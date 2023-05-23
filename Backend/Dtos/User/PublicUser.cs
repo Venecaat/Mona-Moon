@@ -4,6 +4,8 @@ namespace Backend.Dtos.User
 {
     public class PublicUser : BaseUser
     {
+        public required int Id { get; set; }
+
         [Required]
         [StringLength(50, MinimumLength = 2)]
         public required string FirstName { get; set; }
