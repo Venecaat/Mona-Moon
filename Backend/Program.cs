@@ -1,3 +1,4 @@
+using Backend.AutoMapper;
 using Backend.Database;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,6 +7,9 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+// Add AutoMapper
+builder.Services.AddAutoMapper(typeof(MapProfile));
 
 // Add DB Context
 builder.Services.AddDbContext<MonaMoonDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MonaMoon")));
