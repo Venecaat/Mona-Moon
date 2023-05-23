@@ -23,6 +23,8 @@ namespace Backend.Repositories
 
         public async Task<User?> Find(int id) => await _context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Id == id);
 
+        public async Task<User?> FindByEmail(string email) => await _context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Email == email);
+
         public async Task<bool> IsUnique(string email) => await _context.Users.AllAsync(u => u.Email != email);
 
         public async Task<bool> Delete(User user)
