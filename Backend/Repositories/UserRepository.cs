@@ -12,6 +12,11 @@ namespace Backend.Repositories
             _context = context;
         }
 
+        public async Task<List<User>> GetAll() => await _context.Users.AsNoTracking().ToListAsync();
         
+        public async Task<User?> Find(int id) => await _context.Users.AsNoTracking().FirstOrDefaultAsync(u => u.Id == id);
+
+        public async Task<bool> IsUnique(string email) => await _context.Users.AllAsync(u => u.Email != email);
+
     }
 }
