@@ -10,6 +10,6 @@ namespace Backend.Services
         public Task<PublicUser?> FindByEmail(string email);
         public Task<bool> IsUnique(string email);
         public Task<bool> Delete(int id);
-        public Task<PublicUser> Update(PublicUser user);
+        public Task<PublicUser> Update(UpdateUser user);
     }
 }

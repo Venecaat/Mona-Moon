@@ -48,12 +48,12 @@ namespace Backend.Services
             return true;
         }
 
-        public async Task<PublicUser> Update(PublicUser updateUser)
+        public async Task<PublicUser> Update(UpdateUser updateUser)
         {
-            User user = _mapper.Map<PublicUser, User>(updateUser);
+            User user = _mapper.Map<UpdateUser, User>(updateUser);
             await _repository.Update(user);
 
-            return updateUser;
+            return _mapper.Map<User, PublicUser>(user);
         }
     }
 }
