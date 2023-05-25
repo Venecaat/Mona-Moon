@@ -10,6 +10,9 @@ namespace Backend.AutoMapper
         {
             CreateMap<User, PublicUser>();
             CreateMap<PublicUser, User>();
+
+            CreateMap<RegisterUser, User>();
+            CreateMap<UpdateUser, User>();
         }
     }
 }
