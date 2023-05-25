@@ -12,7 +12,7 @@ namespace Backend.Database.Models.User
         public int Id { get; set; }
 
         [Required]
-        [RegularExpression("/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/")]
+        [RegularExpression("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")]
         public required string Email { get; set; }
 
         [Required]
