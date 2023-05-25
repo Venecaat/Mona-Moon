@@ -1,5 +1,7 @@
 using Backend.AutoMapper;
 using Backend.Database;
+using Backend.Repositories;
+using Backend.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +9,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers();
+
+// Add dependencies
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IUserService, UserService>();
 
 // Add AutoMapper
 builder.Services.AddAutoMapper(typeof(MapProfile));
@@ -33,5 +39,8 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+// For testing - Seed DB
+DbInitializer.Seed(app);
 
 app.Run();
