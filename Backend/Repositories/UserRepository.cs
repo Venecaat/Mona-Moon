@@ -29,14 +29,14 @@ namespace Backend.Repositories
 
         public async Task<bool> Delete(User user)
         {
-            _context.Remove(user);
+            _context.Users.Remove(user);
             await _context.SaveChangesAsync();
             return true;
         }
 
         public async Task<bool> Update(User user)
         {
-            _context.Update(user);
+            _context.Users.Update(user);
             await _context.SaveChangesAsync();
             return true;
         }
