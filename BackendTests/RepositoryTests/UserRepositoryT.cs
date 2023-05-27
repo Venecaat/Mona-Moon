@@ -157,5 +157,27 @@ namespace BackendTests.RepositoryTests
         {
             Assert.Null(await repository.Find(325));
         }
+
+        [Test]
+        public async Task FindByEmail_ExistingEmail_ReturnsUser()
+        {
+            User expectedUser = new()
+            {
+                Id = 5,
+                Email = "lastsamurai325@liamg.com",
+                FirstName = "Oda",
+                LastName = "Nobunaga",
+                Password = "harakiri",
+                IsAdmin = false
+            };
+
+            Util.AreEqualByJson(expectedUser, await repository.FindByEmail("lastsamurai325@liamg.com"));
+        }
+
+        [Test]
+        public async Task FindByEmail_NotExistingEmail_ReturnsNull()
+        {
+            Assert.Null(await repository.FindByEmail("notexisting@email.com"));
+        }
     }
 }
