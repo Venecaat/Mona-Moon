@@ -11,7 +11,7 @@ using Moq;
 namespace BackendTests.ServiceTests
 {
     [TestFixture]
-    public class Tests
+    public class UserServiceT
     {
         private IMapper mapper;
         private Mock<UserRepository> mockRepository;
@@ -129,6 +129,29 @@ namespace BackendTests.ServiceTests
             mockRepository.Setup(x => x.GetAll()).Returns(Task.FromResult(users));
 
             Util.AreEqualByJson(usersPublic, await service.GetAll());
+        }
+
+        [Test]
+        public async Task Create_WhenCalled_ReturnsNewUser()
+        {
+            RegisterUser newUser = new ()
+            {
+                Email = "flashboi@addr.es",
+                FirstName = "Flash",
+                LastName = "Dones",
+                Password = "hurryUp"
+            };
+
+            PublicUser expectedUser = new()
+            {
+                Id = 0,
+                Email = "flashboi@addr.es",
+                FirstName = "Flash",
+                LastName = "Dones",
+                IsAdmin = false
+            };
+            
+            Util.AreEqualByJson(expectedUser, await service.Create(newUser));
         }
     }
 }
