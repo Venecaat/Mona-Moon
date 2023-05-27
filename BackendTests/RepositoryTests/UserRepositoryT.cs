@@ -247,5 +247,62 @@ namespace BackendTests.RepositoryTests
             mockContext.Verify(x => x.Users.Remove(It.IsAny<User>()));
             mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()));
         }
+
+        [Test]
+        public async Task Update_UpdatesUserInDb()
+        {
+            User expectedUser = new()
+            {
+                Id = 2,
+                Email = "nothing@qwert.zh",
+                FirstName = "Just",
+                LastName = "Test",
+                Password = "testing123"
+            };
+
+            mockContext.Setup(x => x.Users.Update(It.IsAny<User>()))
+                .Callback<User>(u =>
+                {
+                    users.Remove(users.First(ur => ur.Id == expectedUser.Id));
+                    users.Add(u);
+                });
+
+            await repository.Update(expectedUser);
+
+            Util.AreEqualByJson(expectedUser, users.First(u => u.Id == expectedUser.Id));
+        }
+
+        [Test]
+        public async Task Update_ReturnsTrue()
+        {
+            User user = new()
+            {
+                Id = 2,
+                Email = "nothing@qwert.zh",
+                FirstName = "Just",
+                LastName = "Test",
+                Password = "testing123"
+            };
+
+            Assert.True(await repository.Update(user));
+        }
+
+        [Test]
+        public async Task Update_UpdateAndSaveChangesAsyncMethodsCalledOnDb()
+        {
+            User user = new()
+            {
+                Id = 2,
+                Email = "nothing@qwert.zh",
+                FirstName = "Just",
+                LastName = "Test",
+                Password = "testing123"
+            };
+
+            await repository.Update(user);
+
+            mockContext.Verify(x => x.Users.Update(It.IsAny<User>()));
+            mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()));
+        }
     }
 }
