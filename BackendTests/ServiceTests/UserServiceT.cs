@@ -153,5 +153,42 @@ namespace BackendTests.ServiceTests
             
             Util.AreEqualByJson(expectedUser, await service.Create(newUser));
         }
+
+        [Test]
+        public async Task Find_ExistingId_ReturnsUser()
+        {
+            User user = new()
+            {
+                Id = 4,
+                Email = "tryingFor@you.com",
+                FirstName = "Yuki",
+                LastName = "Onna",
+                Password = "snowbutterfly",
+                IsAdmin = false
+            };
+
+            PublicUser expectedUser = new()
+            {
+                Id = 4,
+                Email = "tryingFor@you.com",
+                FirstName = "Yuki",
+                LastName = "Onna",
+                IsAdmin = false
+            };
+
+            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult(user));
+
+            Util.AreEqualByJson(expectedUser, await service.Find(4));
+        }
+
+        [Test]
+        public async Task Find_NotExistingId_ReturnsNull()
+        {
+            User? user = null;
+
+            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult(user));
+
+            Assert.Null(await service.Find(325));
+        }
     }
 }
