@@ -179,5 +179,17 @@ namespace BackendTests.RepositoryTests
         {
             Assert.Null(await repository.FindByEmail("notexisting@email.com"));
         }
+
+        [Test]
+        public async Task IsUnique_ExistingEmail_ReturnsFalse()
+        {
+            Assert.False(await repository.IsUnique("something@right.bs"));
+        }
+
+        [Test]
+        public async Task IsUnique_NotExistingEmail_ReturnsTrue()
+        {
+            Assert.True(await repository.IsUnique("SomethinG@right.bs"));
+        }
     }
 }
