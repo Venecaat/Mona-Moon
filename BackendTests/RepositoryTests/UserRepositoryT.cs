@@ -21,38 +21,48 @@ namespace BackendTests.RepositoryTests
             {
                 new ()
                 {
+                    Id = 1,
                     Email = "totally@valid.com",
                     FirstName = "Johnson",
                     LastName = "Long",
-                    Password = "blackCat"
+                    Password = "blackCat",
+                    IsAdmin = false
                 },
                 new ()
                 {
+                    Id = 2,
                     Email = "something@right.bs",
                     FirstName = "Jelly",
                     LastName = "Fish",
-                    Password = "artifacto"
+                    Password = "artifacto",
+                    IsAdmin = false
                 },
                 new ()
                 {
+                    Id = 3,
                     Email = "marker123@free.net",
                     FirstName = "Isaac",
                     LastName = "Clarke",
-                    Password = "usgishimura"
+                    Password = "usgishimura",
+                    IsAdmin = true
                 },
                 new ()
                 {
+                    Id = 4,
                     Email = "tryingFor@you.com",
                     FirstName = "Yuki",
                     LastName = "Onna",
-                    Password = "snowbutterfly"
+                    Password = "snowbutterfly",
+                    IsAdmin = false
                 },
                 new ()
                 {
+                    Id = 5,
                     Email = "lastsamurai325@liamg.com",
                     FirstName = "Oda",
                     LastName = "Nobunaga",
-                    Password = "harakiri"
+                    Password = "harakiri",
+                    IsAdmin = false
                 }
             };
 
@@ -124,6 +134,28 @@ namespace BackendTests.RepositoryTests
 
             mockContext.Verify(x => x.Users.AddAsync(It.IsAny<User>(), It.IsAny<CancellationToken>()));
             mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()));
+        }
+
+        [Test]
+        public async Task Find_ExistingId_ReturnsUser()
+        {
+            User expectedUser = new()
+            {
+                Id = 1,
+                Email = "totally@valid.com",
+                FirstName = "Johnson",
+                LastName = "Long",
+                Password = "blackCat",
+                IsAdmin = false,
+            };
+
+            Util.AreEqualByJson(expectedUser, await repository.Find(1));
+        }
+
+        [Test]
+        public async Task Find_NotExistingId_ReturnsNull()
+        {
+            Assert.Null(await repository.Find(325));
         }
     }
 }
