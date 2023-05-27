@@ -191,5 +191,61 @@ namespace BackendTests.RepositoryTests
         {
             Assert.True(await repository.IsUnique("SomethinG@right.bs"));
         }
+
+        [Test]
+        public async Task Delete_RemovesUserFromDb()
+        {
+            User user = new()
+            {
+                Id = 4,
+                Email = "tryingFor@you.com",
+                FirstName = "Yuki",
+                LastName = "Onna",
+                Password = "snowbutterfly",
+                IsAdmin = false
+            };
+
+            mockContext.Setup(x => x.Users.Remove(It.IsAny<User>()))
+                .Callback<User>(_ => users.Remove(users.First(u => u.Id == user.Id)));
+
+            await repository.Delete(user);
+
+            Assert.That(users.Count, Is.EqualTo(4));
+        }
+
+        [Test]
+        public async Task Delete_ReturnsTrue()
+        {
+            User user = new()
+            {
+                Id = 4,
+                Email = "tryingFor@you.com",
+                FirstName = "Yuki",
+                LastName = "Onna",
+                Password = "snowbutterfly",
+                IsAdmin = false
+            };
+
+            Assert.True(await repository.Delete(user));
+        }
+
+        [Test]
+        public async Task Delete_RemoveAndSaveChangesAsyncMethodsCalledOnDb()
+        {
+            User user = new()
+            {
+                Id = 4,
+                Email = "tryingFor@you.com",
+                FirstName = "Yuki",
+                LastName = "Onna",
+                Password = "snowbutterfly",
+                IsAdmin = false
+            };
+            
+            await repository.Delete(user);
+
+            mockContext.Verify(x => x.Users.Remove(It.IsAny<User>()));
+            mockContext.Verify(x => x.SaveChangesAsync(It.IsAny<CancellationToken>()));
+        }
     }
 }
