@@ -190,5 +190,42 @@ namespace BackendTests.ServiceTests
 
             Assert.Null(await service.Find(325));
         }
+
+        [Test]
+        public async Task FindByEmail_ExistingEmail_ReturnsUser()
+        {
+            User user = new()
+            {
+                Id = 1,
+                Email = "totally@valid.com",
+                FirstName = "Johnson",
+                LastName = "Long",
+                Password = "blackCat",
+                IsAdmin = false
+            };
+
+            PublicUser expectedUser = new()
+            {
+                Id = 1,
+                Email = "totally@valid.com",
+                FirstName = "Johnson",
+                LastName = "Long",
+                IsAdmin = false
+            };
+
+            mockRepository.Setup(x => x.FindByEmail(It.IsAny<string>())).Returns(Task.FromResult(user));
+
+            Util.AreEqualByJson(expectedUser, await service.FindByEmail("totally@valid.com"));
+        }
+
+        [Test]
+        public async Task FindByEmail_NotExistingEmail_ReturnsUser()
+        {
+            User? user = null;
+
+            mockRepository.Setup(x => x.FindByEmail(It.IsAny<string>())).Returns(Task.FromResult(user));
+
+            Assert.Null(await service.FindByEmail("notexisting@eeemail.com"));
+        }
     }
 }
