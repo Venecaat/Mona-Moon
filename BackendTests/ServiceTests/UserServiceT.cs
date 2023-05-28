@@ -294,5 +294,62 @@ namespace BackendTests.ServiceTests
             Assert.False(await service.Delete(325));
         }
 
+        [Test]
+        public async Task Update_UpdatesUserInDb()
+        {
+            UpdateUser updateUser = new()
+            {
+                Id = 1,
+                Email = "totally@valid.com",
+                FirstName = "Johnson",
+                LastName = "Long",
+                Password = "veryBIGblackcat"
+            };
+
+            User expectedUser = new()
+            {
+                Id = 1,
+                Email = "totally@valid.com",
+                FirstName = "Johnson",
+                LastName = "Long",
+                Password = "veryBIGblackcat",
+                IsAdmin = false
+            };
+
+            mockRepository.Setup(x => x.Update(It.IsAny<User>()))
+                .Callback<User>(u =>
+                {
+                    users.Remove(users.First(ur => ur.Id == expectedUser.Id));
+                    users.Add(u);
+                });
+
+            await service.Update(updateUser);
+
+            Util.AreEqualByJson(expectedUser, users.First(u => u.Id == expectedUser.Id));
+        }
+        
+        [Test]
+        public async Task Update_ReturnsUser()
+        {
+            UpdateUser updateUser = new()
+            {
+                Id = 1,
+                Email = "totally@valid.com",
+                FirstName = "Johnson",
+                LastName = "Long",
+                Password = "veryBIGblackcat"
+            };
+
+            PublicUser expectedUser = new()
+            {
+                Id = 1,
+                Email = "totally@valid.com",
+                FirstName = "Johnson",
+                LastName = "Long",
+                IsAdmin = false
+            };
+
+            Util.AreEqualByJson(expectedUser, await service.Update(updateUser));
+        }
     }
 }
