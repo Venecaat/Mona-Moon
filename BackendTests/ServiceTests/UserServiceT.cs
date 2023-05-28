@@ -243,5 +243,56 @@ namespace BackendTests.ServiceTests
 
             Assert.True(await service.IsUnique("pongopongo@island.bt"));
         }
+
+        [Test]
+        public async Task Delete_ExistingId_RemovesUserFromDb()
+        {
+            User user = new()
+            {
+                Id = 3,
+                Email = "marker123@free.net",
+                FirstName = "Isaac",
+                LastName = "Clarke",
+                Password = "usgishimura",
+                IsAdmin = true
+            };
+
+            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult(user));
+            mockRepository.Setup(x => x.Delete(It.IsAny<User>()))
+                .Callback<User>(_ => users.Remove(users.First(u => u.Id == user.Id)));
+
+            await service.Delete(3);
+
+            Assert.That(users.Count, Is.EqualTo(4));
+        }
+
+        [Test]
+        public async Task Delete_ExistingId_ReturnsTrue()
+        {
+            User user = new()
+            {
+                Id = 3,
+                Email = "marker123@free.net",
+                FirstName = "Isaac",
+                LastName = "Clarke",
+                Password = "usgishimura",
+                IsAdmin = true
+            };
+            
+            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult(user));
+
+            Assert.True(await service.Delete(3));
+        }
+
+        [Test]
+        public async Task Delete_NotExistingId_ReturnsFalse()
+        {
+            User? user = null;
+
+            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult(user));
+
+            Assert.False(await service.Delete(325));
+        }
+
     }
 }
