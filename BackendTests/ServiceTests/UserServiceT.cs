@@ -227,5 +227,21 @@ namespace BackendTests.ServiceTests
 
             Assert.Null(await service.FindByEmail("notexisting@eeemail.com"));
         }
+
+        [Test]
+        public async Task IsUnique_ExistingEmail_ReturnsFalse()
+        {
+            mockRepository.Setup(x => x.IsUnique(It.IsAny<string>())).Returns(Task.FromResult(false));
+
+            Assert.False(await service.IsUnique("lastsamurai325@liamg.com"));
+        }
+
+        [Test]
+        public async Task IsUnique_NotExistingEmail_ReturnsTrue()
+        {
+            mockRepository.Setup(x => x.IsUnique(It.IsAny<string>())).Returns(Task.FromResult(true));
+
+            Assert.True(await service.IsUnique("pongopongo@island.bt"));
+        }
     }
 }
