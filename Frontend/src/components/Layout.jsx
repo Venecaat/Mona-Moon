@@ -1,10 +1,11 @@
 import PropTypes from "prop-types";
-import {Footer} from "./Footer.jsx";
+import { Footer } from "./Footer.jsx";
+import { Navbar } from "./Navbar.jsx";
 
 export const Layout = ({ children }) => {
     return (
-        <div>
-            <div className="text-neutral w-6/12 border-2 text-center font-bold text-3xl p-2 border-accent-content bg-info">Navbar</div>
+        <div className="flex flex-col justify-between h-screen">
+            <Navbar />
                 <main>
                     { children }
                 </main>
