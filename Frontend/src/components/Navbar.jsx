@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const Navbar = () => {
     return (
         <div className="navbar bg-primary text-primary-content">
@@ -13,21 +15,21 @@ export const Navbar = () => {
                     <ul tabIndex="0"
                         className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52 font-bold z-10">
                         <li><a>Órarend</a></li>
-                        <li><a>Bemutatkozás</a></li>
-                        <li><a>Kapcsolat</a></li>
+                        <li><Link to="/bemutatkozas">Bemutatkozás</Link></li>
+                        <li><Link to="/kapcsolat">Kapcsolat</Link></li>
                     </ul>
                 </div>
-                <a className="hidden lg:btn lg:btn-ghost lg:normal-case lg:text-xl">Mona Moon</a>
+                <Link to="/" className="hidden lg:btn lg:btn-ghost lg:normal-case lg:text-xl">Mona Moon</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-lg font-bold">
                     <li><a>Órarend</a></li>
-                    <li><a>Bemutatkozás</a></li>
-                    <li><a>Kapcsolat</a></li>
+                    <li><Link to="/bemutatkozas">Bemutatkozás</Link></li>
+                    <li><Link to="/kapcsolat">Kapcsolat</Link></li>
                 </ul>
             </div>
             <div className="navbar-center lg:hidden flex">
-                <a className="btn btn-ghost normal-case text-xl">Mona Moon</a>
+                <Link to="/" className="btn btn-ghost normal-case text-xl">Mona Moon</Link>
             </div>
             <div className="navbar-end">
                 <a className="btn">Bejelentkezés</a>
