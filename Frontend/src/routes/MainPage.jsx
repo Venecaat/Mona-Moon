@@ -36,6 +36,16 @@ export const MainPage = () => {
                 <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Zumba fitness bemutató rendezvényekre" />
             </div>
 
+            <Header title="Telihold Anyaoltalom" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-y-5">
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Fitmommy várandós hastánc" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Fitmommy várandós latin fitness" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Dúlai támogatás" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Gyermekágyas gondoskodás" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Császármetszés feldolgozó csoport" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Szülésáldó ünnep" />
+            </div>
+
 
             <div className="flex w-full mt-6">
                 <div className="grid h-auto flex-grow card bg-base-300 rounded-box place-items-center py-4">
@@ -51,7 +61,7 @@ export const MainPage = () => {
                     Fitmommy várandós hastánc<br />
                     Dúlai támogatás<br />
                     Szülésnap császármetszés feldolgozó csoport<br />
-                    Gyerkmekágyas gondoskodás<br />
+                    Gyermekágyas gondoskodás<br />
                     Szülésáldó ünnep<br />
                     Fitmommy várandós latin fitness
                 </div>
