@@ -3,7 +3,7 @@ import { ServiceCard } from "../components/mainpage/ServiceCard.jsx";
 
 export const MainPage = () => {
     return (
-        <div className="max-w-5xl mx-auto my-6">
+        <div>
             <div className="carousel w-full lg:rounded-box">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
