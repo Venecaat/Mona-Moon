@@ -6,7 +6,7 @@ export const Layout = ({ children }) => {
     return (
         <div className="flex flex-col justify-between h-screen">
             <Navbar />
-                <main className="max-w-5xl mx-auto my-6">
+                <main className="max-w-5xl w-full mx-auto my-6">
                     { children }
                 </main>
             <Footer />

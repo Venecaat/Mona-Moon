@@ -4,7 +4,7 @@ import { ServiceCard } from "../components/mainpage/ServiceCard.jsx";
 export const MainPage = () => {
     return (
         <div>
-            <div className="carousel w-full lg:rounded-box">
+            <div className="carousel w-full xl:rounded-box">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -28,7 +28,7 @@ export const MainPage = () => {
                 </div>
             </div>
 
-            <Header title="Hastánc - Zumba" />
+            <Header title="Hastánc - Zumba" classes="text-center" />
             <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-y-5">
                 <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Mi is a Hastánc?" />
                 <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Mi is a Zumba?" />
@@ -36,7 +36,7 @@ export const MainPage = () => {
                 <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Zumba fitness bemutató rendezvényekre" />
             </div>
 
-            <Header title="Telihold Anyaoltalom" />
+            <Header title="Telihold Anyaoltalom" classes="text-center" />
             <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-y-5">
                 <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Fitmommy várandós hastánc" />
                 <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Fitmommy várandós latin fitness" />
