@@ -12,10 +12,41 @@ export const Navbar = () => {
                                   d="M4 6h16M4 12h8m-8 6h16"/>
                         </svg>
                     </label>
-                    <ul tabIndex="0"
-                        className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52 font-bold z-10">
+                    {/*<ul tabIndex="0"*/}
+                    {/*    className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-primary rounded-box w-52 font-bold z-10">*/}
+                    {/*    <li><a>Szolgáltatások</a></li>*/}
+                    {/*    <li><a>Órarend</a></li>*/}
+                    {/*    <li><Link to="/kapcsolat">Kapcsolat</Link></li>*/}
+                    {/*</ul>*/}
+                    <ul className="menu menu-sm dropdown-content mt-3 p-2 z-10 w-80 shadow bg-primary font-bold rounded-box">
+                        <li><Link to="/">Főoldal</Link></li>
+                        <li>
+                            <details>
+                                <summary>Szolgáltatások</summary>
+                                <ul>
+                                    <li>
+                                        <a>Hastánc - Zumba</a>
+                                        <ul className="text-secondary">
+                                            <li><a>Hastánc órák</a></li>
+                                            <li><a>Hastánc fellépés</a></li>
+                                            <li><a>Zumba órák</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a>Telihold Anyaoltalom</a>
+                                        <ul className="text-secondary">
+                                            <li><a>Fitmommy várandós hastánc</a></li>
+                                            <li><a>Fitmommy várandós latin fitness</a></li>
+                                            <li><a>Dúlai támogatás</a></li>
+                                            <li><a>Gyermekágyas gondoskodás</a></li>
+                                            <li><a>Császármetszés feldolgozó csoport</a></li>
+                                            <li><a>Szülésáldó ünnep</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </details>
+                        </li>
                         <li><a>Órarend</a></li>
-                        <li><Link to="/bemutatkozas">Bemutatkozás</Link></li>
                         <li><Link to="/kapcsolat">Kapcsolat</Link></li>
                     </ul>
                 </div>
@@ -23,8 +54,8 @@ export const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-lg font-bold">
+                    <li><a>Szolgáltatások</a></li>
                     <li><a>Órarend</a></li>
-                    <li><Link to="/bemutatkozas">Bemutatkozás</Link></li>
                     <li><Link to="/kapcsolat">Kapcsolat</Link></li>
                 </ul>
             </div>
