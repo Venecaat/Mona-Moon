@@ -4,6 +4,7 @@ import { MainPage } from "./routes/MainPage.jsx";
 import { PageNotFound } from "./routes/PageNotFound.jsx";
 import { Contact } from "./routes/Contact.jsx";
 import { Introduction } from "./routes/Introduction.jsx";
+import {Timetable} from "./routes/Timetable.jsx";
 
 export const App = () => {
 
@@ -11,6 +12,7 @@ export const App = () => {
       <Layout>
           <Routes>
               <Route path="/" element={<MainPage />}></Route>
+              <Route path="/orarend" element={<Timetable />}></Route>
               <Route path="/bemutatkozas" element={<Introduction />}></Route>
               <Route path="/kapcsolat" element={<Contact />}></Route>
               <Route path="*" element={<PageNotFound />}></Route>

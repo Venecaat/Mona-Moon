@@ -44,7 +44,7 @@ export const Navbar = () => {
                                 </ul>
                             </details>
                         </li>
-                        <li><a>Órarend</a></li>
+                        <li><Link to="/orarend">Órarend</Link></li>
                         <li><Link to="/kapcsolat">Kapcsolat</Link></li>
                     </ul>
                 </div>
@@ -80,7 +80,7 @@ export const Navbar = () => {
                             </li>
                         </ul>
                     </li>
-                    <li><a>Órarend</a></li>
+                    <li><Link to="/orarend">Órarend</Link></li>
                     <li><Link to="/kapcsolat">Kapcsolat</Link></li>
                 </ul>
             </div>
