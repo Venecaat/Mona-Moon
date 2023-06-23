@@ -45,6 +45,15 @@ export const Navbar = () => {
                             </details>
                         </li>
                         <li><Link to="/orarend">Órarend</Link></li>
+                        <li>
+                            <details>
+                                <summary>Bemutatkozás</summary>
+                                <ul className="text-secondary">
+                                    <li><a>Hastánc - Zumba</a></li>
+                                    <li><a>Telihold Anyaoltalom</a></li>
+                                </ul>
+                            </details>
+                        </li>
                         <li><Link to="/kapcsolat">Kapcsolat</Link></li>
                     </ul>
                 </div>
@@ -81,6 +90,13 @@ export const Navbar = () => {
                         </ul>
                     </li>
                     <li><Link to="/orarend">Órarend</Link></li>
+                    <li className="dropdown dropdown-hover">
+                        <label tabIndex={0}>Bemutatkozás</label>
+                        <ul className="menu dropdown-content bg-primary rounded-box z-10 w-80 mr-0">
+                            <li><a>Hastánc - Zumba</a></li>
+                            <li><a>Telihold Anyaoltalom</a></li>
+                        </ul>
+                    </li>
                     <li><Link to="/kapcsolat">Kapcsolat</Link></li>
                 </ul>
             </div>
