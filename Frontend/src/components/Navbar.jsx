@@ -68,9 +68,9 @@ export const Navbar = () => {
                                 <details>
                                     <summary>Hastánc - Zumba</summary>
                                     <ul className="text-secondary">
-                                        <li><a>Hastánc órák</a></li>
-                                        <li><a>Hastánc fellépés</a></li>
-                                        <li><a>Zumba órák</a></li>
+                                        <li className="hover:text-accent"><a>Hastánc órák</a></li>
+                                        <li className="hover:text-accent"><Link to="/szolgaltatasok/hastanc-fellepes">Hastánc fellépés</Link></li>
+                                        <li className="hover:text-accent"><a>Zumba órák</a></li>
                                     </ul>
                                 </details>
                             </li>
@@ -78,12 +78,12 @@ export const Navbar = () => {
                                 <details>
                                     <summary>Telihold Anyaoltalom</summary>
                                     <ul className="text-secondary">
-                                        <li><a>Fitmommy várandós hastánc</a></li>
-                                        <li><a>Fitmommy várandós latin fitness</a></li>
-                                        <li><a>Dúlai támogatás</a></li>
-                                        <li><a>Gyermekágyas gondoskodás</a></li>
-                                        <li><a>Császármetszés feldolgozó csoport</a></li>
-                                        <li><a>Szülésáldó ünnep</a></li>
+                                        <li className="hover:text-accent"><a>Fitmommy várandós hastánc</a></li>
+                                        <li className="hover:text-accent"><a>Fitmommy várandós latin fitness</a></li>
+                                        <li className="hover:text-accent"><a>Dúlai támogatás</a></li>
+                                        <li className="hover:text-accent"><a>Gyermekágyas gondoskodás</a></li>
+                                        <li className="hover:text-accent"><a>Császármetszés feldolgozó csoport</a></li>
+                                        <li className="hover:text-accent"><a>Szülésáldó ünnep</a></li>
                                     </ul>
                                 </details>
                             </li>
@@ -92,9 +92,9 @@ export const Navbar = () => {
                     <li><Link to="/orarend">Órarend</Link></li>
                     <li className="dropdown dropdown-hover">
                         <label tabIndex={0}>Bemutatkozás</label>
-                        <ul className="menu dropdown-content bg-primary rounded-box z-10 w-80 mr-0">
-                            <li><a>Hastánc - Zumba</a></li>
-                            <li><a>Telihold Anyaoltalom</a></li>
+                        <ul className="menu dropdown-content bg-primary text-secondary rounded-box z-10 w-80 mr-0">
+                            <li className="hover:text-accent"><a>Hastánc - Zumba</a></li>
+                            <li className="hover:text-accent"><a>Telihold Anyaoltalom</a></li>
                         </ul>
                     </li>
                     <li><Link to="/kapcsolat">Kapcsolat</Link></li>

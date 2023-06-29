@@ -72,7 +72,7 @@ export const MainPage = () => {
                 <div className="hero-content flex-col md:flex-row gap-0 lg:gap-4">
                     <img src="/src/assets/images/Intro.png" className="max-w-sm rounded-full shadow-2xl scale-90 lg:scale-100" />
                     <div>
-                        <h1 className="text-6xl font-bold text-center md:text-left">Mona Moon</h1>
+                        <h1 className="text-6xl font-bold text-center md:text-left text-primary">Mona Moon</h1>
                         <p className="py-6 text-center md:text-left">
                             Beczkó Mónika vagyok. Dúla, önkéntes szoptatási segítő,
                             gyermekágyas segítő, pre- és postnatal mozgás tréner, hastánc és zumba oktató,
