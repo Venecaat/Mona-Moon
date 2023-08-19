@@ -6,6 +6,8 @@ import { Contact } from "./routes/Contact.jsx";
 import { Introduction } from "./routes/Introduction.jsx";
 import { Timetable } from "./routes/Timetable.jsx";
 import { BellyDancePerformance } from "./routes/services/bellydance-zumba/BellyDancePerformance.jsx";
+import { BellyDanceLesson } from "./routes/services/bellydance-zumba/BellyDanceLesson.jsx";
+import { ZumbaLesson } from "./routes/services/bellydance-zumba/ZumbaLesson.jsx";
 
 export const App = () => {
 
@@ -19,7 +21,9 @@ export const App = () => {
               <Route path="*" element={<PageNotFound />}></Route>
 
 
+              <Route path="/szolgaltatasok/hastanc-orak" element={<BellyDanceLesson />}></Route>
               <Route path="/szolgaltatasok/hastanc-fellepes" element={<BellyDancePerformance />}></Route>
+              <Route path="/szolgaltatasok/zumba-orak" element={<ZumbaLesson />}></Route>
           </Routes>
       </Layout>
   )
