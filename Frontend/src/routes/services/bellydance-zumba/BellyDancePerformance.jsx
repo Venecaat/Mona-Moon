@@ -5,9 +5,9 @@ export const BellyDancePerformance = () => {
             <div className="bg-base">
                 <div className="hero-content flex-col md:flex-row gap-0 lg:gap-4">
                     <div>
-                        <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left text-primary">Engedd, hogy a kelet misztikus világa magával ragadjon</h1>
+                        <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left text-primary">Hastánc fellépés rendezvényekre!</h1>
                     </div>
-                    <img src="/src/assets/images/hastanc-fellepes.jpg" className="max-w-sm shadow-2xl scale-90 lg:scale-100" />
+                    <img src="/src/assets/images/hastanc-fellepes-mod.jpg" className="max-w-sm shadow-2xl scale-90 lg:scale-100" />
                 </div>
             </div>
             <hr className="w-11/12 xl:w-full mx-auto my-8 border-2 border-primary rounded" />
@@ -26,7 +26,7 @@ export const BellyDancePerformance = () => {
                 </div>
                 <div className="px-4 xl:px-0">
                     <h2 className="text-primary font-bold text-3xl">Repertoár</h2>
-                    <ul className="ml-5 mt-3 italic grid grid-cols-1 gap-2">
+                    <ul className="md:ml-5 mt-3 italic grid grid-cols-1 gap-2">
                         <li>Klasszikus hastánc (Raks Sharki)</li>
                         <li>Dobszóló</li>
                         <li>Eszközös táncok: fátyol, ízisz szárny, legyezőfátyol, saidi bot, csörgődob, stb.</li>
@@ -38,7 +38,7 @@ export const BellyDancePerformance = () => {
                 </div>
                 <div className="grid grid-cols-1 bg-primary p-5 text-warning xl:rounded-box text-center gap-4">
                     <div>
-                        Előzetes megbeszélés a részletek tisztázása (időpont, helyszín stb.) mindenképpen szükséges!
+                        Előzetes megbeszélés a részletek tisztázásához (időpont, helyszín stb.) mindenképpen szükséges!
                     </div>
                     <div>
                         Az árazás függ a helyszíntől, időponttól, a rendezvény jellegétől, illetve a kért műsor hosszától és a táncosok számától is.
