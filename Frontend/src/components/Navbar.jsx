@@ -33,12 +33,12 @@ export const Navbar = () => {
                                         <details>
                                             <summary>Telihold Anyaoltalom</summary>
                                             <ul className="text-secondary">
-                                                <li><a>Fitmummy várandós hastánc</a></li>
-                                                <li><a>Fitmummy várandós latin fitness</a></li>
-                                                <li><a>Dúlai támogatás</a></li>
-                                                <li><a>Gyermekágyas gondoskodás</a></li>
-                                                <li><a>Császármetszés feldolgozó csoport</a></li>
-                                                <li><a>Szülésáldó ünnep</a></li>
+                                                <li><Link to="/szolgaltatasok/fitmummy-hastanc">Fitmummy várandós hastánc</Link></li>
+                                                <li><Link to="/szolgaltatasok/fitmummy-latin-fitness">Fitmummy várandós latin fitness</Link></li>
+                                                <li><Link to="/szolgaltatasok/dulai-tamogatas">Dúlai támogatás</Link></li>
+                                                <li><Link to="/szolgaltatasok/gyermekagyas-gondoskodas">Gyermekágyas gondoskodás</Link></li>
+                                                <li><Link to="/szolgaltatasok/csaszarmetszes-feldolgozo-csoport">Császármetszés feldolgozó csoport</Link></li>
+                                                <li><Link to="/szolgaltatasok/szulesaldo-unnep">Szülésáldó ünnep</Link></li>
                                             </ul>
                                         </details>
                                     </li>
@@ -81,12 +81,12 @@ export const Navbar = () => {
                                 <details>
                                     <summary>Telihold Anyaoltalom</summary>
                                     <ul className="text-secondary">
-                                        <li className="hover:text-accent"><a>Fitmummy várandós hastánc</a></li>
-                                        <li className="hover:text-accent"><a>Fitmummy várandós latin fitness</a></li>
-                                        <li className="hover:text-accent"><a>Dúlai támogatás</a></li>
-                                        <li className="hover:text-accent"><a>Gyermekágyas gondoskodás</a></li>
-                                        <li className="hover:text-accent"><a>Császármetszés feldolgozó csoport</a></li>
-                                        <li className="hover:text-accent"><a>Szülésáldó ünnep</a></li>
+                                        <li className="hover:text-accent"><Link to="/szolgaltatasok/fitmummy-hastanc">Fitmummy várandós hastánc</Link></li>
+                                        <li className="hover:text-accent"><Link to="/szolgaltatasok/fitmummy-latin-fitness">Fitmummy várandós latin fitness</Link></li>
+                                        <li className="hover:text-accent"><Link to="/szolgaltatasok/dulai-tamogatas">Dúlai támogatás</Link></li>
+                                        <li className="hover:text-accent"><Link to="/szolgaltatasok/gyermekagyas-gondoskodas">Gyermekágyas gondoskodás</Link></li>
+                                        <li className="hover:text-accent"><Link to="/szolgaltatasok/csaszarmetszes-feldolgozo-csoport">Császármetszés feldolgozó csoport</Link></li>
+                                        <li className="hover:text-accent"><Link to="/szolgaltatasok/szulesaldo-unnep">Szülésáldó ünnep</Link></li>
                                     </ul>
                                 </details>
                             </li>
