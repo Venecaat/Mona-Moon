@@ -7,14 +7,14 @@ export const ZumbaLesson = () => {
                     <div>
                         <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left text-primary">Gyere és próbáld ki!</h1>
                     </div>
-                    <img src="/src/assets/images/zumba-lesson.png" className="max-w-sm shadow-2xl scale-90 lg:scale-100" />
+                    <img src="/src/assets/images/zumba-lesson.png" className="max-w-sm shadow-2xl scale-90 lg:scale-100" alt="Zumba órák" />
                 </div>
             </div>
             <hr className="w-11/12 xl:w-full mx-auto my-8 border-2 border-primary rounded" />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
                 <div className="px-4 xl:px-0">
                     <h2 className="text-primary font-bold text-3xl">Használt táncstílusok fitness mozdulatokkal kombinálva</h2>
-                    <ul className="md:ml-5 mt-3 italic grid grid-cols-1 gap-2">
+                    <ul className="md:ml-5 mt-3 italic grid grid-cols-2 md:grid-cols-3 gap-2">
                         <li>Salsa</li>
                         <li>Cumbia</li>
                         <li>Reggaeton</li>
@@ -24,7 +24,6 @@ export const ZumbaLesson = () => {
                         <li>Bachata</li>
                         <li>Calypso</li>
                         <li>Samba</li>
-                        <li>Stb.</li>
                     </ul>
                 </div>
                 <div className="px-4 xl:px-0 font-bold">
