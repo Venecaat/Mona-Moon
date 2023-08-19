@@ -23,9 +23,9 @@ export const Navbar = () => {
                                         <details>
                                             <summary>Hastánc - Zumba</summary>
                                             <ul className="text-secondary">
-                                                <li><a>Hastánc órák</a></li>
-                                                <li><a>Hastánc fellépés</a></li>
-                                                <li><a>Zumba órák</a></li>
+                                                <li><Link to="/szolgaltatasok/hastanc-orak">Hastánc órák</Link></li>
+                                                <li><Link to="/szolgaltatasok/hastanc-fellepes">Hastánc fellépés</Link></li>
+                                                <li><Link to="/szolgaltatasok/zumba-orak">Zumba órák</Link></li>
                                             </ul>
                                         </details>
                                     </li>
