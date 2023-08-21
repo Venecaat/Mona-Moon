@@ -8,7 +8,7 @@ export const FitmummyBellyDance = () => {
                     <div>
                         <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left text-primary">Fitmummy várandós hastánc</h1>
                     </div>
-                    <img src="/src/assets/images/fitmummy-belly-dance.png" className="max-w-sm shadow-2xl scale-90 lg:scale-100" alt="Hastánc órák" /> {/* Change picture */}
+                    <img src="/src/assets/images/fitmummy-belly-dance.png" className="max-w-sm shadow-2xl scale-90 lg:scale-100" alt="Fitmummy várandós hastánc" />
                 </div>
             </div>
             <hr className="w-11/12 xl:w-full mx-auto my-8 border-2 border-primary rounded" />
@@ -34,7 +34,8 @@ export const FitmummyBellyDance = () => {
                 <div className="px-4 xl:px-0">
                     <h2 className="text-primary font-bold text-3xl">Mit adhat neked a hastánc?</h2>
                     <ul className="md:ml-5 mt-3 grid grid-cols-1 gap-4">
-                        <li>Segíthet a harmonikus testtartás fenntartásában. Ellensúlyozza az ülő életmód,
+                        <li>
+                            Segíthet a harmonikus testtartás fenntartásában. Ellensúlyozza az ülő életmód,
                             a várandós lét testtartásbeli változásait. Testtudatosságra tanít,
                             ezáltal megkönnyítheti viselni a várandósság terheit és a szülést.
                         </li>
