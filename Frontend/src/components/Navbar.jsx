@@ -26,6 +26,7 @@ export const Navbar = () => {
                                                 <li><Link to="/szolgaltatasok/hastanc-orak">Hastánc órák</Link></li>
                                                 <li><Link to="/szolgaltatasok/hastanc-fellepes">Hastánc fellépés</Link></li>
                                                 <li><Link to="/szolgaltatasok/zumba-orak">Zumba órák</Link></li>
+                                                <li><Link to="/szolgaltatasok/zumba-fellepes">Zumba fellépés</Link></li>
                                             </ul>
                                         </details>
                                     </li>
@@ -74,6 +75,7 @@ export const Navbar = () => {
                                         <li className="hover:text-accent"><Link to="/szolgaltatasok/hastanc-orak">Hastánc órák</Link></li>
                                         <li className="hover:text-accent"><Link to="/szolgaltatasok/hastanc-fellepes">Hastánc fellépés</Link></li>
                                         <li className="hover:text-accent"><Link to="/szolgaltatasok/zumba-orak">Zumba órák</Link></li>
+                                        <li className="hover:text-accent"><Link to="/szolgaltatasok/zumba-fellepes">Zumba fellépés</Link></li>
                                     </ul>
                                 </details>
                             </li>

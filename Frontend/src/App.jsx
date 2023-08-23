@@ -10,6 +10,7 @@ import { ZumbaLesson } from "./routes/services/bellydance-zumba/ZumbaLesson.jsx"
 import { FitmummyBellyDance, FitmummyLatinFitness, DoulaSupport, Childcare, CaesareanSection, BirthBlessing } from "./routes/services/fullmoon-mp/FullmoonMpServices.jsx"
 import { BellyDanceZumba } from "./routes/introduction/BellyDanceZumba.jsx";
 import { FullmoonMP } from "./routes/introduction/FullmoonMP.jsx";
+import { ZumbaPerformance } from "./routes/services/bellydance-zumba/ZumbaPerformance.jsx";
 
 export const App = () => {
 
@@ -29,6 +30,7 @@ export const App = () => {
               <Route path="/szolgaltatasok/hastanc-orak" element={<BellyDanceLesson />}></Route>
               <Route path="/szolgaltatasok/hastanc-fellepes" element={<BellyDancePerformance />}></Route>
               <Route path="/szolgaltatasok/zumba-orak" element={<ZumbaLesson />}></Route>
+              <Route path="/szolgaltatasok/zumba-fellepes" element={<ZumbaPerformance />}></Route>
 
               {/* FULLMOON-MP SERVICES */}
               <Route path="/szolgaltatasok/fitmummy-hastanc" element={<FitmummyBellyDance />}></Route>
