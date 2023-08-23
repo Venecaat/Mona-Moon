@@ -50,8 +50,8 @@ export const Navbar = () => {
                             <details>
                                 <summary>Bemutatkozás</summary>
                                 <ul className="text-secondary">
-                                    <li><a>Hastánc - Zumba</a></li>
-                                    <li><a>Telihold Anyaoltalom</a></li>
+                                    <li><Link to="/bemutatkozas/hastánc-zumba">Hastánc - Zumba</Link></li>
+                                    <li><Link to="/bemutatkozas/telihold-anyaoltalom">Telihold Anyaoltalom</Link></li>
                                 </ul>
                             </details>
                         </li>
@@ -96,8 +96,8 @@ export const Navbar = () => {
                     <li className="dropdown dropdown-hover">
                         <label tabIndex={0}>Bemutatkozás</label>
                         <ul className="menu dropdown-content bg-primary text-secondary rounded-box z-10 w-80 mr-0">
-                            <li className="hover:text-accent"><a>Hastánc - Zumba</a></li>
-                            <li className="hover:text-accent"><a>Telihold Anyaoltalom</a></li>
+                            <li><Link to="/bemutatkozas/hastánc-zumba" className="hover:text-accent">Hastánc - Zumba</Link></li>
+                            <li><Link to="/bemutatkozas/telihold-anyaoltalom" className="hover:text-accent">Telihold Anyaoltalom</Link></li>
                         </ul>
                     </li>
                     <li><Link to="/kapcsolat">Kapcsolat</Link></li>
