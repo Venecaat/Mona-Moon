@@ -11,6 +11,26 @@ export const ZumbaPerformance = () => {
                 </div>
             </div>
             <hr className="w-11/12 xl:w-full mx-auto my-8 border-2 border-primary rounded" />
+            <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
+                <div className="px-4 xl:px-0">
+                    Családi napot, vagy céges sportnapot szervezel? Vagy csak a barátaid szeretnéd megmozgatni egy
+                    jó hangulatú fitness órán? Feldobnád a szülinapi bulit, lánybúcsút egy kis mozgással?
+                </div>
+                <div className="px-4 xl:px-0">
+                    Akkor ajánlom figyelmedbe a pörgős latin ritmusokra épülő Zumba Fitnesst. Garantált a jó hangulat!
+                    Nem kell táncosnak lenni hozzá, mivel a zumba koreográfiák egyszerű lépésekből állnak,
+                    így bárki számára követhetők, élvezhetők!
+                </div>
+                <div className="px-4 xl:px-0 font-bold">
+                    Zumbán nem egy komplett táncstílust tanítok meg, nem a tökéletességre törekszem, csak arra,
+                    hogy táncoljunk és jól érezzük magunkat!
+                </div>
+                <div className="grid grid-cols-1 bg-primary p-5 text-warning xl:rounded-box text-center gap-4">
+                    <div>
+                        Az árazás függ a helyszíntől, időponttól, a rendezvény jellegétől, illetve a kért óra/bemutató hosszától.
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
