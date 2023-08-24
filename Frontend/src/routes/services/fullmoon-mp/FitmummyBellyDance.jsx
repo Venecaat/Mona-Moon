@@ -6,18 +6,14 @@ import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
+import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
 
 export const FitmummyBellyDance = () => {
     return (
         <div className="text-xl font-semibold">
-            <div className="bg-base">
-                <div className="hero-content flex-col md:flex-row gap-0 lg:gap-4">
-                    <div>
-                        <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left text-primary">Fitmummy várandós hastánc</h1>
-                    </div>
-                    <img src="/src/assets/images/fitmummy-belly-dance.png" className="max-w-sm shadow-2xl scale-90 lg:scale-100" alt="Fitmummy várandós hastánc" />
-                </div>
-            </div>
+            <ServiceHeader title="Fitmummy várandós hastánc"
+                           imgPath="/src/assets/images/fitmummy-belly-dance.png"
+                           imgAlt="Fitmummy várandós hastánc" />
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
                 <NormalParagraph text="Könnyed, lágy, nőies mozgásforma, amely finom mozgásaival kellően átmozgatja az egész testet,

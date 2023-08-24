@@ -3,18 +3,14 @@ import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
+import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
 
 export const CaesareanSection = () => {
     return (
         <div className="text-xl font-semibold">
-            <div className="bg-base">
-                <div className="hero-content flex-col md:flex-row gap-0 lg:gap-4">
-                    <div>
-                        <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left text-primary">A te szülésed is számít!</h1>
-                    </div>
-                    <img src="/src/assets/images/caesarean-section.png" className="max-w-sm shadow-2xl scale-90 lg:scale-100" alt="Császármetszés feldolgozó csoport" />
-                </div>
-            </div>
+            <ServiceHeader title="A te szülésed is számít!"
+                           imgPath="/src/assets/images/caesarean-section.png"
+                           imgAlt="Császármetszés feldolgozó csoport" />
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
                 <NormalParagraph text="Nem törvényszerű, hogy a császármetszés rossz élmény, trauma legyen.

@@ -2,18 +2,14 @@ import { Link } from "react-router-dom";
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
+import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
 
 export const Childcare = () => {
     return (
         <div className="text-xl font-semibold">
-            <div className="bg-base">
-                <div className="hero-content flex-col md:flex-row gap-0 lg:gap-4">
-                    <div>
-                        <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left text-primary">Gyermekágyas gondoskodás</h1>
-                    </div>
-                    <img src="/src/assets/images/childcare.png" className="max-w-sm shadow-2xl scale-90 lg:scale-100" alt="Gyermekágyas gondoskodás" />
-                </div>
-            </div>
+            <ServiceHeader title="Gyermekágyas gondoskodás"
+                           imgPath="/src/assets/images/childcare.png"
+                           imgAlt="Gyermekágyas gondoskodás" />
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
                 <NormalParagraph text="Hogy mi fán terem a gyermekágyas segítés? Mit csinál egy gyermekágyas dúla/segítő?" />
