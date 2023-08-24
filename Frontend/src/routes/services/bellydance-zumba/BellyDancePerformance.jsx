@@ -1,3 +1,4 @@
+import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 
 export const BellyDancePerformance = () => {
     return (
@@ -7,10 +8,10 @@ export const BellyDancePerformance = () => {
                     <div>
                         <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left text-primary">Hastánc fellépés rendezvényekre!</h1>
                     </div>
-                    <img src="/src/assets/images/hastanc-fellepes-mod.jpg" className="max-w-sm shadow-2xl scale-90 lg:scale-100" />
+                    <img src="/src/assets/images/bellydance-performance-mod.jpg" className="max-w-sm shadow-2xl scale-90 lg:scale-100" alt="Hastánc fellépés" />
                 </div>
             </div>
-            <hr className="w-11/12 xl:w-full mx-auto my-8 border-2 border-primary rounded" />
+            <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
                 <div className="px-4 xl:px-0">
                     Orientális tánc (hastánc) fellépéseket vállalok születésnapokon, leány-legénybúcsúkon,
@@ -18,7 +19,7 @@ export const BellyDancePerformance = () => {
                     évfordulókon, egyéb céges illetve magán rendezvényeken.
                 </div>
                 <div className="px-4 xl:px-0">
-                    Ha egy keleties estével szeretnél kedveskedni barátaidnak, ismerőseidnek, vendégeidnek akkor keress bátran! Garantált a jó hangulat!
+                    Ha egy keleties estével szeretnél kedveskedni barátaidnak, ismerőseidnek, vendégeidnek, akkor keress bátran! Garantált a jó hangulat!
                 </div>
                 <div className="px-4 xl:px-0">
                     A standard műsor 1 táncossal 10-15 perces (igény esetén lehet ettől eltérő műsoridőt is kérni, esetleg több táncossal is).

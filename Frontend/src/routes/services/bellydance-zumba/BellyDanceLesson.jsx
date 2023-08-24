@@ -1,3 +1,4 @@
+import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 
 export const BellyDanceLesson = () => {
     return (
@@ -7,10 +8,10 @@ export const BellyDanceLesson = () => {
                     <div>
                         <h1 className="text-5xl md:text-6xl font-bold text-center md:text-left text-primary">Engedd, hogy a kelet misztikus világa magával ragadjon</h1>
                     </div>
-                    <img src="/src/assets/images/hastanc-fellepes.jpg" className="max-w-sm shadow-2xl scale-90 lg:scale-100" />
+                    <img src="/src/assets/images/bellydance-performance.jpg" className="max-w-sm shadow-2xl scale-90 lg:scale-100" alt="Hastánc órák" /> {/* Change picture */}
                 </div>
             </div>
-            <hr className="w-11/12 xl:w-full mx-auto my-8 border-2 border-primary rounded" />
+            <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
                 <div className="px-4 xl:px-0">
                     Ideje, hogy te is felfedezd azt a mozgásformát, ami neked a legjobb! Talán az én órámon találod meg, amit keresel. Várlak kortól és alkattól függetlenül!

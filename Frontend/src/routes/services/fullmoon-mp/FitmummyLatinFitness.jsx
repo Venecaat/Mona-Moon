@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 
 export const FitmummyLatinFitness = () => {
     return (
@@ -11,7 +12,7 @@ export const FitmummyLatinFitness = () => {
                     <img src="/src/assets/images/fitmummy-belly-dance.png" className="max-w-sm shadow-2xl scale-90 lg:scale-100" alt="Fitmummy várandós latin fitness" />
                 </div>
             </div>
-            <hr className="w-11/12 xl:w-full mx-auto my-8 border-2 border-primary rounded" />
+            <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
                 <div className="px-4 xl:px-0">
                     Ha szeretnéd megőrizni a fittséged várandósan, és közben jól is éreznéd magad más kismamák társaságában.
