@@ -1,6 +1,7 @@
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 import { WarningBox } from "../../../components/WarningBox.jsx";
 import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
+import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 
 export const BellyDanceLesson = () => {
     return (
@@ -15,9 +16,8 @@ export const BellyDanceLesson = () => {
             </div>
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
-                <div className="px-4 xl:px-0">
-                    Ideje, hogy te is felfedezd azt a mozgásformát, ami neked a legjobb! Talán az én órámon találod meg, amit keresel. Várlak kortól és alkattól függetlenül!
-                </div>
+                <NormalParagraph text="Ideje, hogy te is felfedezd azt a mozgásformát, ami neked a legjobb!
+                    Talán az én órámon találod meg, amit keresel. Várlak kortól és alkattól függetlenül!" />
                 <div className="px-4 xl:px-0">
                     <h2 className="text-primary font-bold text-3xl">Az órák felépítése</h2>
                     <ol className="md:ml-11 mt-3 italic grid grid-cols-1 gap-2 md:list-decimal">

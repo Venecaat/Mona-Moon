@@ -1,6 +1,7 @@
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 import { WarningBox } from "../../../components/WarningBox.jsx";
 import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
+import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 
 export const BellyDancePerformance = () => {
     return (
@@ -15,18 +16,13 @@ export const BellyDancePerformance = () => {
             </div>
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
-                <div className="px-4 xl:px-0">
-                    Orientális tánc (hastánc) fellépéseket vállalok születésnapokon, leány-legénybúcsúkon,
+                <NormalParagraph text="Orientális tánc (hastánc) fellépéseket vállalok születésnapokon, leány-legénybúcsúkon,
                     esküvőkön, fesztiválokon, megnyitókon, falunapokon, szilveszteri bulikon, éttermekben,
-                    évfordulókon, egyéb céges illetve magán rendezvényeken.
-                </div>
-                <div className="px-4 xl:px-0">
-                    Ha egy keleties estével szeretnél kedveskedni barátaidnak, ismerőseidnek, vendégeidnek, akkor keress bátran! Garantált a jó hangulat!
-                </div>
-                <div className="px-4 xl:px-0">
-                    A standard műsor 1 táncossal 10-15 perces (igény esetén lehet ettől eltérő műsoridőt is kérni, esetleg több táncossal is).
-                    Az előadást rendezvény jellegéhez igazodva, annak megfelelő műsorösszeállítással, változatosan, magas színvonalon prezentálom.
-                </div>
+                    évfordulókon, egyéb céges illetve magán rendezvényeken." />
+                <NormalParagraph text="Ha egy keleties estével szeretnél kedveskedni barátaidnak, ismerőseidnek, vendégeidnek,
+                    akkor keress bátran! Garantált a jó hangulat!" />
+                <NormalParagraph text="A standard műsor 1 táncossal 10-15 perces (igény esetén lehet ettől eltérő műsoridőt is kérni, esetleg több táncossal is).
+                    Az előadást rendezvény jellegéhez igazodva, annak megfelelő műsorösszeállítással, változatosan, magas színvonalon prezentálom." />
                 <div className="px-4 xl:px-0">
                     <h2 className="text-primary font-bold text-3xl">Repertoár</h2>
                     <ul className="md:ml-5 mt-3 italic grid grid-cols-1 gap-2">

@@ -3,6 +3,7 @@ import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 import { WarningBox } from "../../../components/WarningBox.jsx";
 import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
+import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 
 export const DoulaSupport = () => {
     return (
@@ -17,28 +18,20 @@ export const DoulaSupport = () => {
             </div>
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
-                <div className="px-4 xl:px-0">
-                    Szeretnél készülni a várandósságra, szülésre (legyen az hüvelyi szülés vagy császár), szoptatásra, gyermekágyra?
-                </div>
-                <div className="px-4 xl:px-0">
-                    Jó lenne egy bizalmi személy, aki végigkíséri életed ezen fontos szakaszát,
+                <NormalParagraph text="Szeretnél készülni a várandósságra, szülésre (legyen az hüvelyi szülés vagy császár), szoptatásra, gyermekágyra?" />
+                <NormalParagraph text="Jó lenne egy bizalmi személy, aki végigkíséri életed ezen fontos szakaszát,
                     akivel megoszthatod az érzéseid, illetve megbeszélheted a téged foglalkoztató éppen aktuális kérdéseket?
-                    Esetleg lenne miről beszélni az előző szülésélményed kapcsán? Akkor jó helyen jársz!
-                </div>
-                <div className="px-4 xl:px-0">
-                    Dúlaként tudlak támogatni a fentebb említett területeken egyéni konzultáció keretein belül személyesen
+                    Esetleg lenne miről beszélni az előző szülésélményed kapcsán? Akkor jó helyen jársz!" />
+                <NormalParagraph text="Dúlaként tudlak támogatni a fentebb említett területeken egyéni konzultáció keretein belül személyesen
                     Budapesten, vagy online földrajzi helyzettől függetlenül. Ha a pároddal közösen szeretnétek készülni,
-                    akkor természetesen várlak mindkettőtöket szeretettel!
-                </div>
-                <div className="px-4 xl:px-0">
-                    Hogy milyen időtartamban, hány alkalommal szeretnéd igénybe venni a segítségem, az teljes mértékben
+                    akkor természetesen várlak mindkettőtöket szeretettel!" />
+                <NormalParagraph text="Hogy milyen időtartamban, hány alkalommal szeretnéd igénybe venni a segítségem, az teljes mértékben
                     rád/rátok van bízva. Attól függ, hogy mi az, ami foglalkoztat, mire vagy kiváncsi, milyen érzéseken,
                     esetleges félelmeken szeretnél dolgozni. Készülhetünk együtt akár már a várandósságot megelőzően is,
                     vagy a várandósság elejétől kezdve rendszeres időközönként, sorba véve a várandósság, szülés, szoptatás,
                     gyermekágy fontos témaköreit. De akár egy-egy téged foglalkoztató konkrét kérdéssel is
                     megkereshetsz 1-2 konzultáció erejéig. Minden opció jó, és teljesen rendben van,
-                    úgy fog történni, ahogy te szeretnéd!
-                </div>
+                    úgy fog történni, ahogy te szeretnéd!" />
                 <div className="px-4 xl:px-0">
                     <h2 className="text-primary font-bold text-3xl">A teljesség igénye nélkül témakörök, amikről pl. beszélgethetünk:</h2>
                     <ul className="md:ml-5 mt-3 grid grid-cols-1 gap-4 italic">

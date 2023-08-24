@@ -1,6 +1,7 @@
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
+import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 
 export const CaesareanSection = () => {
     return (
@@ -15,15 +16,12 @@ export const CaesareanSection = () => {
             </div>
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
-                <div className="px-4 xl:px-0">
-                    Nem törvényszerű, hogy a császármetszés rossz élmény, trauma legyen.
-                    Ha úgy érzed neked nem volt az, akkor az alábbi lehetőség nem neked szól.
-                </div>
-                <div className="px-4 xl:px-0 font-bold">
-                    Ha viszont nem tervezett császármetszéssel szültél, ami kapcsán nehéz érzések vannak benned,
+                <NormalParagraph text="Nem törvényszerű, hogy a császármetszés rossz élmény, trauma legyen.
+                    Ha úgy érzed neked nem volt az, akkor az alábbi lehetőség nem neked szól." />
+                <NormalParagraph text="Ha viszont nem tervezett császármetszéssel szültél, ami kapcsán nehéz érzések vannak benned,
                     nem erre készültél, vagy nem tudod hova tenni az eseményeket, úgy érzed nehezen lépsz tovább,
-                    akkor ez a lehetőség érdekes lehet számodra.
-                </div>
+                    akkor ez a lehetőség érdekes lehet számodra."
+                                 extraClasses="font-bold" />
                 <div className="px-4 xl:px-0">
                     <h2 className="text-primary font-bold text-3xl">Ismerősek az ilyen és ehhez hasonló mondatok?</h2>
                     <ul className="md:ml-5 mt-3 grid grid-cols-1 gap-4 font-bold">
@@ -32,28 +30,21 @@ export const CaesareanSection = () => {
                         <li>A lényeg, hogy túl vagytok rajta, nem?</li>
                     </ul>
                 </div>
-                <div className="px-4 xl:px-0">
-                    Téged nem vigasztalnak, sőt inkább elszomorítanak vagy felbosszantanak? Nem tudsz kihez fordulni az érzéseiddel? Úgy érzed, nem értenek meg?
-                </div>
+                <NormalParagraph text="Téged nem vigasztalnak, sőt inkább elszomorítanak vagy felbosszantanak?
+                    Nem tudsz kihez fordulni az érzéseiddel? Úgy érzed, nem értenek meg?" />
                 <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
                     Jó hírem van!
                 </div>
-                <div className="px-4 xl:px-0">
-                    Létezik egy olyan 10 alkalmas csoportfolyamat, egy támogató, megértő, sorstárs közeg,
-                    egy biztonságos tér, ahol elmondhatod mindazt, ami fáj/bánt, ami neked nehézséget okoz, amit nehezen éltél meg.
-                </div>
-                <div className="px-4 xl:px-0">
-                    Nem terápiás, hanem önsegítő csoportba fogsz érkezni, ahol érezni fogod a sorstársak megértését, ami már önmagában sokat fog adni.
-                </div>
-                <div className="px-4 xl:px-0">
-                    Lehetőséged lesz a saját magad tempójában haladnod a gyászfolyamatban. Igen a császár is lehet egyfajta gyász, veszteségélmény.
-                </div>
-                <div className="px-4 xl:px-0">
-                    Minden alkalommal valamilyen más témát előtérbe helyezve nézhetsz majd rá a császárodra.
+                <NormalParagraph text="Létezik egy olyan 10 alkalmas csoportfolyamat, egy támogató, megértő, sorstárs közeg,
+                    egy biztonságos tér, ahol elmondhatod mindazt, ami fáj/bánt, ami neked nehézséget okoz, amit nehezen éltél meg." />
+                <NormalParagraph text="Nem terápiás, hanem önsegítő csoportba fogsz érkezni,
+                    ahol érezni fogod a sorstársak megértését, ami már önmagában sokat fog adni." />
+                <NormalParagraph text="Lehetőséged lesz a saját magad tempójában haladnod a gyászfolyamatban.
+                    Igen a császár is lehet egyfajta gyász, veszteségélmény." />
+                <NormalParagraph text="Minden alkalommal valamilyen más témát előtérbe helyezve nézhetsz majd rá a császárodra.
                     Ezek a tematikus napok üdítő kapcsolódásokra is rávilágíthatnak.
                     A veszteségektől, nehéz érzésektől elindulva eljutunk majd az erőforrások kiaknázásáig,
-                    a saját kapaszkodók megtalálásáig.
-                </div>
+                    a saját kapaszkodók megtalálásáig." />
                 <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
                     Szeretettel várlak!
                 </div>

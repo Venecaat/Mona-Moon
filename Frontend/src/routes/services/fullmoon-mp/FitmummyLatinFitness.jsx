@@ -4,6 +4,7 @@ import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 import { WarningBox } from "../../../components/WarningBox.jsx";
 import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
+import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 
 export const FitmummyLatinFitness = () => {
     return (
@@ -18,16 +19,12 @@ export const FitmummyLatinFitness = () => {
             </div>
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
-                <div className="px-4 xl:px-0">
-                    Ha szeretnéd megőrizni a fittséged várandósan, és közben jól is éreznéd magad más kismamák társaságában.
-                    Ha szereted a latin ritmusokat, akkor...
-                </div>
+                <NormalParagraph text="Ha szeretnéd megőrizni a fittséged várandósan, és közben jól is éreznéd magad más kismamák társaságában.
+                    Ha szereted a latin ritmusokat, akkor..." />
                 <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
                     Várlak szeretettel a kismamákra szabott Fitmummy latin fitness órámon akkor is, ha korábban még nem voltál ilyen típusú órán!
                 </div>
-                <div className="px-4 xl:px-0">
-                    Az órákat rekreációs sportoktatóként (OKJ) és fitmummy prenatális trénerként tartom.
-                </div>
+                <NormalParagraph text="Az órákat rekreációs sportoktatóként (OKJ) és fitmummy prenatális trénerként tartom." />
                 <div className="px-4 xl:px-0">
                     A fitmummy programról itt olvashatsz bővebben: <Link to="http://fitmummy.hu/" className="text-primary hover:text-accent ease-in duration-100 underline">Fitmummy.hu</Link>
                 </div>

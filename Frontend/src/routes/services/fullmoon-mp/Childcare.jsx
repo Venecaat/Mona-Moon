@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
+import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 
 export const Childcare = () => {
     return (
@@ -14,18 +15,12 @@ export const Childcare = () => {
             </div>
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
-                <div className="px-4 xl:px-0">
-                    Hogy mi fán terem a gyermekágyas segítés? Mit csinál egy gyermekágyas dúla/segítő?
-                </div>
-                <div className="px-4 xl:px-0">
-                    Ha egyszerű akarok lenni, akkor erre az a válaszom, hogy azt, amiben megállapodtok. Ezzel nem mondtam sok újat, igaz?
-                    A helyzet az, hogy minden család és segítő más, így némiben eltérőek lehetnek az igények és a vállalások is.
-                </div>
-                <div className="px-4 xl:px-0">
-                    Ha engem szeretnél segítődnek, akkor első körben küldök neked egy kérdőívet, ami alapján felmérem
+                <NormalParagraph text="Hogy mi fán terem a gyermekágyas segítés? Mit csinál egy gyermekágyas dúla/segítő?" />
+                <NormalParagraph text="Ha egyszerű akarok lenni, akkor erre az a válaszom, hogy azt, amiben megállapodtok. Ezzel nem mondtam sok újat, igaz?
+                    A helyzet az, hogy minden család és segítő más, így némiben eltérőek lehetnek az igények és a vállalások is." />
+                <NormalParagraph text="Ha engem szeretnél segítődnek, akkor első körben küldök neked egy kérdőívet, ami alapján felmérem
                     az igényeidet/igényeiteket, illetve információt adok magamról, arról, hogy mi az, amit tudok nyújtani.
-                    Ha ez alapján szimpatikusak vagyunk egymásnak, akkor tovább tudunk lépni a személyes találkozásra, majd az elköteleződésre.
-                </div>
+                    Ha ez alapján szimpatikusak vagyunk egymásnak, akkor tovább tudunk lépni a személyes találkozásra, majd az elköteleződésre." />
                 <div className="px-4 xl:px-0">
                     <h2 className="text-primary font-bold text-3xl">Miben is lehet szükség segítségre a gyermekágyas időszakban?</h2>
                     <ol start="0" className="md:ml-11 mt-3 italic grid grid-cols-1 gap-2 md:list-decimal">

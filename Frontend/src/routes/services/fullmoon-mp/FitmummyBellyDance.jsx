@@ -4,6 +4,7 @@ import { WarningBox } from "../../../components/WarningBox.jsx";
 import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
+import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 
 export const FitmummyBellyDance = () => {
     return (
@@ -18,14 +19,10 @@ export const FitmummyBellyDance = () => {
             </div>
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
-                <div className="px-4 xl:px-0">
-                    Könnyed, lágy, nőies mozgásforma, amely finom mozgásaival kellően átmozgatja az egész testet,
+                <NormalParagraph text="Könnyed, lágy, nőies mozgásforma, amely finom mozgásaival kellően átmozgatja az egész testet,
                     kiemelten a csípő, a has és a medence izmait, ezáltal finoman ringatva a babádat a pocakodban.
-                    Miközben te táncolsz, és jól érzed magad, a babád is ellazulhat a kellemes keleti ritmusokra.
-                </div>
-                <div className="px-4 xl:px-0">
-                    Az órákat rekreációs sportoktatóként, hastánc oktatói fakultációval (OKJ) és fitmummy prenatális trénerként tartom.
-                </div>
+                    Miközben te táncolsz, és jól érzed magad, a babád is ellazulhat a kellemes keleti ritmusokra." />
+                <NormalParagraph text="Az órákat rekreációs sportoktatóként, hastánc oktatói fakultációval (OKJ) és fitmummy prenatális trénerként tartom." />
                 <div className="px-4 xl:px-0">
                     A fitmummy programról itt olvashatsz bővebben: <Link to="http://fitmummy.hu/" className="text-primary hover:text-accent ease-in duration-100 underline">Fitmummy.hu</Link>
                 </div>
@@ -74,11 +71,9 @@ export const FitmummyBellyDance = () => {
                         <li>Relaxáció</li>
                     </ol>
                 </div>
-                <div className="px-4 xl:px-0">
-                    Egy változatos, jól felépített hastánc órára számíthatsz, ami a megváltozott állapot
+                <NormalParagraph text="Egy változatos, jól felépített hastánc órára számíthatsz, ami a megváltozott állapot
                     sajátosságait figyelembe véve kellően átmozgat, és támogatja a testedben történő változásokkal
-                    való adaptálódást. Segít fittnek maradni.
-                </div>
+                    való adaptálódást. Segít fittnek maradni." />
                 <div className="px-4 xl:px-0">
                     <h2 className="text-primary font-bold text-3xl">Mit hozz magaddal?</h2>
                     <ul className="md:ml-5 mt-3 italic grid grid-cols-1 gap-2">
