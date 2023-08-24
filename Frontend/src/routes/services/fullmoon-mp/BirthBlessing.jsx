@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
+import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
+import { WarningBox } from "../../../components/WarningBox.jsx";
 
 export const BirthBlessing = () => {
     return (
@@ -59,11 +61,9 @@ export const BirthBlessing = () => {
                         Az ünnep időtartama általában 2-3 óra, ami a résztvevők számától függően változhat.
                     </div>
                 </div>
-                <div className="grid grid-cols-1 bg-primary p-5 text-warning xl:rounded-box text-center gap-4">
-                    <div>
-                        Az árazás több tényezőtől függ, ezért előzetes egyeztetés után tudok árajánlatot adni.
-                    </div>
-                </div>
+                <WarningBox>
+                    <WarningBoxElement text="Az árazás több tényezőtől függ, ezért előzetes egyeztetés után tudok árajánlatot adni." />
+                </WarningBox>
             </div>
         </div>
     )

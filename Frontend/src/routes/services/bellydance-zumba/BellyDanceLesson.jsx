@@ -1,4 +1,6 @@
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
+import { WarningBox } from "../../../components/WarningBox.jsx";
+import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 
 export const BellyDanceLesson = () => {
     return (
@@ -36,18 +38,12 @@ export const BellyDanceLesson = () => {
                         <li>Rázóöv - helyettesíthető egy nagyobb kendővel is, amit a csípőd köré fel tudsz kötni</li>
                     </ul>
                 </div>
-                <div className="grid grid-cols-1 bg-primary p-5 text-warning xl:rounded-box text-center gap-4">
-                    <div>
-                        Az órákon saját felelősségre veszel részt.
-                    </div>
-                    <div>
-                        Amennyiben egészségügyi problémád, panaszod van, konzultálj kezelőorvosoddal.
-                        Az órákon való részvétel nem helyettesíti az orvossal, gyógytornásszal való konzultációt.
-                    </div>
-                    <div>
-                        A fentieket a részvételeddel elfogadottnak tekinted.
-                    </div>
-                </div>
+                <WarningBox>
+                    <WarningBoxElement text="Az órákon saját felelősségre veszel részt." />
+                    <WarningBoxElement text="Amennyiben egészségügyi problémád, panaszod van, konzultálj kezelőorvosoddal.
+                    Az órákon való részvétel nem helyettesíti az orvossal, gyógytornásszal való konzultációt." />
+                    <WarningBoxElement text="A fentieket a részvételeddel elfogadottnak tekinted." />
+                </WarningBox>
             </div>
         </div>
     )

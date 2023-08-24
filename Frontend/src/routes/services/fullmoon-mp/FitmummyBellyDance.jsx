@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
+import { WarningBox } from "../../../components/WarningBox.jsx";
+import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 
 export const FitmummyBellyDance = () => {
     return (
@@ -103,18 +105,12 @@ export const FitmummyBellyDance = () => {
                 <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
                     Várlak szeretettel akkor is, ha korábban még nem táncoltál/hastáncoltál!
                 </div>
-                <div className="grid grid-cols-1 bg-primary p-5 text-warning xl:rounded-box text-center gap-4">
-                    <div>
-                        Az órákon saját felelősségre veszel részt.
-                    </div>
-                    <div>
-                        Amennyiben egészségügyi problémád, panaszod van, konzultálj kezelőorvosoddal.
-                        Az órákon való részvétel nem helyettesíti az orvossal, gyógytornásszal való konzultációt.
-                    </div>
-                    <div>
-                        A fentieket a részvételeddel elfogadottnak tekinted.
-                    </div>
-                </div>
+                <WarningBox>
+                    <WarningBoxElement text="Az órákon saját felelősségre veszel részt." />
+                    <WarningBoxElement text="Amennyiben egészségügyi problémád, panaszod van, konzultálj kezelőorvosoddal.
+                    Az órákon való részvétel nem helyettesíti az orvossal, gyógytornásszal való konzultációt." />
+                    <WarningBoxElement text="A fentieket a részvételeddel elfogadottnak tekinted." />
+                </WarningBox>
             </div>
         </div>
     )

@@ -1,4 +1,6 @@
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
+import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
+import { WarningBox } from "../../../components/WarningBox.jsx";
 
 export const DoulaSupport = () => {
     return (
@@ -68,12 +70,10 @@ export const DoulaSupport = () => {
                         Minden esetben igazodok az egyéni igényekhez. Éppen ezért a konzultációk hosszát sem szabályozom.
                     </div>
                 </div>
-                <div className="grid grid-cols-1 bg-primary p-5 text-warning xl:rounded-box text-center gap-4">
-                    <div>
-                        Van, ami egy órában átbeszélhető, de van olyan téma is, amihez több óra/találkozó szükséges,
-                        így az árak is előzetes egyeztetés után kerülnek meghatározásra.
-                    </div>
-                </div>
+                <WarningBox>
+                    <WarningBoxElement text="Van, ami egy órában átbeszélhető, de van olyan téma is,
+                    amihez több óra/találkozó szükséges, így az árak is előzetes egyeztetés után kerülnek meghatározásra." />
+                </WarningBox>
                 <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
                     Várlak szeretettel, hogy támogathassalak életed egyik legmeghatározóbb időszakában, úgy, ahogy TE szeretnéd!
                 </div>

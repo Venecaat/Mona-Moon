@@ -1,4 +1,6 @@
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
+import { WarningBox } from "../../../components/WarningBox.jsx";
+import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 
 export const ZumbaPerformance = () => {
     return (
@@ -26,11 +28,9 @@ export const ZumbaPerformance = () => {
                     Zumbán nem egy komplett táncstílust tanítok meg, nem a tökéletességre törekszem, csak arra,
                     hogy táncoljunk és jól érezzük magunkat!
                 </div>
-                <div className="grid grid-cols-1 bg-primary p-5 text-warning xl:rounded-box text-center gap-4">
-                    <div>
-                        Az árazás függ a helyszíntől, időponttól, a rendezvény jellegétől, illetve a kért óra/bemutató hosszától.
-                    </div>
-                </div>
+                <WarningBox>
+                    <WarningBoxElement text="Az árazás függ a helyszíntől, időponttól, a rendezvény jellegétől, illetve a kért óra/bemutató hosszától." />
+                </WarningBox>
             </div>
         </div>
     )

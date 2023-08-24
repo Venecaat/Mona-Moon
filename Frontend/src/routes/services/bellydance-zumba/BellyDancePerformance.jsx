@@ -1,4 +1,6 @@
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
+import { WarningBox } from "../../../components/WarningBox.jsx";
+import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 
 export const BellyDancePerformance = () => {
     return (
@@ -37,14 +39,10 @@ export const BellyDancePerformance = () => {
                         <li>Néptáncok: beledi, saidi, khalidji, melaya</li>
                     </ul>
                 </div>
-                <div className="grid grid-cols-1 bg-primary p-5 text-warning xl:rounded-box text-center gap-4">
-                    <div>
-                        Előzetes megbeszélés a részletek tisztázásához (időpont, helyszín stb.) mindenképpen szükséges!
-                    </div>
-                    <div>
-                        Az árazás függ a helyszíntől, időponttól, a rendezvény jellegétől, illetve a kért műsor hosszától és a táncosok számától is.
-                    </div>
-                </div>
+                <WarningBox>
+                    <WarningBoxElement text="Előzetes megbeszélés a részletek tisztázásához (időpont, helyszín, stb.) mindenképpen szükséges!" />
+                    <WarningBoxElement text="Az árazás függ a helyszíntől, időponttól, a rendezvény jellegétől, illetve a kért műsor hosszától és a táncosok számától is." />
+                </WarningBox>
             </div>
         </div>
     )
