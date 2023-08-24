@@ -2,6 +2,7 @@ import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
+import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 
 export const CaesareanSection = () => {
     return (
@@ -32,9 +33,7 @@ export const CaesareanSection = () => {
                 </div>
                 <NormalParagraph text="Téged nem vigasztalnak, sőt inkább elszomorítanak vagy felbosszantanak?
                     Nem tudsz kihez fordulni az érzéseiddel? Úgy érzed, nem értenek meg?" />
-                <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
-                    Jó hírem van!
-                </div>
+                <HighlightedParagraph text="Jó hírem van!" />
                 <NormalParagraph text="Létezik egy olyan 10 alkalmas csoportfolyamat, egy támogató, megértő, sorstárs közeg,
                     egy biztonságos tér, ahol elmondhatod mindazt, ami fáj/bánt, ami neked nehézséget okoz, amit nehezen éltél meg." />
                 <NormalParagraph text="Nem terápiás, hanem önsegítő csoportba fogsz érkezni,
@@ -45,9 +44,7 @@ export const CaesareanSection = () => {
                     Ezek a tematikus napok üdítő kapcsolódásokra is rávilágíthatnak.
                     A veszteségektől, nehéz érzésektől elindulva eljutunk majd az erőforrások kiaknázásáig,
                     a saját kapaszkodók megtalálásáig." />
-                <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
-                    Szeretettel várlak!
-                </div>
+                <HighlightedParagraph text="Szeretettel várlak!" />
                 <InfoBox>
                     <InfoBoxElement text="Egy csoportalkalom időtartama 2 óra, és 2 hetente kerül megszervezésre." />
                     <InfoBoxElement text="Az első 2 alkalom nyitott, utána a kör bezárul, már nem tudunk új résztvevőt fogadni.

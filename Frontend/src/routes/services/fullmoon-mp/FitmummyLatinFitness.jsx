@@ -5,6 +5,7 @@ import { WarningBox } from "../../../components/WarningBox.jsx";
 import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
+import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 
 export const FitmummyLatinFitness = () => {
     return (
@@ -21,9 +22,8 @@ export const FitmummyLatinFitness = () => {
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
                 <NormalParagraph text="Ha szeretnéd megőrizni a fittséged várandósan, és közben jól is éreznéd magad más kismamák társaságában.
                     Ha szereted a latin ritmusokat, akkor..." />
-                <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
-                    Várlak szeretettel a kismamákra szabott Fitmummy latin fitness órámon akkor is, ha korábban még nem voltál ilyen típusú órán!
-                </div>
+                <HighlightedParagraph text="Várlak szeretettel a kismamákra szabott Fitmummy latin fitness órámon akkor is,
+                    ha korábban még nem voltál ilyen típusú órán!" />
                 <NormalParagraph text="Az órákat rekreációs sportoktatóként (OKJ) és fitmummy prenatális trénerként tartom." />
                 <div className="px-4 xl:px-0">
                     A fitmummy programról itt olvashatsz bővebben: <Link to="http://fitmummy.hu/" className="text-primary hover:text-accent ease-in duration-100 underline">Fitmummy.hu</Link>
@@ -79,12 +79,12 @@ export const FitmummyLatinFitness = () => {
                 <InfoBox>
                     <InfoBoxElement text="Mindig figyelj a tested jelzéseire, ha úgy érzed pihenned kell, akkor pihenj, ha innod kell, igyál." />
                     <InfoBoxElement text="Ha valamelyik mozdulat nem esik jól, akkor állj meg egy kicsit, hagyd ki, helyettesítsd mással." />
-                    <InfoBoxElement text="Ha szükséges, akkor csökkentsd a mozgás intenzitását például kisebb lépésekkel, a karmozdulatok kihagyásával stb." />
+                    <InfoBoxElement text="Ha szükséges, akkor csökkentsd a mozgás intenzitását például kisebb lépésekkel, a karmozdulatok kihagyásával, stb." />
                 </InfoBox>
                 <WarningBox>
                     <WarningBoxElement text="Az órákon saját felelősségre veszel részt." />
                     <WarningBoxElement text="Amennyiben egészségügyi problémád, panaszod van, konzultálj kezelőorvosoddal.
-                    Az órákon való részvétel nem helyettesíti az orvossal, gyógytornásszal való konzultációt." />
+                        Az órákon való részvétel nem helyettesíti az orvossal, gyógytornásszal való konzultációt." />
                     <WarningBoxElement text="A fentieket a részvételeddel elfogadottnak tekinted." />
                 </WarningBox>
             </div>

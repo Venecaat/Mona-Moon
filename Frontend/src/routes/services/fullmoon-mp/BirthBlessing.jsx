@@ -5,6 +5,7 @@ import { WarningBox } from "../../../components/WarningBox.jsx";
 import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
+import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 
 export const BirthBlessing = () => {
     return (
@@ -42,10 +43,8 @@ export const BirthBlessing = () => {
                     pozitív energiák a tapasztalatok alapján sokszor erőt adnak a vajúdó anyának.
                     Ha szeretnéd, veled lehetnek szülésed alatt az itt kapott ajándékok,
                     amik szintén emlékeztetni tudnak erre a különleges napra." />
-                <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
-                    Ha szeretnéd magadat, lányodat, barátnődet meglepni egy ősi gyökerekkel rendelkező,
-                    de abszolút modern szertartással Budapesten belül, akkor bátran fordulj hozzám!
-                </div>
+                <HighlightedParagraph text="Ha szeretnéd magadat, lányodat, barátnődet meglepni egy ősi gyökerekkel rendelkező,
+                    de abszolút modern szertartással Budapesten belül, akkor bátran fordulj hozzám!" />
                 <button type="button" className="btn w-3/4 md:w-1/2 mx-auto bg-secondary text-primary font-bold border-secondary text-2xl hover:bg-accent hover:border-accent">
                     <Link to="/kapcsolat">Elérhetőségek</Link>
                 </button>

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
+import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 
 export const Childcare = () => {
     return (
@@ -118,9 +119,7 @@ export const Childcare = () => {
                         </li>
                     </ul>
                 </div>
-                <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
-                    Ha bármilyen további kérdésed van, vagy szeretnél felkérni segítődnek, akkor keress bátran!
-                </div>
+                <HighlightedParagraph text="Ha bármilyen további kérdésed van, vagy szeretnél felkérni segítődnek, akkor keress bátran!" />
                 <button type="button" className="btn w-3/4 md:w-1/2 mx-auto bg-secondary text-primary font-bold border-secondary text-2xl hover:bg-accent hover:border-accent">
                     <Link to="/kapcsolat">Elérhetőségek</Link>
                 </button>

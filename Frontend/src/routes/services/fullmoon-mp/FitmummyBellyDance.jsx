@@ -5,6 +5,7 @@ import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
+import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 
 export const FitmummyBellyDance = () => {
     return (
@@ -83,21 +84,19 @@ export const FitmummyBellyDance = () => {
                         <li>Hasznos lehet egy törülköző is, amit a jógaszőnyegre tudsz teríteni</li>
                     </ul>
                 </div>
+                <HighlightedParagraph text="Várlak szeretettel akkor is, ha korábban még nem táncoltál/hastáncoltál!" />
                 <InfoBox>
                     <InfoBoxElement text="Az órán való részvétel nem igényel semmilyen előképzettséget." />
                 </InfoBox>
                 <InfoBox>
                     <InfoBoxElement text="Mindig figyelj a tested jelzéseire, ha úgy érzed pihenned kell, akkor pihenj, ha innod kell, igyál." />
                     <InfoBoxElement text="Ha valamelyik mozdulat nem esik jól, akkor állj meg egy kicsit, hagyd ki, helyettesítsd mással." />
-                    <InfoBoxElement text="Ha szükséges, akkor csökkentsd a mozgás intenzitását például kisebb lépésekkel, a karmozdulatok kihagyásával stb." />
+                    <InfoBoxElement text="Ha szükséges, akkor csökkentsd a mozgás intenzitását például kisebb lépésekkel, a karmozdulatok kihagyásával, stb." />
                 </InfoBox>
-                <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
-                    Várlak szeretettel akkor is, ha korábban még nem táncoltál/hastáncoltál!
-                </div>
                 <WarningBox>
                     <WarningBoxElement text="Az órákon saját felelősségre veszel részt." />
                     <WarningBoxElement text="Amennyiben egészségügyi problémád, panaszod van, konzultálj kezelőorvosoddal.
-                    Az órákon való részvétel nem helyettesíti az orvossal, gyógytornásszal való konzultációt." />
+                        Az órákon való részvétel nem helyettesíti az orvossal, gyógytornásszal való konzultációt." />
                     <WarningBoxElement text="A fentieket a részvételeddel elfogadottnak tekinted." />
                 </WarningBox>
             </div>

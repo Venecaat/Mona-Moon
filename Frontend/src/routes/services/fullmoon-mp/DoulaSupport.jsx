@@ -4,6 +4,7 @@ import { WarningBox } from "../../../components/WarningBox.jsx";
 import { InfoBox } from "../../../components/InfoBox.jsx";
 import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
+import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 
 export const DoulaSupport = () => {
     return (
@@ -57,6 +58,7 @@ export const DoulaSupport = () => {
                         <li>Testvér érkezése</li>
                     </ul>
                 </div>
+                <HighlightedParagraph text="Várlak szeretettel, hogy támogathassalak életed egyik legmeghatározóbb időszakában, úgy, ahogy TE szeretnéd!" />
                 <InfoBox>
                     <InfoBoxElement text="A fenti átfogó témák csupán javaslatok, természetesen ezektől eltérő kérdéseiddel is fordulhatsz hozzám." />
                     <InfoBoxElement text="Minden esetben igazodok az egyéni igényekhez. Éppen ezért a konzultációk hosszát sem szabályozom." />
@@ -65,9 +67,6 @@ export const DoulaSupport = () => {
                     <WarningBoxElement text="Van, ami egy órában átbeszélhető, de van olyan téma is,
                     amihez több óra/találkozó szükséges, így az árak is előzetes egyeztetés után kerülnek meghatározásra." />
                 </WarningBox>
-                <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
-                    Várlak szeretettel, hogy támogathassalak életed egyik legmeghatározóbb időszakában, úgy, ahogy TE szeretnéd!
-                </div>
             </div>
         </div>
     )
