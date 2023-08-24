@@ -1,4 +1,6 @@
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
+import { InfoBox } from "../../../components/InfoBox.jsx";
+import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 
 export const CaesareanSection = () => {
     return (
@@ -55,15 +57,11 @@ export const CaesareanSection = () => {
                 <div className="px-4 my-4 xl:px-0 text-center text-3xl text-primary font-bold">
                     Szeretettel várlak!
                 </div>
-                <div className="grid grid-cols-1 bg-primary p-5 text-info xl:rounded-box text-center text-lg gap-4">
-                    <div>
-                        Egy csoportalkalom időtartama 2 óra, és 2 hetente kerül megszervezésre.
-                    </div>
-                    <div>
-                        Az első 2 alkalom nyitott, utána a kör bezárul, már nem tudunk új résztvevőt fogadni.
-                        Elköteleződünk egymás mellett 10 alkalomra.
-                    </div>
-                </div>
+                <InfoBox>
+                    <InfoBoxElement text="Egy csoportalkalom időtartama 2 óra, és 2 hetente kerül megszervezésre." />
+                    <InfoBoxElement text="Az első 2 alkalom nyitott, utána a kör bezárul, már nem tudunk új résztvevőt fogadni.
+                    Elköteleződünk egymás mellett 10 alkalomra." />
+                </InfoBox>
             </div>
         </div>
     )

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 import { WarningBox } from "../../../components/WarningBox.jsx";
+import { InfoBox } from "../../../components/InfoBox.jsx";
+import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 
 export const BirthBlessing = () => {
     return (
@@ -56,11 +58,9 @@ export const BirthBlessing = () => {
                 <button type="button" className="btn w-3/4 md:w-1/2 mx-auto bg-secondary text-primary font-bold border-secondary text-2xl hover:bg-accent hover:border-accent">
                     <Link to="/kapcsolat">Elérhetőségek</Link>
                 </button>
-                <div className="grid grid-cols-1 bg-primary p-5 text-info xl:rounded-box text-center text-lg gap-4">
-                    <div>
-                        Az ünnep időtartama általában 2-3 óra, ami a résztvevők számától függően változhat.
-                    </div>
-                </div>
+                <InfoBox>
+                    <InfoBoxElement text="Az ünnep időtartama általában 2-3 óra, ami a résztvevők számától függően változhat." />
+                </InfoBox>
                 <WarningBox>
                     <WarningBoxElement text="Az árazás több tényezőtől függ, ezért előzetes egyeztetés után tudok árajánlatot adni." />
                 </WarningBox>

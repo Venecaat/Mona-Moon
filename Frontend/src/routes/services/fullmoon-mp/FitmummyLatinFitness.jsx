@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 import { WarningBox } from "../../../components/WarningBox.jsx";
+import { InfoBox } from "../../../components/InfoBox.jsx";
+import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 
 export const FitmummyLatinFitness = () => {
     return (
@@ -74,22 +76,14 @@ export const FitmummyLatinFitness = () => {
                         <li>+1 Ha van okosórád, ami a pulzusodat tudja mérni, akkor vedd fel nyugodtan</li>
                     </ul>
                 </div>
-                <div className="grid grid-cols-1 bg-primary p-5 text-info xl:rounded-box text-center text-lg gap-4">
-                    <div>
-                        Az órán való részvétel nem igényel semmilyen előképzettséget.
-                    </div>
-                </div>
-                <div className="grid grid-cols-1 bg-primary p-5 text-info xl:rounded-box text-center text-lg gap-4">
-                    <div>
-                        Mindig figyelj a tested jelzéseire, ha úgy érzed pihenned kell, akkor pihenj, ha innod kell, igyál.
-                    </div>
-                    <div>
-                        Ha valamelyik mozdulat nem esik jól, akkor állj meg egy kicsit, hagyd ki, helyettesítsd mással.
-                    </div>
-                    <div>
-                        Ha szükséges, akkor csökkentsd a mozgás intenzitását például kisebb lépésekkel, a karmozdulatok kihagyásával stb.
-                    </div>
-                </div>
+                <InfoBox>
+                    <InfoBoxElement text="Az órán való részvétel nem igényel semmilyen előképzettséget." />
+                </InfoBox>
+                <InfoBox>
+                    <InfoBoxElement text="Mindig figyelj a tested jelzéseire, ha úgy érzed pihenned kell, akkor pihenj, ha innod kell, igyál." />
+                    <InfoBoxElement text="Ha valamelyik mozdulat nem esik jól, akkor állj meg egy kicsit, hagyd ki, helyettesítsd mással." />
+                    <InfoBoxElement text="Ha szükséges, akkor csökkentsd a mozgás intenzitását például kisebb lépésekkel, a karmozdulatok kihagyásával stb." />
+                </InfoBox>
                 <WarningBox>
                     <WarningBoxElement text="Az órákon saját felelősségre veszel részt." />
                     <WarningBoxElement text="Amennyiben egészségügyi problémád, panaszod van, konzultálj kezelőorvosoddal.
