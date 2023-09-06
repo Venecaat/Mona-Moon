@@ -4,6 +4,7 @@ import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
+import { ULParagraph } from "../../../components/ULParagraph.jsx";
 
 export const CaesareanSection = () => {
     return (
@@ -19,14 +20,11 @@ export const CaesareanSection = () => {
                     nem erre készültél, vagy nem tudod hova tenni az eseményeket, úgy érzed nehezen lépsz tovább,
                     akkor ez a lehetőség érdekes lehet számodra."
                                  extraClasses="font-bold" />
-                <div className="px-4 xl:px-0">
-                    <h2 className="text-primary font-bold text-3xl">Ismerősek az ilyen és ehhez hasonló mondatok?</h2>
-                    <ul className="md:ml-5 mt-3 grid grid-cols-1 gap-4 font-bold">
-                        <li>Örülj, hogy egészségesek vagytok!</li>
-                        <li>Mi értelme ezzel ennyit foglalkozni?</li>
-                        <li>A lényeg, hogy túl vagytok rajta, nem?</li>
-                    </ul>
-                </div>
+                <ULParagraph title="Ismerősek az ilyen és ehhez hasonló mondatok?" gap="4" extraClasses="font-bold">
+                    <li>Örülj, hogy egészségesek vagytok!</li>
+                    <li>Mi értelme ezzel ennyit foglalkozni?</li>
+                    <li>A lényeg, hogy túl vagytok rajta, nem?</li>
+                </ULParagraph>
                 <NormalParagraph text="Téged nem vigasztalnak, sőt inkább elszomorítanak vagy felbosszantanak?
                     Nem tudsz kihez fordulni az érzéseiddel? Úgy érzed, nem értenek meg?" />
                 <HighlightedParagraph text="Jó hírem van!" />

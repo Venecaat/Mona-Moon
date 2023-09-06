@@ -7,6 +7,8 @@ import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
+import { OLParagraph } from "../../../components/OLParagraph.jsx";
+import { ULParagraph } from "../../../components/ULParagraph.jsx";
 
 export const FitmummyLatinFitness = () => {
     return (
@@ -30,45 +32,36 @@ export const FitmummyLatinFitness = () => {
                         Betöltött <span className="font-bold">12.</span> terhességi héttől javaslom a csatlakozást.
                     </div>
                 </div>
-                <div className="px-4 xl:px-0">
-                    <h2 className="text-primary font-bold text-3xl">Miért jó?</h2>
-                    <ul className="md:ml-5 mt-3 grid grid-cols-1 gap-4">
-                        <li>
-                            A szív és keringési rendszer, légzőrendszer kapacitását fejleszti, kedvezően befolyásolja
-                            a szénhidrát és zsír anyagcserét, ami által alakformáló hatását is kifejti.
-                            Könnyebb lesz megtartani a fittséged általa, mivel kardió tréningről van szó.
-                            A kardió edzés pedig abszolút javasolt a kismamáknak is. Kedvezően hat az idegrendszerre,
-                            ami szintén nem egy utolsó szempont. A zene és a csoport ereje pedig hatékonyan oldja
-                            a felgyülemlett stresszt, csökkenti a feszültséget.
-                        </li>
-                        <li>
-                            A nagy rázkódással járó mozdulatokat, ugrásokat mellőzzük, amik túlságosan megterhelnék
-                            az amúgy is nagy súlyt cipelő gátizmokat, helyette kellemes csípő-
-                            és karmozdulatokat, lépéseket használunk dinamikus formában.
-                        </li>
-                    </ul>
-                </div>
-                <div className="px-4 xl:px-0">
-                    <h2 className="text-primary font-bold text-3xl">Az óra felépítése</h2>
-                    <ol className="md:ml-11 mt-3 italic grid grid-cols-1 gap-2 md:list-decimal">
-                        <li>Bemelegítés</li>
-                        <li>Légzőtorna mobilizációval</li>
-                        <li>Táncos fitness zenére 6-7 koreográfiával, amiket van idő begyakorolni - havonta egy számot lecserélek.</li>
-                        <li>Nyújtás és gátizomlazítás</li>
-                        <li>Gátizomtorna (erősítés)</li>
-                        <li>Relaxáció</li>
-                    </ol>
-                </div>
-                <div className="px-4 xl:px-0">
-                    <h2 className="text-primary font-bold text-3xl">Mit hozz magaddal?</h2>
-                    <ul className="md:ml-5 mt-3 italic grid grid-cols-1 gap-2">
-                        <li>Kényelmes, jól szellőző nadrágot és felsőt</li>
-                        <li>Megfelelő sportcipőt</li>
-                        <li>Egy üveg vizet</li>
-                        <li>Egy kis törülközőt</li>
-                        <li>+1 Ha van okosórád, ami a pulzusodat tudja mérni, akkor vedd fel nyugodtan</li>
-                    </ul>
-                </div>
+                <ULParagraph title="Miért jó?">
+                    <li>
+                        A szív és keringési rendszer, légzőrendszer kapacitását fejleszti, kedvezően befolyásolja
+                        a szénhidrát és zsír anyagcserét, ami által alakformáló hatását is kifejti.
+                        Könnyebb lesz megtartani a fittséged általa, mivel kardió tréningről van szó.
+                        A kardió edzés pedig abszolút javasolt a kismamáknak is. Kedvezően hat az idegrendszerre,
+                        ami szintén nem egy utolsó szempont. A zene és a csoport ereje pedig hatékonyan oldja
+                        a felgyülemlett stresszt, csökkenti a feszültséget.
+                    </li>
+                    <li>
+                        A nagy rázkódással járó mozdulatokat, ugrásokat mellőzzük, amik túlságosan megterhelnék
+                        az amúgy is nagy súlyt cipelő gátizmokat, helyette kellemes csípő-
+                        és karmozdulatokat, lépéseket használunk dinamikus formában.
+                    </li>
+                </ULParagraph>
+                <OLParagraph title="Az óra felépítése">
+                    <li>Bemelegítés</li>
+                    <li>Légzőtorna mobilizációval</li>
+                    <li>Táncos fitness zenére 6-7 koreográfiával, amiket van idő begyakorolni - havonta egy számot lecserélek.</li>
+                    <li>Nyújtás és gátizomlazítás</li>
+                    <li>Gátizomtorna (erősítés)</li>
+                    <li>Relaxáció</li>
+                </OLParagraph>
+                <ULParagraph title="Mit hozz magaddal?">
+                    <li>Kényelmes, jól szellőző nadrágot és felsőt</li>
+                    <li>Megfelelő sportcipőt</li>
+                    <li>Egy üveg vizet</li>
+                    <li>Egy kis törülközőt</li>
+                    <li>+1 Ha van okosórád, ami a pulzusodat tudja mérni, akkor vedd fel nyugodtan</li>
+                </ULParagraph>
                 <InfoBox>
                     <InfoBoxElement text="Az órán való részvétel nem igényel semmilyen előképzettséget." />
                 </InfoBox>

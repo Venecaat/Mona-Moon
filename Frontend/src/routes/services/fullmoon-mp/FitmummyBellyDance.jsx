@@ -7,6 +7,8 @@ import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
+import { OLParagraph } from "../../../components/OLParagraph.jsx";
+import { ULParagraph } from "../../../components/ULParagraph.jsx";
 
 export const FitmummyBellyDance = () => {
     return (
@@ -30,56 +32,47 @@ export const FitmummyBellyDance = () => {
                         táncos-zenés mozgásformákat. Betöltött <span className="font-bold">12.</span> terhességi héttől javaslom.
                     </div>
                 </div>
-                <div className="px-4 xl:px-0">
-                    <h2 className="text-primary font-bold text-3xl">Mit adhat neked a hastánc?</h2>
-                    <ul className="md:ml-5 mt-3 grid grid-cols-1 gap-4">
-                        <li>
-                            Segíthet a harmonikus testtartás fenntartásában. Ellensúlyozza az ülő életmód,
-                            a várandós lét testtartásbeli változásait. Testtudatosságra tanít,
-                            ezáltal megkönnyítheti viselni a várandósság terheit és a szülést.
-                        </li>
-                        <li>
-                            A hát- és derékfájást csökkenti, akár meg is szüntetheti.
-                            Jótékony hatása van a keringési és a légzési rendszerre.
-                            Erősíti a hát alsó részét, dolgoztatja a has izmait, a combot és a feneket is tónusban tartja.
-                        </li>
-                        <li>
-                            A medence környéki izmok és gátizmok feszességét oldja, ami a harmadik trimeszterben
-                            a szülés közeledtével különösen fontos. Segíti a női szervek egészséges működését.
-                            Szülésnél a lágy csípőkörök, nyolcasok, hullámok segíthetik a babádat a megfelelő pozícióba helyezkedni.
-                            A tánc/hastánc mivel zenére történik, jelentős hatással van a pszichére is.
-                            Feszültségoldó hatása elvitathatatlan, ami várandósan egy nagyon fontos dolog.
-                            Azért különleges, mert arra tanítja a nőket, hogy hogyan tudják elfogadni, szépnek látni magukat.
-                            Segít az önbizalom kialakításában, a nőiesség megélésében.
-                        </li>
-                        <li className="font-bold">
-                            Harmónia testnek és léleknek egyaránt.
-                        </li>
-                    </ul>
-                </div>
-                <div className="px-4 xl:px-0">
-                    <h2 className="text-primary font-bold text-3xl">Az óra felépítése</h2>
-                    <ol className="md:ml-11 mt-3 italic grid grid-cols-1 gap-2 md:list-decimal">
-                        <li>Bemelegítés, mobilizáció légzőtornával</li>
-                        <li>Hastánc tréning 1-4 zeneszámmal</li>
-                        <li>Mozdulattanulás és mini koreográfia</li>
-                        <li>Nyújtás és gátizomlazítás</li>
-                        <li>Gátizomtorna (erősítés)</li>
-                        <li>Relaxáció</li>
-                    </ol>
-                </div>
+                <ULParagraph title="Mit adhat neked a hastánc?">
+                    <li>
+                        Segíthet a harmonikus testtartás fenntartásában. Ellensúlyozza az ülő életmód,
+                        a várandós lét testtartásbeli változásait. Testtudatosságra tanít,
+                        ezáltal megkönnyítheti viselni a várandósság terheit és a szülést.
+                    </li>
+                    <li>
+                        A hát- és derékfájást csökkenti, akár meg is szüntetheti.
+                        Jótékony hatása van a keringési és a légzési rendszerre.
+                        Erősíti a hát alsó részét, dolgoztatja a has izmait, a combot és a feneket is tónusban tartja.
+                    </li>
+                    <li>
+                        A medence környéki izmok és gátizmok feszességét oldja, ami a harmadik trimeszterben
+                        a szülés közeledtével különösen fontos. Segíti a női szervek egészséges működését.
+                        Szülésnél a lágy csípőkörök, nyolcasok, hullámok segíthetik a babádat a megfelelő pozícióba helyezkedni.
+                        A tánc/hastánc mivel zenére történik, jelentős hatással van a pszichére is.
+                        Feszültségoldó hatása elvitathatatlan, ami várandósan egy nagyon fontos dolog.
+                        Azért különleges, mert arra tanítja a nőket, hogy hogyan tudják elfogadni, szépnek látni magukat.
+                        Segít az önbizalom kialakításában, a nőiesség megélésében.
+                    </li>
+                    <li className="font-bold">
+                        Harmónia testnek és léleknek egyaránt.
+                    </li>
+                </ULParagraph>
+                <OLParagraph title="Az óra felépítése">
+                    <li>Bemelegítés, mobilizáció légzőtornával</li>
+                    <li>Hastánc tréning 1-4 zeneszámmal</li>
+                    <li>Mozdulattanulás és mini koreográfia</li>
+                    <li>Nyújtás és gátizomlazítás</li>
+                    <li>Gátizomtorna (erősítés)</li>
+                    <li>Relaxáció</li>
+                </OLParagraph>
                 <NormalParagraph text="Egy változatos, jól felépített hastánc órára számíthatsz, ami a megváltozott állapot
                     sajátosságait figyelembe véve kellően átmozgat, és támogatja a testedben történő változásokkal
                     való adaptálódást. Segít fittnek maradni." />
-                <div className="px-4 xl:px-0">
-                    <h2 className="text-primary font-bold text-3xl">Mit hozz magaddal?</h2>
-                    <ul className="md:ml-5 mt-3 italic grid grid-cols-1 gap-2">
-                        <li>Kényelmes, jól szellőző felsőt, nadrágot/szoknyát és zoknit vagy táncpapucsot - ha nem vagy fázós, akkor mezítláb is táncolhatsz</li>
-                        <li>Rázóöv - helyettesíthető egy nagyobb kendővel is, amit a csípődre tudsz kötni</li>
-                        <li>Egy üveg vízre is szükséged lesz</li>
-                        <li>Hasznos lehet egy törülköző is, amit a jógaszőnyegre tudsz teríteni</li>
-                    </ul>
-                </div>
+                <ULParagraph title="Mit hozz magaddal?">
+                    <li>Kényelmes, jól szellőző felsőt, nadrágot/szoknyát és zoknit vagy táncpapucsot - ha nem vagy fázós, akkor mezítláb is táncolhatsz</li>
+                    <li>Rázóöv - helyettesíthető egy nagyobb kendővel is, amit a csípődre tudsz kötni</li>
+                    <li>Egy üveg vízre is szükséged lesz</li>
+                    <li>Hasznos lehet egy törülköző is, amit a jógaszőnyegre tudsz teríteni</li>
+                </ULParagraph>
                 <HighlightedParagraph text="Várlak szeretettel akkor is, ha korábban még nem táncoltál/hastáncoltál!" />
                 <InfoBox>
                     <InfoBoxElement text="Az órán való részvétel nem igényel semmilyen előképzettséget." />

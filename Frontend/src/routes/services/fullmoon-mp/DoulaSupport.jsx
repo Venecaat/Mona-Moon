@@ -6,6 +6,7 @@ import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
 import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
+import { ULParagraph } from "../../../components/ULParagraph.jsx";
 
 export const DoulaSupport = () => {
     return (
@@ -29,31 +30,28 @@ export const DoulaSupport = () => {
                     gyermekágy fontos témaköreit. De akár egy-egy téged foglalkoztató konkrét kérdéssel is
                     megkereshetsz 1-2 konzultáció erejéig. Minden opció jó, és teljesen rendben van,
                     úgy fog történni, ahogy te szeretnéd!" />
-                <div className="px-4 xl:px-0">
-                    <h2 className="text-primary font-bold text-3xl">A teljesség igénye nélkül témakörök, amikről pl. beszélgethetünk:</h2>
-                    <ul className="md:ml-5 mt-3 grid grid-cols-1 gap-4 italic">
-                        <li>A várandósság testi-lelki változásai</li>
-                        <li>Sport várandósan és a szülés után</li>
-                        <li>Az élettani vajúdás és szülés szakaszai, testi-lelki állomásai</li>
-                        <li>Vajúdástámogatási technikák - testi-lelki</li>
-                        <li>Mitől lesz jó a szülés? A "jó" szülés legfontosabb feltételei</li>
-                        <li>Beszélgetés az esetleges félelmekről és azok "kezeléséről"</li>
-                        <li>Beavatkozások létjogosultsága, előnyök, hátrányok, kockázatok</li>
-                        <li>A szülő nő, az újszülött, az apa jogai</li>
-                        <li>Szülési terv, azaz lehet-e tervezni a szülést? Hogyan hozhatod ki a legtöbbet a szülésedből?</li>
-                        <li>Az apa szerepe, a várandósság, szülés, gyermekágy idején</li>
-                        <li>Anya, Apa, Család születése, szerepek változása</li>
-                        <li>Szexualitás</li>
-                        <li>Az aranyóra jelentősége, illetve mit tegyünk, ha elmarad?</li>
-                        <li>A kisbaba valódi szükségletei</li>
-                        <li>Gyermekágy - praktikus információk, testi-lelki folyamatok</li>
-                        <li>A sikeres szoptatás feltételei, a szoptatás mint biológiai norma</li>
-                        <li>Császármetszés - felkészülés a B tervre</li>
-                        <li>Szülés utáni regeneráció lehetőségei hüvelyi szülés, császár esetén</li>
-                        <li>Szülésélmény meghallgatás értő figyelemmel</li>
-                        <li>Testvér érkezése</li>
-                    </ul>
-                </div>
+                <ULParagraph title="A teljesség igénye nélkül témakörök, amikről pl. beszélgethetünk:" gap="4">
+                    <li>A várandósság testi-lelki változásai</li>
+                    <li>Sport várandósan és a szülés után</li>
+                    <li>Az élettani vajúdás és szülés szakaszai, testi-lelki állomásai</li>
+                    <li>Vajúdástámogatási technikák - testi-lelki</li>
+                    <li>Mitől lesz jó a szülés? A "jó" szülés legfontosabb feltételei</li>
+                    <li>Beszélgetés az esetleges félelmekről és azok "kezeléséről"</li>
+                    <li>Beavatkozások létjogosultsága, előnyök, hátrányok, kockázatok</li>
+                    <li>A szülő nő, az újszülött, az apa jogai</li>
+                    <li>Szülési terv, azaz lehet-e tervezni a szülést? Hogyan hozhatod ki a legtöbbet a szülésedből?</li>
+                    <li>Az apa szerepe, a várandósság, szülés, gyermekágy idején</li>
+                    <li>Anya, Apa, Család születése, szerepek változása</li>
+                    <li>Szexualitás</li>
+                    <li>Az aranyóra jelentősége, illetve mit tegyünk, ha elmarad?</li>
+                    <li>A kisbaba valódi szükségletei</li>
+                    <li>Gyermekágy - praktikus információk, testi-lelki folyamatok</li>
+                    <li>A sikeres szoptatás feltételei, a szoptatás mint biológiai norma</li>
+                    <li>Császármetszés - felkészülés a B tervre</li>
+                    <li>Szülés utáni regeneráció lehetőségei hüvelyi szülés, császár esetén</li>
+                    <li>Szülésélmény meghallgatás értő figyelemmel</li>
+                    <li>Testvér érkezése</li>
+                </ULParagraph>
                 <HighlightedParagraph text="Várlak szeretettel, hogy támogathassalak életed egyik legmeghatározóbb időszakában, úgy, ahogy TE szeretnéd!" />
                 <InfoBox>
                     <InfoBoxElement text="A fenti átfogó témák csupán javaslatok, természetesen ezektől eltérő kérdéseiddel is fordulhatsz hozzám." />
