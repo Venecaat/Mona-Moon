@@ -8,6 +8,10 @@ export const NormalParagraph = ({ text, extraClasses }) =>{
     )
 }
 
+NormalParagraph.defaultProps = {
+    extraClasses: ""
+}
+
 NormalParagraph.propTypes = {
     text: PropTypes.string,
     extraClasses: PropTypes.string
