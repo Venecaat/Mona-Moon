@@ -18,8 +18,7 @@ export const ZumbaPerformance = () => {
                     Nem kell táncosnak lenni hozzá, mivel a zumba koreográfiák egyszerű lépésekből állnak,
                     így bárki számára követhetők, élvezhetők!"/>
                 <NormalParagraph text="Zumbán nem egy komplett táncstílust tanítok meg, nem a tökéletességre törekszem, csak arra,
-                    hogy táncoljunk és jól érezzük magunkat!"
-                                 extraClasses="font-bold"/>
+                    hogy táncoljunk és jól érezzük magunkat!" extraClasses="font-bold"/>
                 <WarningBox>
                     <WarningBoxElement text="Az árazás függ a helyszíntől, időponttól, a rendezvény jellegétől, illetve a kért óra/bemutató hosszától." />
                 </WarningBox>

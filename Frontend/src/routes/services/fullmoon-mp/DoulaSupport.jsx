@@ -59,7 +59,7 @@ export const DoulaSupport = () => {
                 </InfoBox>
                 <WarningBox>
                     <WarningBoxElement text="Van, ami egy órában átbeszélhető, de van olyan téma is,
-                    amihez több óra/találkozó szükséges, így az árak is előzetes egyeztetés után kerülnek meghatározásra." />
+                        amihez több óra/találkozó szükséges, így az árak is előzetes egyeztetés után kerülnek meghatározásra." />
                 </WarningBox>
             </div>
         </div>

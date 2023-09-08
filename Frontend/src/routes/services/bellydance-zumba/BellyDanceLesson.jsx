@@ -34,7 +34,7 @@ export const BellyDanceLesson = () => {
                 <WarningBox>
                     <WarningBoxElement text="Az órákon saját felelősségre veszel részt." />
                     <WarningBoxElement text="Amennyiben egészségügyi problémád, panaszod van, konzultálj kezelőorvosoddal.
-                    Az órákon való részvétel nem helyettesíti az orvossal, gyógytornásszal való konzultációt." />
+                        Az órákon való részvétel nem helyettesíti az orvossal, gyógytornásszal való konzultációt." />
                     <WarningBoxElement text="A fentieket a részvételeddel elfogadottnak tekinted." />
                 </WarningBox>
             </div>

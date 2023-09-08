@@ -23,10 +23,10 @@ export const BellyDanceZumba = () => {
                     majd 2012-2013-ban vendégszerepeltem Olaszországban."
                 />
                 <NormalParagraph text="A Zumbáról 2010-ben hallottam először. Beto Perez, a Zumba megalkotójának DVD-je
-                került a kezembe, ami nagyon megfogott. Elkezdtem több oktató óráját is látogatni. 2013-ban döntöttem úgy,
-                hogy a hastáncon kívül a Zumba fitnesszel is szeretnél foglalkozni. Ezért 2013 szeptemberében elvégeztem a
-                Zumba Fitness LLC. hivatalos Basic 1. képzését, majd később a Zumba Kids képzést is.
-                Ezután pedig termet béreltem, és elkezdtem a saját hastánc és Zumba óráim felépítését."
+                    került a kezembe, ami nagyon megfogott. Elkezdtem több oktató óráját is látogatni. 2013-ban döntöttem úgy,
+                    hogy a hastáncon kívül a Zumba fitnesszel is szeretnél foglalkozni. Ezért 2013 szeptemberében elvégeztem a
+                    Zumba Fitness LLC. hivatalos Basic 1. képzését, majd később a Zumba Kids képzést is.
+                    Ezután pedig termet béreltem, és elkezdtem a saját hastánc és Zumba óráim felépítését."
                 />
                 <NormalParagraph text="2015-ben Tóth Bea Amaraya Step by Step Bellydance és A-Dance Oktatóképzőjén vettem részt,
                     amiből nagyon sok újdonságot tanultam. Valamint Amaraya Társulatának tagjává váltam.
