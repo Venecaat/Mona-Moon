@@ -39,11 +39,11 @@ export const DoulaSupport = () => {
                     <li>Beszélgetés az esetleges félelmekről és azok "kezeléséről"</li>
                     <li>Beavatkozások létjogosultsága, előnyök, hátrányok, kockázatok</li>
                     <li>A szülő nő, az újszülött, az apa jogai</li>
-                    <li>Szülési terv, azaz lehet-e tervezni a szülést? Hogyan hozhatod ki a legtöbbet a szülésedből?</li>
+                    <li>Szülési terv, azaz lehet-e tervezni a szülést. Hogyan hozhatod ki a legtöbbet a szülésedből</li>
                     <li>Az apa szerepe, a várandósság, szülés, gyermekágy idején</li>
                     <li>Anya, Apa, Család születése, szerepek változása</li>
                     <li>Szexualitás</li>
-                    <li>Az aranyóra jelentősége, illetve mit tegyünk, ha elmarad?</li>
+                    <li>Az aranyóra jelentősége, illetve mit tegyünk, ha elmarad</li>
                     <li>A kisbaba valódi szükségletei</li>
                     <li>Gyermekágy - praktikus információk, testi-lelki folyamatok</li>
                     <li>A sikeres szoptatás feltételei, a szoptatás mint biológiai norma</li>

@@ -50,7 +50,7 @@ export const FitmummyLatinFitness = () => {
                 <OLParagraph title="Az óra felépítése">
                     <li>Bemelegítés</li>
                     <li>Légzőtorna mobilizációval</li>
-                    <li>Táncos fitness zenére 6-7 koreográfiával, amiket van idő begyakorolni - havonta egy számot lecserélek.</li>
+                    <li>Táncos fitness zenére 6-7 koreográfiával, amiket van idő begyakorolni - havonta egy számot lecserélek</li>
                     <li>Nyújtás és gátizomlazítás</li>
                     <li>Gátizomtorna (erősítés)</li>
                     <li>Relaxáció</li>

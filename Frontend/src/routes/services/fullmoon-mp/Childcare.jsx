@@ -97,20 +97,20 @@ export const Childcare = () => {
                 <ULParagraph title="Kinek jöhet jól a gyermekágyas segítő?">
                     <li>
                         Minden gyermekágyas anyának és apának is jól jön a kompetenciáiban való megerősítés,
-                        a biológiai norma támogatása, sok dicséret, meghallgatás, a félelmek, kételyek oldása és persze a praktikus segítség
+                        a biológiai norma támogatása, sok dicséret, meghallgatás, a félelmek, kételyek oldása és persze a praktikus segítség.
                     </li>
                     <li>
                         Annak, akinek a családja/rokonai/barátai távol vannak/nincsenek/nem olyan a viszony,
                         és az édesanya/édesapa magára maradna a gyermekágyban, annak minden testi-lelki változásával,
-                        fizikai leterheltségével együtt
+                        fizikai leterheltségével együtt.
                     </li>
                     <li>
                         Annak, aki szeretne olyan segítséget maga mellett tudni, aki maga is megélte a gyermekágyas időszakot,
-                        aki tisztában van a korszerű babagondozási és szoptatási ismeretekkel, a biológiai normával
+                        aki tisztában van a korszerű babagondozási és szoptatási ismeretekkel, a biológiai normával.
                     </li>
                     <li>
                         Annak, aki olyan segítőre vágyik, aki elfogadja a család szokásait, alkalmazkodik hozzá,
-                        nem vitatja azokat, és csak akkor ad tanácsot, ha megkérdezik
+                        nem vitatja azokat, és csak akkor ad tanácsot, ha megkérdezik.
                     </li>
                 </ULParagraph>
                 <HighlightedParagraph text="Ha bármilyen további kérdésed van, vagy szeretnél felkérni segítődnek, akkor keress bátran!" />
