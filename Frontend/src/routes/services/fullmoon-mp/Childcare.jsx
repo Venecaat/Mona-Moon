@@ -94,7 +94,7 @@ export const Childcare = () => {
                         </li>
                     </ol>
                 </div>
-                <ULParagraph title="Kinek jöhet jól a gyermekágyas segítő?" gap="5">
+                <ULParagraph title="Kinek jöhet jól a gyermekágyas segítő?">
                     <li>
                         Minden gyermekágyas anyának és apának is jól jön a kompetenciáiban való megerősítés,
                         a biológiai norma támogatása, sok dicséret, meghallgatás, a félelmek, kételyek oldása és persze a praktikus segítség

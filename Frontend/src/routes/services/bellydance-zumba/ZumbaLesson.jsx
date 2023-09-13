@@ -2,6 +2,7 @@ import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
 import { WarningBox } from "../../../components/WarningBox.jsx";
 import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
 import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
+import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
 import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
 import { OLParagraph } from "../../../components/OLParagraph.jsx";
 import { ULParagraph } from "../../../components/ULParagraph.jsx";
@@ -14,7 +15,7 @@ export const ZumbaLesson = () => {
                            imgAlt="Zumba órák" />
             <HeaderDividerLine />
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
-                <ULParagraph title="Használt táncstílusok fitness mozdulatokkal kombinálva" extraClasses="md:grid-cols-3">
+                <ULParagraph title="Használt táncstílusok fitness mozdulatokkal kombinálva" gap={2} extraClasses="md:grid-cols-3">
                     <li>Salsa</li>
                     <li>Cumbia</li>
                     <li>Reggaeton</li>
@@ -28,7 +29,8 @@ export const ZumbaLesson = () => {
                 <NormalParagraph text="Nem egy komplett táncstílust tanulunk meg, hanem csak táncolunk és jól érezzük magunkat!"
                                  extraClasses="font-bold" />
                 <NormalParagraph text="Ideje, hogy te is felfedezd azt a mozgásformát, ami neked a legjobb!
-                    Talán az én órámon találod meg, amit keresel. Várlak kortól és alkattól függetlenül!" />
+                    Talán az én órámon találod meg, amit keresel." />
+                <HighlightedParagraph text="Várlak kortól és alkattól függetlenül!" />
                 <OLParagraph title="Az órák felépítése">
                     <li>Bemelegítés: 8-10 perc</li>
                     <li>Koreográfiák: 40-45 perc, 8-10 zeneszám - havonta cserélek le egy számot, így követhető marad az óra, de mégsem lesz unalmas!</li>

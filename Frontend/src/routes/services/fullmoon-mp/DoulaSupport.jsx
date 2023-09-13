@@ -30,7 +30,7 @@ export const DoulaSupport = () => {
                     gyermekágy fontos témaköreit. De akár egy-egy téged foglalkoztató konkrét kérdéssel is
                     megkereshetsz 1-2 konzultáció erejéig. Minden opció jó, és teljesen rendben van,
                     úgy fog történni, ahogy te szeretnéd!" />
-                <ULParagraph title="A teljesség igénye nélkül témakörök, amikről pl. beszélgethetünk:" gap="4">
+                <ULParagraph title="A teljesség igénye nélkül témakörök, amikről pl. beszélgethetünk:">
                     <li>A várandósság testi-lelki változásai</li>
                     <li>Sport várandósan és a szülés után</li>
                     <li>Az élettani vajúdás és szülés szakaszai, testi-lelki állomásai</li>

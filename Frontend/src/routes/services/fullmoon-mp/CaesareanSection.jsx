@@ -20,7 +20,7 @@ export const CaesareanSection = () => {
                     nem erre készültél, vagy nem tudod hova tenni az eseményeket, úgy érzed nehezen lépsz tovább,
                     akkor ez a lehetőség érdekes lehet számodra."
                                  extraClasses="font-bold" />
-                <ULParagraph title="Ismerősek az ilyen és ehhez hasonló mondatok?" gap="4" extraClasses="font-bold">
+                <ULParagraph title="Ismerősek az ilyen és ehhez hasonló mondatok?" extraClasses="font-bold">
                     <li>Örülj, hogy egészségesek vagytok!</li>
                     <li>Mi értelme ezzel ennyit foglalkozni?</li>
                     <li>A lényeg, hogy túl vagytok rajta, nem?</li>
