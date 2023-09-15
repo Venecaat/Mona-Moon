@@ -1,10 +1,11 @@
 import { NormalParagraph } from "../../components/NormalParagraph.jsx";
-import { HighlightedParagraph } from "../../components/HighlightedParagraph.jsx";
+import { Header } from "../../components/mainpage/Header.jsx";
 
 export const FullmoonMP = () => {
     return (
         <div className="text-xl font-semibold">
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
+                <Header title="Nagyon jóleső érzés számomra adni, engem is feltölt, erőt ad. Tudom, hogy ez az utam!" classes="text-center" />
                 <NormalParagraph text="A nőiség és a női közösség, a tánc (főleg a hastánc) régóta fontos része az életemnek.
                     Jól érzem magam női társaságban, szerintem óriási erőnk van külön-külön is, de még nagyobb együtt,
                     ha kölcsönös elfogadással, tisztelettel és szeretettel tudunk fordulni egymás felé.
@@ -33,7 +34,6 @@ export const FullmoonMP = () => {
                     de segítőként egyenesen létszükséglet. Ahhoz, hogy értő figyelemmel, ítélet- és kritikamentesen
                     tudjak odafordulni az Anyákhoz/családokhoz, tisztában kell lennem a saját piros gombjaimmal,
                     hogy mi miért, hogy hat rám, mikor kapcsol be egy-egy történetben a saját élmény." />
-                <HighlightedParagraph text="Nagyon jóleső érzés számomra adni, engem is feltölt, erőt ad. Tudom, hogy ez az utam!" />
             </div>
         </div>
     )
