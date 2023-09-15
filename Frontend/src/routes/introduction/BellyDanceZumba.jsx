@@ -73,14 +73,14 @@ export const BellyDanceZumba = () => {
                     és ilyenkor vagyok igazán önmagam. Csodálatos dolog számomra a színpadon állni, adni a közönségnek magamból,
                     az energiámból a tánc univerzális nyelve által, és közben érezni a szeretetüket." extraClasses="font-bold" />
                 <ULParagraph title="Képesítések">
-                    <li>2006 - Orientális tánc szakvizsga - Országos Szórakoztatózenei Központ</li>
-                    <li>2008 - Sportoktató szakképesítés - SOTE TF</li>
-                    <li>2008 - Orientális tánc fakultáció - SOTE TF</li>
-                    <li>2013 - Hivatalos Zumba oktató, Basic steps level 1 - Zumba Fitness LLC</li>
-                    <li>2014 - Hivatalos Zumba Kids és Kids Jr. oktató - Zumba Fitness LLC</li>
-                    <li>2015 - Step by Step kezdő táncképzés - Amaraya</li>
-                    <li>2016 - Step by Step középhaladó táncképzés - Amaraya</li>
-                    <li>2016 - Első Lépés táncképzés - A-Dance</li>
+                    <li>2006 - Orientális Tánc Szakvizsga - Országos Szórakoztatózenei Központ</li>
+                    <li>2008 - Sportoktató Szakképesítés - SOTE TF</li>
+                    <li>2008 - Orientális Tánc Fakultáció - SOTE TF</li>
+                    <li>2013 - Hivatalos Zumba Oktató, Basic Steps Level 1 - Zumba Fitness LLC</li>
+                    <li>2014 - Hivatalos Zumba Kids és Kids Jr. Oktató - Zumba Fitness LLC</li>
+                    <li>2015 - Step by Step Kezdő Táncképzés - Amaraya</li>
+                    <li>2016 - Step by Step Középhaladó Táncképzés - Amaraya</li>
+                    <li>2016 - Első Lépés Táncképzés - A-Dance</li>
                 </ULParagraph>
             </div>
         </div>
