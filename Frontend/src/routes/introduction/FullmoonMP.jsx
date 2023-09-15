@@ -45,6 +45,7 @@ export const FullmoonMP = () => {
                     <li>2022 - Pedagógiai- és Családsegítő Szakképesítés - Best-Work Oktató és Szolgáltató Kft.</li>
                     <li>2022 - Pre- és Postnatal Trénerképzés - Bernáth Dóra Felnőttképző</li>
                     <li>2022 - Fitmummy Prenatális Tréning - Almásy Mozgásakadémia</li>
+                    <li>2023 - Fitmummy Posztnatális Tréning - Almásy Mozgásakadémia</li>
                     <li>2023 - Dúlaműhely - Békés Dúlatréning</li>
                 </ULParagraph>
             </div>
