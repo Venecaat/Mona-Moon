@@ -1,4 +1,5 @@
 import { NormalParagraph } from "../../components/NormalParagraph.jsx";
+import { ULParagraph } from "../../components/ULParagraph.jsx";
 import { Header } from "../../components/mainpage/Header.jsx";
 
 export const FullmoonMP = () => {
@@ -34,6 +35,18 @@ export const FullmoonMP = () => {
                     de segítőként egyenesen létszükséglet. Ahhoz, hogy értő figyelemmel, ítélet- és kritikamentesen
                     tudjak odafordulni az Anyákhoz/családokhoz, tisztában kell lennem a saját piros gombjaimmal,
                     hogy mi miért, hogy hat rám, mikor kapcsol be egy-egy történetben a saját élmény." />
+                <ULParagraph title="Képesítések">
+                    <li>2020 - Önismereti és Motivációs Tréning - Békés Dúlatréning</li>
+                    <li>2020 - Dúla Alaptréning - Békés Dúlatréning</li>
+                    <li>2020 - Szoptatási Segítő Alaptanfolyam - Anyatejút Tudásközpont</li>
+                    <li>2021 - Gyermekágyas Segítő Képzés - Miskovics-Kobza Zsuzsanna Mária</li>
+                    <li>2021 - Gyermekpszichológiai Konzulens Program - Best-Work Oktató és Szolgáltató Kft.</li>
+                    <li>2021 - Szoptatási Segítő Középhaladó Tanfolyam - Anyatejút Tudásközpont</li>
+                    <li>2022 - Pedagógiai- és Családsegítő Szakképesítés - Best-Work Oktató és Szolgáltató Kft.</li>
+                    <li>2022 - Pre- és Postnatal Trénerképzés - Bernáth Dóra Felnőttképző</li>
+                    <li>2022 - Fitmummy Prenatális Tréning - Almásy Mozgásakadémia</li>
+                    <li>2023 - Dúlaműhely - Békés Dúlatréning</li>
+                </ULParagraph>
             </div>
         </div>
     )
