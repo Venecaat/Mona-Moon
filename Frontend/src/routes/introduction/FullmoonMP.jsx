@@ -7,7 +7,9 @@ export const FullmoonMP = () => {
         <div className="text-xl font-semibold">
             <div className="grid grid-cols-1 mb-6 text-center md:text-left text-2xl gap-7">
                 <Header title="Nagyon jóleső érzés számomra adni, engem is feltölt, erőt ad. Tudom, hogy ez az utam!" classes="text-center" />
-                <NormalParagraph text="A nőiség és a női közösség, a tánc (főleg a hastánc) régóta fontos része az életemnek.
+                <div className="px-4 xl:px-0">
+                    <img src="/src/assets/images/intro_fullmoon_mp_1.png" className="max-w-sm rounded-lg float-left mr-4" />
+                    A nőiség és a női közösség, a tánc (főleg a hastánc) régóta fontos része az életemnek.
                     Jól érzem magam női társaságban, szerintem óriási erőnk van külön-külön is, de még nagyobb együtt,
                     ha kölcsönös elfogadással, tisztelettel és szeretettel tudunk fordulni egymás felé.
                     Sokáig a táncban tudtam megélni ezt a kapcsolódást, harmóniát és erőt.
@@ -20,13 +22,11 @@ export const FullmoonMP = () => {
                     Akkor jöttem rá, hogy segíteni szeretnék. Segíteni, hogy minél több nő, család érezze a megtartó erőt,
                     azt, hogy van hova fordulniuk, ha kérdésük, kétségük van, meghallgatásra,
                     vagy csak egy kis praktikus segítségre vágynak. Tapasztaltam, és tapasztalom mindennap,
-                    hogy mekkora szükség van az értő figyelemre, naprakész, hiteles információkra, támogatásra." />
+                    hogy mekkora szükség van az értő figyelemre, naprakész, hiteles információkra, támogatásra.
+                </div>
                 <NormalParagraph text="A saját élményeim, anyaságom óta szívügyemmé vált a női lét várandósság, szülés, gyermekágy,
                     szoptatás körüli időszaka, és ebben az érzékeny időszakban való támogatás/segítés." />
-                <NormalParagraph text="Ezért 2020-ban elvégeztem az Anyatejút Tudásközpont Szoptatási Segítő Alaptanfolyamát, majd 2021-ben a
-                    Középhaladó tanfolyamot is, valamint Békés Emőke Dúla tréningjét és műhelyét.
-                    2021-ben részt vettem Miskovics-Kobza Zsuzsa Meső gyermekágyas segítő képzésén,
-                    majd 2022-ben pre- és postnatal tréner is lettem. Nagy vágyam vált valóra, amikor a Fitmummy zenés tréning órák
+                <NormalParagraph text="Nagy vágyam vált valóra, amikor a Fitmummy zenés tréning órák
                     megszervezésével összeért az életemnek az a két területe, ami a legjobban érdekel.
                     A mozgás/tánc és az Édesanyák támogatása." />
                 <NormalParagraph text="Igyekszem folyamatosan továbbképezni magam, hogy minél több oldalról tudjam támogatni az
