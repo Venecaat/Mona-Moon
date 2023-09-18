@@ -11,6 +11,8 @@ import { FitmummyBellyDance, FitmummyLatinFitness, DoulaSupport, Childcare, Caes
 import { BellyDanceZumba } from "./routes/introduction/BellyDanceZumba.jsx";
 import { FullmoonMP } from "./routes/introduction/FullmoonMP.jsx";
 import { ZumbaPerformance } from "./routes/services/bellydance-zumba/ZumbaPerformance.jsx";
+import { Login } from "./routes/auth/Login.jsx";
+import { Register } from "./routes/auth/Register.jsx";
 
 export const App = () => {
 
@@ -39,6 +41,11 @@ export const App = () => {
               <Route path="/szolgaltatasok/gyermekagyas-gondoskodas" element={<Childcare />}></Route>
               <Route path="/szolgaltatasok/csaszarmetszes-feldolgozo-csoport" element={<CaesareanSection />}></Route>
               <Route path="/szolgaltatasok/szulesaldo-unnep" element={<BirthBlessing />}></Route>
+
+              {/* LOGIN / REGISTER */}
+              <Route path="/bejelentkezes" element={<Login />}></Route>
+              <Route path="/regisztracio" element={<Register />}></Route>
+
           </Routes>
       </Layout>
   )
