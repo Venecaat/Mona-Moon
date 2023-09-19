@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { FieldErrorMsg } from "../../components/form/FieldErrorMsg.jsx";
+import { RequiredStar } from "../../components/form/RequiredStar.jsx";
 
 export const Register = () => {
     const RegisterSchema = Yup.object().shape({
@@ -41,31 +42,31 @@ export const Register = () => {
                     <Form className="card flex-shrink-0 w-full max-w-sm shadow-2xl mx-auto p-8 gap-4">
                         <h1 className="text-4xl text-primary font-bold text-center mb-6">Regisztráció</h1>
                         <div>
-                            <label htmlFor="lastName">Vezetéknév</label>
+                            <label htmlFor="lastName">Vezetéknév<RequiredStar /></label>
                             <Field id="lastName" name="lastName" placeholder="Vezetéknév"
                                    className="input input-bordered text-xl w-full text-primary focus:outline-none focus:border-2 focus:border-primary" />
                             { errors.lastName && touched.lastName ? ( <FieldErrorMsg errorMsg={ errors.lastName } /> ) : null}
                         </div>
                         <div>
-                            <label htmlFor="firstName">Keresztnév</label>
+                            <label htmlFor="firstName">Keresztnév<RequiredStar /></label>
                             <Field id="firstName" name="firstName" placeholder="Keresztnév"
                                    className="input input-bordered text-xl w-full text-primary focus:outline-none focus:border-2 focus:border-primary" />
                             { errors.firstName && touched.firstName ? ( <FieldErrorMsg errorMsg={ errors.firstName } /> ) : null}
                         </div>
                         <div>
-                            <label htmlFor="email">Email</label>
+                            <label htmlFor="email">Email<RequiredStar /></label>
                             <Field type="email" id="email" name="email" placeholder="Email"
                                    className="input input-bordered text-xl w-full text-primary focus:outline-none focus:border-2 focus:border-primary" />
                             { errors.email && touched.email ? ( <FieldErrorMsg errorMsg={ errors.email } /> ) : null}
                         </div>
                         <div>
-                            <label htmlFor="password">Jelszó</label>
+                            <label htmlFor="password">Jelszó<RequiredStar /></label>
                             <Field type="password" id="password" name="password" placeholder="Jelszó"
                                    className="input input-bordered text-xl w-full text-primary focus:outline-none focus:border-2 focus:border-primary" />
                             { errors.password && touched.password ? ( <FieldErrorMsg errorMsg={ errors.password } /> ) : null}
                         </div>
                         <div>
-                            <label htmlFor="passwordConfirm">Jelszó megerősítése</label>
+                            <label htmlFor="passwordConfirm">Jelszó megerősítése<RequiredStar /></label>
                             <Field type="password" id="passwordConfirm" name="passwordConfirm" placeholder="Jelszó megerősítése"
                                    className="input input-bordered text-xl w-full text-primary focus:outline-none focus:border-2 focus:border-primary" />
                             { errors.passwordConfirm && touched.passwordConfirm ? ( <FieldErrorMsg errorMsg={ errors.passwordConfirm } /> ) : null}
