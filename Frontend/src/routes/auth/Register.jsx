@@ -14,7 +14,7 @@ export const Register = () => {
             .min(2, "Min 2 karakter hosszúnak kell lennie!"),
         email: Yup.string()
             .required("Kötelező megadni!")
-            .email("Érvénytelen email cím formátum!"),
+            .matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$", {message: "Érvénytelen email cím formátum!"}),
         password: Yup.string()
             .required("Kötelező megadni!")
             .min(8, "Min 8 karakter hosszúnak kell lennie!"),
