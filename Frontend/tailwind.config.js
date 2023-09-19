@@ -25,7 +25,7 @@ export default {
           "info": "#67e8f9",
           "success": "#22c55e",
           "warning": "#f59e0b",
-          "error": "#f0757d",
+          "error": "#e83843",
         },
         monamoon_dark: {
           "primary": "#fcd57e",
@@ -39,7 +39,7 @@ export default {
           "info": "#67e8f9",
           "success": "#22c55e",
           "warning": "#f59e0b",
-          "error": "#f0757d",
+          "error": "#e83843",
         },
       },
     ],
