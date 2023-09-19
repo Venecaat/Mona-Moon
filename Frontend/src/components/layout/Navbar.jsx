@@ -119,9 +119,9 @@ export const Navbar = () => {
                             <circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/>
                         </svg>
                     </label>
-                    <ul className="menu dropdown-content mt-3 lg:mt-0 p-2 z-10 w-40 shadow bg-primary font-bold rounded-box">
-                        <li><Link to="/bejelentkezes">Bejelentkezés</Link></li>
-                        <li><Link to="/regisztracio">Regisztráció</Link></li>
+                    <ul className="menu dropdown-content bg-primary text-secondary rounded-box font-bold mt-3 lg:mt-0 p-2 z-10 w-40">
+                        <li><Link to="/bejelentkezes" className="hover:text-accent">Bejelentkezés</Link></li>
+                        <li><Link to="/regisztracio" className="hover:text-accent">Regisztráció</Link></li>
                     </ul>
                 </div>
             </div>
