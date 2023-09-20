@@ -30,11 +30,13 @@ namespace Backend.Services
             return user == null ? null : _mapper.Map<User, PublicUser>(user);
         }
 
-        public async Task<PublicUser?> FindByEmail(string email)
+        public async Task<PublicUser?> FindByEmailDto(string email)
         {
             User? user = await _repository.FindByEmail(email);
             return user == null ? null : _mapper.Map<User, PublicUser>(user);
         }
+
+        public async Task<User?> FindByEmail(string email) => await _repository.FindByEmail(email);
 
         public async Task<bool> IsUnique(string email) => await _repository.IsUnique(email);
 
