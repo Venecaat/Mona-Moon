@@ -12,7 +12,7 @@ export class UsersApi {
         return await res.data;
     }
 
-    static async createUser(lastName, firstName, email, password) {
+    static async register(lastName, firstName, email, password) {
         let errorMsg = "";
         let errorStatusCode;
 

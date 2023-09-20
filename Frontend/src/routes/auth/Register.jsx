@@ -38,7 +38,7 @@ export const Register = () => {
                 }}
                 validationSchema={RegisterSchema}
                 onSubmit={ async (values) => {
-                    const user = await UsersApi.createUser(values.lastName, values.firstName, values.email, values.password);
+                    const user = await UsersApi.register(values.lastName, values.firstName, values.email, values.password);
 
                     showEmailIsTakenErrorMsg = user.status === 409;
 
