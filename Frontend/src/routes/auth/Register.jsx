@@ -88,7 +88,7 @@ export const Register = () => {
                             ease-in-out duration-200">
                                 Már van felhasználód?
                             </Link>
-                            { showEmailIsTakenErrorMsg ? (<FieldErrorMsg extraClasses="text-center" errorMsg="Az E-mail cím már foglalt!" />) : null }
+                            { showEmailIsTakenErrorMsg ? (<FieldErrorMsg extraClasses="text-center mt-2" errorMsg="Az E-mail cím már foglalt!" />) : null }
                         </div>
                     </Form>
                 )}
