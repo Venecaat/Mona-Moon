@@ -1,7 +1,5 @@
-﻿using Backend.Database.Models.User;
-using Backend.Dtos.User;
+﻿using Backend.Dtos.User;
 using Backend.Services;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
@@ -10,11 +8,13 @@ namespace Backend.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        private readonly IUserService _service;
+        private readonly IUserService _userService;
+        private readonly IAuthService _authService;
 
-        public UserController(IUserService service)
+        public UserController(IUserService userService, IAuthService authService)
         {
-            _service = service;
+            _userService = userService;
+            _authService = authService;
         }
 
         [HttpGet]
@@ -24,7 +24,7 @@ namespace Backend.Controllers
         {
             try
             {
-                List<PublicUser> users = await _service.GetAll();
+                List<PublicUser> users = await _userService.GetAll();
                 return StatusCode(StatusCodes.Status200OK, users);
             }
             catch
@@ -41,7 +41,7 @@ namespace Backend.Controllers
         {
             try
             {
-                PublicUser? user = await _service.Find(id);
+                PublicUser? user = await _userService.Find(id);
                 return user is null ? StatusCode(StatusCodes.Status404NotFound, $"There is no user with this Id: {id}!")
                     : StatusCode(StatusCodes.Status200OK, user);
             }
@@ -57,13 +57,13 @@ namespace Backend.Controllers
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<ActionResult<PublicUser>> CreateUser(RegisterUser newUser)
         {
-            PublicUser? existingUser = await _service.FindByEmail(newUser.Email);
+            PublicUser? existingUser = await _userService.FindByEmail(newUser.Email);
 
             if (existingUser is not null) return StatusCode(StatusCodes.Status409Conflict, $"This Email address is already taken: {newUser.Email}!");
 
             try
             {
-                PublicUser user = await _service.Create(newUser);
+                PublicUser user = await _userService.Create(newUser);
                 return StatusCode(StatusCodes.Status201Created, user);
             }
             catch
@@ -79,17 +79,17 @@ namespace Backend.Controllers
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<ActionResult<PublicUser>> UpdateUser(UpdateUser updateUser)
         {
-            PublicUser? existingUser = await _service.FindByEmail(updateUser.Email);
+            PublicUser? existingUser = await _userService.FindByEmail(updateUser.Email);
 
             if (existingUser is not null) return StatusCode(StatusCodes.Status409Conflict, $"This Email address is already taken: {updateUser.Email}!");
 
-            existingUser = await _service.Find(updateUser.Id);
+            existingUser = await _userService.Find(updateUser.Id);
 
             if (existingUser is null) return StatusCode(StatusCodes.Status404NotFound, $"There is no user with this Id: {updateUser.Id}!");
 
             try
             {
-                PublicUser user = await _service.Update(updateUser);
+                PublicUser user = await _userService.Update(updateUser);
                 return StatusCode(StatusCodes.Status200OK, user);
             }
             catch
@@ -106,7 +106,7 @@ namespace Backend.Controllers
         {
             try
             {
-                return await _service.Delete(id) ? StatusCode(StatusCodes.Status200OK, $"The user with this id: {id} has been successfully deleted!")
+                return await _userService.Delete(id) ? StatusCode(StatusCodes.Status200OK, $"The user with this id: {id} has been successfully deleted!")
                     : StatusCode(StatusCodes.Status404NotFound, $"There is no user with this Id: {id}!");
             }
             catch

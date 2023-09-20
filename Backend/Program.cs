@@ -30,6 +30,7 @@ builder.Services.AddControllers();
 // Add dependencies
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAuthService, AuthService>();
 
 // Add AutoMapper
 builder.Services.AddAutoMapper(typeof(MapProfile));
