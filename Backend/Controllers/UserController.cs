@@ -50,29 +50,7 @@ namespace Backend.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest, "Oops, something went wrong!");
             }
         }
-
-        [HttpPost]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status409Conflict)]
-        public async Task<ActionResult<PublicUser>> CreateUser(RegisterUser newUser)
-        {
-            PublicUser? existingUser = await _userService.FindByEmail(newUser.Email);
-
-            if (existingUser is not null) return StatusCode(StatusCodes.Status409Conflict, $"This Email address is already taken: {newUser.Email}!");
-
-            try
-            {
-                newUser = _authService.HashPw(newUser);
-                PublicUser user = await _userService.Create(newUser);
-                return StatusCode(StatusCodes.Status201Created, user);
-            }
-            catch
-            {
-                return StatusCode(StatusCodes.Status400BadRequest, "Oops, something went wrong!");
-            }
-        }
-
+        
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -109,6 +87,29 @@ namespace Backend.Controllers
             {
                 return await _userService.Delete(id) ? StatusCode(StatusCodes.Status200OK, $"The user with this id: {id} has been successfully deleted!")
                     : StatusCode(StatusCodes.Status404NotFound, $"There is no user with this Id: {id}!");
+            }
+            catch
+            {
+                return StatusCode(StatusCodes.Status400BadRequest, "Oops, something went wrong!");
+            }
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status409Conflict)]
+        public async Task<ActionResult<PublicUser>> Register(RegisterUser newUser)
+        {
+            PublicUser? existingUser = await _userService.FindByEmail(newUser.Email);
+
+            if (existingUser is not null)
+                return StatusCode(StatusCodes.Status409Conflict, $"This Email address is already taken: {newUser.Email}!");
+
+            try
+            {
+                newUser = _authService.HashPw(newUser);
+                PublicUser user = await _userService.Create(newUser);
+                return StatusCode(StatusCodes.Status201Created, user);
             }
             catch
             {
