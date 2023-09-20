@@ -95,6 +95,7 @@ namespace Backend.Controllers
         }
 
         [HttpPost]
+        [Route("Register")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status409Conflict)]
@@ -118,6 +119,7 @@ namespace Backend.Controllers
         }
 
         [HttpPost]
+        [Route("Login")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         public async Task<ActionResult<PublicUser>> Login(LoginUser loginUser)
