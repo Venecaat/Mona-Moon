@@ -63,6 +63,7 @@ namespace Backend.Controllers
 
             try
             {
+                newUser = _authService.HashPw(newUser);
                 PublicUser user = await _userService.Create(newUser);
                 return StatusCode(StatusCodes.Status201Created, user);
             }
