@@ -58,7 +58,7 @@ namespace Backend.Controllers
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<ActionResult<PublicUser>> UpdateUser(UpdateUser updateUser)
         {
-            PublicUser? existingUser = await _userService.FindByEmail(updateUser.Email);
+            PublicUser? existingUser = await _userService.FindByEmailDto(updateUser.Email);
 
             if (existingUser is not null) return StatusCode(StatusCodes.Status409Conflict, $"This Email address is already taken: {updateUser.Email}!");
 
@@ -100,7 +100,7 @@ namespace Backend.Controllers
         [ProducesResponseType(StatusCodes.Status409Conflict)]
         public async Task<ActionResult<PublicUser>> Register(RegisterUser newUser)
         {
-            PublicUser? existingUser = await _userService.FindByEmail(newUser.Email);
+            PublicUser? existingUser = await _userService.FindByEmailDto(newUser.Email);
 
             if (existingUser is not null)
                 return StatusCode(StatusCodes.Status409Conflict, $"This Email address is already taken: {newUser.Email}!");
