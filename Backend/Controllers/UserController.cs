@@ -116,5 +116,16 @@ namespace Backend.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest, "Oops, something went wrong!");
             }
         }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public async Task<ActionResult<PublicUser>> Login(LoginUser loginUser)
+        {
+            PublicUser? resUser = await _authService.Authenticate(loginUser);
+            if (resUser is null) return StatusCode(StatusCodes.Status401Unauthorized, "Invalid credentials!");
+
+            return StatusCode(StatusCodes.Status200OK, resUser);
+        }
     }
 }
