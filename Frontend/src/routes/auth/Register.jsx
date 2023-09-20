@@ -41,6 +41,9 @@ export const Register = () => {
                     const user = await UsersApi.createUser(values.lastName, values.firstName, values.email, values.password);
 
                     showEmailIsTakenErrorMsg = user.status === 409;
+
+                    {/* TODO: Make it fancier */}
+                    if (user.status === 201) alert("A regisztráció sikeres volt!");
                 }}>
                 {({ errors, touched }) => (
                     <Form className="card flex-shrink-0 w-full max-w-sm shadow-2xl mx-auto p-8 gap-4">
