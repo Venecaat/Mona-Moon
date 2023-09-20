@@ -3,8 +3,11 @@ import { Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { FieldErrorMsg } from "../../components/form/FieldErrorMsg.jsx";
 import { RequiredStar } from "../../components/form/RequiredStar.jsx";
+import { UsersApi } from "../../api/UsersApi.jsx";
 
 export const Register = () => {
+    let showEmailIsTakenErrorMsg = false;
+
     const RegisterSchema = Yup.object().shape({
         lastName: Yup.string()
             .required("Kötelező megadni!")
@@ -34,9 +37,10 @@ export const Register = () => {
                     passwordConfirm: ""
                 }}
                 validationSchema={RegisterSchema}
-                onSubmit={(values) => {
+                onSubmit={ async (values) => {
+                    const user = await UsersApi.createUser(values.lastName, values.firstName, values.email, values.password);
 
-                    console.log(values);
+                    showEmailIsTakenErrorMsg = user.status === 409;
                 }}>
                 {({ errors, touched }) => (
                     <Form className="card flex-shrink-0 w-full max-w-sm shadow-2xl mx-auto p-8 gap-4">
@@ -77,11 +81,11 @@ export const Register = () => {
                                 Regisztráció
                             </button>
 
-                            {/* MAKE IT MODAL? */}
                             <Link to="/bejelentkezes" className="text-lg text-primary hover:text-accent
                             ease-in-out duration-200">
                                 Már van felhasználód?
                             </Link>
+                            { showEmailIsTakenErrorMsg ? (<FieldErrorMsg extraClasses="text-center" errorMsg="Az E-mail cím már foglalt!" />) : null }
                         </div>
                     </Form>
                 )}
