@@ -148,5 +148,21 @@ namespace Backend.Controllers
 
             return StatusCode(StatusCodes.Status200OK, resUser);
         }
+
+        [HttpGet]
+        [Route("Logout")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("jwt", new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.None
+            });
+
+            return StatusCode(StatusCodes.Status200OK, "You successfully logged out!");
+        }
     }
 }
