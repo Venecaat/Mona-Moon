@@ -50,7 +50,7 @@ namespace Backend.Controllers
                 return StatusCode(StatusCodes.Status400BadRequest, "Oops, something went wrong!");
             }
         }
-        
+
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -136,6 +136,15 @@ namespace Backend.Controllers
             }
             
             if (resUser is null) return StatusCode(StatusCodes.Status401Unauthorized, "Invalid credentials!");
+
+            string jwt = _authService.GenerateJwt(resUser);
+
+            Response.Cookies.Append("jwt", jwt, new CookieOptions
+            {
+                HttpOnly = true,
+                Secure = true,
+                SameSite = SameSiteMode.None
+            });
 
             return StatusCode(StatusCodes.Status200OK, resUser);
         }
