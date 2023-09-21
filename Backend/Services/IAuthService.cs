@@ -6,5 +6,6 @@ namespace Backend.Services
     {
         RegisterUser HashPw(RegisterUser user);
         Task<PublicUser> Authenticate(LoginUser user);
+        string GenerateJwt(PublicUser user);
     }
 }
