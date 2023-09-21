@@ -120,8 +120,13 @@ export const Navbar = () => {
                         </svg>
                     </label>
                     <ul className="menu dropdown-content bg-primary text-secondary rounded-box font-bold mt-3 lg:mt-0 p-2 z-10 w-40">
-                        <li><Link to="/bejelentkezes" className="hover:text-accent">Bejelentkezés</Link></li>
-                        <li><Link to="/regisztracio" className="hover:text-accent">Regisztráció</Link></li>
+                        <div>
+                            <li><Link to="/bejelentkezes" className="hover:text-accent">Bejelentkezés</Link></li>
+                            <li><Link to="/regisztracio" className="hover:text-accent">Regisztráció</Link></li>
+                        </div>
+                        <div>
+                            <li><Link to="/kijelentkezes" className="hover:text-accent">Kijelentkezés</Link></li>
+                        </div>
                     </ul>
                 </div>
             </div>
