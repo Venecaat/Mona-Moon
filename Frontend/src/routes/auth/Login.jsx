@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import { FieldErrorMsg } from "../../components/form/FieldErrorMsg.jsx";
 import { UsersApi } from "../../api/UsersApi.jsx";
+import PropTypes from "prop-types";
 
-export const Login = () => {
+export const Login = ({ setEmail }) => {
     let showInvalidCredentialsErrorMsg = false;
 
     return (
@@ -58,3 +59,7 @@ export const Login = () => {
         </div>
     )
 }
+
+Login.propTypes = {
+    setEmail: PropTypes.func
+};

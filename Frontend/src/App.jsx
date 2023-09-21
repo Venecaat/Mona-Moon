@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Layout } from "./components/layout/Layout.jsx";
 import { MainPage } from "./routes/MainPage.jsx";
@@ -13,11 +14,13 @@ import { FullmoonMP } from "./routes/introduction/FullmoonMP.jsx";
 import { ZumbaPerformance } from "./routes/services/bellydance-zumba/ZumbaPerformance.jsx";
 import { Login } from "./routes/auth/Login.jsx";
 import { Register } from "./routes/auth/Register.jsx";
+import { Logout } from "./routes/auth/Logout.jsx";
 
 export const App = () => {
+    const [email, setEmail] = useState(sessionStorage.getItem("email"));
 
   return (
-      <Layout>
+      <Layout email={email}>
           <Routes>
               <Route path="/" element={<MainPage />}></Route>
               <Route path="/orarend" element={<Timetable />}></Route>
@@ -43,8 +46,9 @@ export const App = () => {
               <Route path="/szolgaltatasok/szulesaldo-unnep" element={<BirthBlessing />}></Route>
 
               {/* LOGIN / REGISTER */}
-              <Route path="/bejelentkezes" element={<Login />}></Route>
               <Route path="/regisztracio" element={<Register />}></Route>
+              <Route path="/bejelentkezes" element={<Login setEmail={setEmail} />}></Route>
+              <Route path="/kijelentkezes" element={<Logout setEmail={setEmail} />}></Route>
 
           </Routes>
       </Layout>

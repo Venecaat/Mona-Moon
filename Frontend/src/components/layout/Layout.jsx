@@ -3,7 +3,7 @@ import { Footer } from "./Footer.jsx";
 import { Navbar } from "./Navbar.jsx";
 import { useEffect } from "react";
 
-export const Layout = ({ children }) => {
+export const Layout = ({ children, email }) => {
     useEffect(() => {
         const backToTopButton = document.getElementById("backToTop");
 
@@ -19,7 +19,7 @@ export const Layout = ({ children }) => {
 
     return (
         <div className="flex flex-col justify-between h-screen">
-            <Navbar />
+            <Navbar email={email} />
                 <main className="max-w-5xl w-full mx-auto my-6">
                     { children }
                 </main>
@@ -36,5 +36,6 @@ export const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
-    children: PropTypes.any
+    children: PropTypes.any,
+    email: PropTypes.string
 };

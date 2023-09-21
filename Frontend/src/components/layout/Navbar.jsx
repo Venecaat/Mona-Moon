@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-export const Navbar = () => {
+export const Navbar = ({ email }) => {
     return (
         <div className="navbar bg-primary text-primary-content max-h-12">
             {/* TABLET/MOBILE MENU */}
@@ -120,16 +121,24 @@ export const Navbar = () => {
                         </svg>
                     </label>
                     <ul className="menu dropdown-content bg-primary text-secondary rounded-box font-bold mt-3 lg:mt-0 p-2 z-10 w-40">
-                        <div>
-                            <li><Link to="/bejelentkezes" className="hover:text-accent">Bejelentkezés</Link></li>
-                            <li><Link to="/regisztracio" className="hover:text-accent">Regisztráció</Link></li>
-                        </div>
-                        <div>
-                            <li><Link to="/kijelentkezes" className="hover:text-accent">Kijelentkezés</Link></li>
-                        </div>
+                        { !email ?
+                            <div>
+                                <li><Link to="/bejelentkezes" className="hover:text-accent">Bejelentkezés</Link></li>
+                                <li><Link to="/regisztracio" className="hover:text-accent">Regisztráció</Link></li>
+                            </div> : null
+                        }
+                        { email ?
+                            <div>
+                                <li><Link to="/kijelentkezes" className="hover:text-accent">Kijelentkezés</Link></li>
+                            </div> : null
+                        }
                     </ul>
                 </div>
             </div>
         </div>
     )
 }
+
+Navbar.propTypes = {
+    email: PropTypes.string
+};
