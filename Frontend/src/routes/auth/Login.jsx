@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
 import { FieldErrorMsg } from "../../components/form/FieldErrorMsg.jsx";
 import { UsersApi } from "../../api/UsersApi.jsx";
@@ -6,6 +6,7 @@ import PropTypes from "prop-types";
 
 export const Login = ({ setEmail }) => {
     let showInvalidCredentialsErrorMsg = false;
+    const navigate = useNavigate();
 
     return (
         <div className="text-2xl font-semibold">
@@ -15,12 +16,15 @@ export const Login = ({ setEmail }) => {
                     password: ""
                 }}
                 onSubmit={ async (values) => {
-                    const user = await UsersApi.login(values.email, values.password);
+                    const response = await UsersApi.login(values.email, values.password);
 
-                    showInvalidCredentialsErrorMsg = user.status === 401;
+                    showInvalidCredentialsErrorMsg = response.status === 401;
 
-                    {/* TODO: Make it fancier */}
-                    if (user.status === 200) alert("A belépés sikeres volt!");
+                    if (response.status === 200) {
+                        setEmail(response.user.email);
+                        sessionStorage.setItem("email", response.user.email);
+                        navigate("/");
+                    }
                 }}>
                 {() => (
                     <Form className="card flex-shrink-0 w-full max-w-sm shadow-2xl mx-auto p-8 gap-4">
