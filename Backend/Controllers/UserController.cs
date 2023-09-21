@@ -1,5 +1,6 @@
 ﻿using Backend.Dtos.User;
 using Backend.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Backend.Controllers
@@ -17,6 +18,7 @@ namespace Backend.Controllers
             _authService = authService;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -33,6 +35,7 @@ namespace Backend.Controllers
             }
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -51,6 +54,7 @@ namespace Backend.Controllers
             }
         }
 
+        [Authorize]
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -77,6 +81,7 @@ namespace Backend.Controllers
             }
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -94,6 +99,7 @@ namespace Backend.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("Register")]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -118,6 +124,7 @@ namespace Backend.Controllers
             }
         }
 
+        [AllowAnonymous]
         [HttpPost]
         [Route("Login")]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -149,6 +156,7 @@ namespace Backend.Controllers
             return StatusCode(StatusCodes.Status200OK, resUser);
         }
 
+        [Authorize]
         [HttpGet]
         [Route("Logout")]
         [ProducesResponseType(StatusCodes.Status200OK)]
