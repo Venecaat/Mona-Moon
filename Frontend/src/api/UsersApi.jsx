@@ -53,4 +53,8 @@ export class UsersApi {
             errorMsg: errorMsg ? errorMsg : null
         };
     }
+
+    static async logout() {
+        await axios.get(`${API_URL}/User/Logout`, { withCredentials : true });
+    }
 }
