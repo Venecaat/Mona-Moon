@@ -50,6 +50,25 @@ export const App = () => {
               <Route path="/bejelentkezes" element={<Login setEmail={setEmail} />}></Route>
               <Route path="/kijelentkezes" element={<Logout setEmail={setEmail} />}></Route>
 
+          {/*  TODO:
+                - add password requirements in Register
+                - add email check here or backend eg.: asd@fgh - if there is no domain at the end
+                - fix Main Page
+                - show user in account menu
+                - fix backend environment variables
+                - add route restrictions in frontend here in App
+                - add Profile page
+                - change session storage to cookies backend or frontend
+                - add Remember me option to Login
+                - after registration navigate to Login or maybe a verification page or modal
+                - make forgot password - maybe in modal
+                - email verification
+                - increase cookie expiry time
+                - use Cloudinary
+                - add field check in Login in frontend
+                - more unit tests for backend
+            */}
+
           </Routes>
       </Layout>
   )
