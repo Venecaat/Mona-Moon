@@ -192,7 +192,7 @@ namespace BackendTests.ServiceTests
         }
 
         [Test]
-        public async Task FindByEmail_ExistingEmail_ReturnsUser()
+        public async Task FindByEmailDto_ExistingEmail_ReturnsUser()
         {
             User user = new()
             {
@@ -215,17 +215,17 @@ namespace BackendTests.ServiceTests
 
             mockRepository.Setup(x => x.FindByEmail(It.IsAny<string>())).Returns(Task.FromResult(user));
 
-            Util.AreEqualByJson(expectedUser, await service.FindByEmail("totally@valid.com"));
+            Util.AreEqualByJson(expectedUser, await service.FindByEmailDto("totally@valid.com"));
         }
 
         [Test]
-        public async Task FindByEmail_NotExistingEmail_ReturnsUser()
+        public async Task FindByEmailDto_NotExistingEmail_ReturnsUser()
         {
             User? user = null;
 
             mockRepository.Setup(x => x.FindByEmail(It.IsAny<string>())).Returns(Task.FromResult(user));
 
-            Assert.Null(await service.FindByEmail("notexisting@eeemail.com"));
+            Assert.Null(await service.FindByEmailDto("notexisting@eeemail.com"));
         }
 
         [Test]
