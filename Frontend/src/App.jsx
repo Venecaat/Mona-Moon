@@ -58,7 +58,7 @@ export const App = () => {
                 - add route restrictions in frontend here in App
                 - add Profile page
                 - change session storage to cookies backend or frontend
-                - add Remember me option to Login
+                - implement Remember me option in Login
                 - after registration navigate to Login or maybe a verification page or modal
                 - make forgot password - maybe in modal
                 - email verification

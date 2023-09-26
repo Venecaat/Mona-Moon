@@ -13,7 +13,8 @@ export const Login = ({ setEmail }) => {
             <Formik
                 initialValues={{
                     email: "",
-                    password: ""
+                    password: "",
+                    remember: false
                 }}
                 onSubmit={ async (values) => {
                     const response = await UsersApi.login(values.email, values.password);
@@ -39,23 +40,33 @@ export const Login = ({ setEmail }) => {
                             <label htmlFor="password">Jelszó</label>
                             <Field type="password" id="password" name="password" placeholder="Jelszó"
                                    className="input input-bordered text-xl w-full text-primary focus:outline-none focus:border-2 focus:border-primary" />
+
+                            {/* MAKE IT MODAL? */}
                             <Link to="/jelszo-visszaallitas" className="text-lg text-primary hover:text-accent
                                 ease-in-out duration-200">
                                 Elfelejtetted a jelszavad?
                             </Link>
                         </div>
                         <div>
-                            <button type="submit" className="btn w-full mt-4 bg-secondary border-secondary text-xl text-primary
-                            hover:bg-accent hover:border-accent">
-                                Bejelentkezés
-                            </button>
-
-                            {/* MAKE IT MODAL? */}
-                            <Link to="/regisztracio" className="text-lg text-primary hover:text-accent
-                            ease-in-out duration-200">
-                                Még nincs felhasználód?
-                            </Link>
-                            { showInvalidCredentialsErrorMsg ? (<FieldErrorMsg extraClasses="text-center mt-2" errorMsg="Hibás E-mail cím vagy jelszó!" />) : null }
+                            <div>
+                                <button type="submit" className="btn w-full mt-4 bg-secondary border-secondary text-xl text-primary
+                                hover:bg-accent hover:border-accent">
+                                    Bejelentkezés
+                                </button>
+                            </div>
+                            <div className="label justify-normal">
+                                <Field type="checkbox" id="remember" name="remember" className="toggle toggle-primary mr-2" />
+                                <label className="flex">
+                                    <span className="text-lg text-primary items-center">Remember me</span>
+                                </label>
+                            </div>
+                            <div>
+                                <Link to="/regisztracio" className="text-lg text-primary hover:text-accent
+                                ease-in-out duration-200">
+                                    Még nincs felhasználód?
+                                </Link>
+                                { showInvalidCredentialsErrorMsg ? (<FieldErrorMsg extraClasses="text-center mt-2" errorMsg="Hibás E-mail cím vagy jelszó!" />) : null }
+                            </div>
                         </div>
                     </Form>
                 )}
