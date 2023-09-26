@@ -17,10 +17,12 @@ export const Register = () => {
             .min(2, "Min 2 karakter hosszúnak kell lennie!"),
         email: Yup.string()
             .required("Kötelező megadni!")
-            .matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$", {message: "Érvénytelen email cím formátum!"}),
+            .matches("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$", { message: "Érvénytelen email cím formátum!" }),
         password: Yup.string()
             .required("Kötelező megadni!")
-            .min(8, "Min 8 karakter hosszúnak kell lennie!"),
+            .max(32, "Max 32 karakter hosszú lehet!")
+            .matches("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$",
+                { message: "A jelszónak minimum 8 karakterből kell állnia, és tartalmaznia kell 1 nagybetűt, kisbetűt, számot és speciális karaktert!" }),
         passwordConfirm: Yup.string()
             .required("Kötelező megadni!")
             .oneOf([Yup.ref("password")], "Nem egyezik!")
@@ -36,7 +38,7 @@ export const Register = () => {
                     password: "",
                     passwordConfirm: ""
                 }}
-                validationSchema={RegisterSchema}
+                validationSchema={ RegisterSchema }
                 onSubmit={ async (values) => {
                     const user = await UsersApi.register(values.lastName, values.firstName, values.email, values.password);
 

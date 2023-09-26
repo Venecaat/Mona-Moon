@@ -51,7 +51,6 @@ export const App = () => {
               <Route path="/kijelentkezes" element={<Logout setEmail={setEmail} />}></Route>
 
           {/*  TODO:
-                - add password requirements in Register
                 - add email check here or backend eg.: asd@fgh - if there is no domain at the end
                 - fix Main Page
                 - show user in account menu
