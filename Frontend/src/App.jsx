@@ -52,7 +52,6 @@ export const App = () => {
 
           {/*  TODO:
                 - add email check here or backend eg.: asd@fgh - if there is no domain at the end
-                - fix Main Page
                 - fix backend environment variables
                 - add route restrictions in frontend here in App
                 - add Profile page
