@@ -5,7 +5,6 @@ namespace Backend.Dtos.User
     public class LoginUser : BaseUser
     {
         [Required]
-        [DataType(DataType.Password)]
-        public required string Password { get; set; }
+        public required string Email { get; set; }
     }
 }

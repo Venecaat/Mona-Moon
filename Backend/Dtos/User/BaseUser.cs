@@ -5,7 +5,7 @@ namespace Backend.Dtos.User
     public abstract class BaseUser
     {
         [Required]
-        [RegularExpression("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")]
-        public required string Email { get; set; }
+        [DataType(DataType.Password)]
+        public required string Password { get; set; }
     }
 }
