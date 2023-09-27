@@ -1,5 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Formik, Form, Field } from "formik";
+import * as Yup from "yup";
 import { FieldErrorMsg } from "../../components/form/FieldErrorMsg.jsx";
 import { UsersApi } from "../../api/UsersApi.jsx";
 import PropTypes from "prop-types";
@@ -7,6 +8,13 @@ import PropTypes from "prop-types";
 export const Login = ({ setEmail }) => {
     let showInvalidCredentialsErrorMsg = false;
     const navigate = useNavigate();
+
+    const LoginSchema = Yup.object().shape({
+        email: Yup.string()
+            .required("Kötelező megadni!"),
+        password: Yup.string()
+            .required("Kötelező megadni!")
+    })
 
     return (
         <div className="text-2xl font-semibold">
@@ -16,6 +24,7 @@ export const Login = ({ setEmail }) => {
                     password: "",
                     remember: false
                 }}
+                validationSchema={ LoginSchema }
                 onSubmit={ async (values) => {
                     const response = await UsersApi.login(values.email, values.password);
 
@@ -27,19 +36,20 @@ export const Login = ({ setEmail }) => {
                         navigate("/");
                     }
                 }}>
-                {() => (
+                {({ errors, touched }) => (
                     <Form className="card flex-shrink-0 w-full max-w-sm shadow-2xl mx-auto p-8 gap-4">
                         <h1 className="text-4xl text-primary font-bold text-center mb-6">Bejelentkezés</h1>
                         <div>
                             <label htmlFor="email">Email</label>
-                            <Field type="email" id="email" name="email" placeholder="Email"
-                                   className="input input-bordered text-xl w-full text-primary focus:outline-none focus:border-2 focus:border-primary"
-                            />
+                            <Field id="email" name="email" placeholder="Email"
+                                   className="input input-bordered text-xl w-full text-primary focus:outline-none focus:border-2 focus:border-primary" />
+                            { errors.email && touched.email ? ( <FieldErrorMsg errorMsg={ errors.email } /> ) : null}
                         </div>
                         <div>
                             <label htmlFor="password">Jelszó</label>
                             <Field type="password" id="password" name="password" placeholder="Jelszó"
                                    className="input input-bordered text-xl w-full text-primary focus:outline-none focus:border-2 focus:border-primary" />
+                            { errors.password && touched.password ? ( <FieldErrorMsg errorMsg={ errors.password } /> ) : null}
 
                             {/* MAKE IT MODAL? */}
                             <Link to="/jelszo-visszaallitas" className="text-lg text-primary hover:text-accent

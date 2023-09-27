@@ -51,7 +51,6 @@ export const App = () => {
               <Route path="/kijelentkezes" element={<Logout setEmail={setEmail} />}></Route>
 
           {/*  TODO:
-                - add email check here or backend eg.: asd@fgh - if there is no domain at the end
                 - fix backend environment variables
                 - add route restrictions in frontend here in App
                 - add Profile page
@@ -62,7 +61,6 @@ export const App = () => {
                 - email verification
                 - increase cookie expiry time
                 - use Cloudinary
-                - add field check in Login in frontend
                 - more unit tests for backend
             */}
 
