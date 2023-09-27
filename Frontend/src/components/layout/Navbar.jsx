@@ -107,6 +107,7 @@ export const Navbar = ({ email }) => {
                 </ul>
             </div>
 
+            {/* ALWAYS VISIBLE */}
             <div className="navbar-center lg:hidden flex">
                 <Link to="/" className="btn btn-ghost normal-case text-xl">Mona Moon</Link>
             </div>
@@ -120,7 +121,7 @@ export const Navbar = ({ email }) => {
                             <circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/>
                         </svg>
                     </label>
-                    <ul className="menu dropdown-content bg-primary text-secondary rounded-box font-bold mt-3 lg:mt-0 p-2 z-10 w-40">
+                    <ul className="menu dropdown-content bg-primary text-secondary rounded-box font-bold mt-3 lg:mt-0 p-2 z-10 w-52">
                         { !email ?
                             <div>
                                 <li><Link to="/bejelentkezes" className="hover:text-accent">Bejelentkezés</Link></li>
@@ -129,6 +130,18 @@ export const Navbar = ({ email }) => {
                         }
                         { email ?
                             <div>
+                                <div className="text-base-100 px-4 max-h-14">
+                                    <div className="avatar w-full">
+                                        <div className="w-12 max-h-12 rounded-full mr-4">
+                                            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                        </div>
+                                        <div className="text-center">
+                                            <h5>Lágymányosi</h5>
+                                            <h5>Georgina</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr className="w-11/12 mx-auto border-1 border-secondary rounded" />
                                 <li><Link to="/kijelentkezes" className="hover:text-accent">Kijelentkezés</Link></li>
                             </div> : null
                         }
