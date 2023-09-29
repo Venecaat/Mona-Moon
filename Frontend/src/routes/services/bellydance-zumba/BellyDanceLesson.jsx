@@ -1,10 +1,10 @@
-import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
-import { WarningBox } from "../../../components/WarningBox.jsx";
-import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
-import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
-import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
-import { OLParagraph } from "../../../components/OLParagraph.jsx";
-import { ULParagraph } from "../../../components/ULParagraph.jsx";
+import { HeaderDividerLine } from "../../../components/content/HeaderDividerLine.jsx";
+import { WarningBox } from "../../../components/content/WarningBox.jsx";
+import { WarningBoxElement } from "../../../components/content/WarningBoxElement.jsx";
+import { NormalParagraph } from "../../../components/content/NormalParagraph.jsx";
+import { ServiceHeader } from "../../../components/content/ServiceHeader.jsx";
+import { OLParagraph } from "../../../components/content/OLParagraph.jsx";
+import { ULParagraph } from "../../../components/content/ULParagraph.jsx";
 
 export const BellyDanceLesson = () => {
     return (

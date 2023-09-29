@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
-import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
-import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
-import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
-import { ULParagraph } from "../../../components/ULParagraph.jsx";
+import { HeaderDividerLine } from "../../../components/content/HeaderDividerLine.jsx";
+import { NormalParagraph } from "../../../components/content/NormalParagraph.jsx";
+import { HighlightedParagraph } from "../../../components/content/HighlightedParagraph.jsx";
+import { ServiceHeader } from "../../../components/content/ServiceHeader.jsx";
+import { ULParagraph } from "../../../components/content/ULParagraph.jsx";
 
 export const Childcare = () => {
     return (

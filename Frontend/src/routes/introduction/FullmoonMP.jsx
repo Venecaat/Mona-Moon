@@ -1,5 +1,5 @@
-import { NormalParagraph } from "../../components/NormalParagraph.jsx";
-import { ULParagraph } from "../../components/ULParagraph.jsx";
+import { NormalParagraph } from "../../components/content/NormalParagraph.jsx";
+import { ULParagraph } from "../../components/content/ULParagraph.jsx";
 import { Header } from "../../components/mainpage/Header.jsx";
 
 export const FullmoonMP = () => {

@@ -1,10 +1,10 @@
-import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
-import { InfoBox } from "../../../components/InfoBox.jsx";
-import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
-import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
-import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
-import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
-import { ULParagraph } from "../../../components/ULParagraph.jsx";
+import { HeaderDividerLine } from "../../../components/content/HeaderDividerLine.jsx";
+import { InfoBox } from "../../../components/content/InfoBox.jsx";
+import { InfoBoxElement } from "../../../components/content/InfoBoxElement.jsx";
+import { NormalParagraph } from "../../../components/content/NormalParagraph.jsx";
+import { HighlightedParagraph } from "../../../components/content/HighlightedParagraph.jsx";
+import { ServiceHeader } from "../../../components/content/ServiceHeader.jsx";
+import { ULParagraph } from "../../../components/content/ULParagraph.jsx";
 
 export const CaesareanSection = () => {
     return (
