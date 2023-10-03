@@ -51,7 +51,6 @@ export const App = () => {
               <Route path="/kijelentkezes" element={<Logout setEmail={setEmail} />}></Route>
 
           {/*  TODO:
-                - fix backend environment variables
                 - add route restrictions in frontend here in App
                 - add Profile page
                 - change session storage to cookies backend or frontend
