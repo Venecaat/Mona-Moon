@@ -52,7 +52,7 @@ export const App = () => {
 
           {/*  TODO:
                 - add route restrictions in frontend here in App
-                - add Profile page
+                - edit Profile page
                 - change session storage to cookies backend or frontend
                 - implement Remember me option in Login
                 - after registration navigate to Login or maybe a verification page or modal
