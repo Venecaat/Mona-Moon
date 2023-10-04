@@ -5,7 +5,7 @@ import { FieldErrorMsg } from "../../components/form/FieldErrorMsg.jsx";
 import { UsersApi } from "../../api/UsersApi.jsx";
 import PropTypes from "prop-types";
 
-export const Login = ({ setEmail }) => {
+export const Login = ({ setEmail, setLastName, setFirstName }) => {
     let showInvalidCredentialsErrorMsg = false;
     const navigate = useNavigate();
 
@@ -32,7 +32,13 @@ export const Login = ({ setEmail }) => {
 
                     if (response.status === 200) {
                         setEmail(response.user.email);
+                        setLastName(response.user.lastName);
+                        setFirstName(response.user.firstName);
+
                         sessionStorage.setItem("email", response.user.email);
+                        sessionStorage.setItem("lastName", response.user.lastName);
+                        sessionStorage.setItem("firstName", response.user.firstName);
+
                         navigate("/");
                     }
                 }}>
@@ -86,5 +92,7 @@ export const Login = ({ setEmail }) => {
 }
 
 Login.propTypes = {
-    setEmail: PropTypes.func
+    setEmail: PropTypes.func,
+    setLastName: PropTypes.func,
+    setFirstName: PropTypes.func
 };

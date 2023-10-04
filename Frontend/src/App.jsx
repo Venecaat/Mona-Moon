@@ -15,12 +15,15 @@ import { ZumbaPerformance } from "./routes/services/bellydance-zumba/ZumbaPerfor
 import { Login } from "./routes/auth/Login.jsx";
 import { Register } from "./routes/auth/Register.jsx";
 import { Logout } from "./routes/auth/Logout.jsx";
+import { Profile } from "./routes/profile/Profile.jsx";
 
 export const App = () => {
     const [email, setEmail] = useState(sessionStorage.getItem("email"));
+    const [lastName, setLastName] = useState(sessionStorage.getItem("lastName"));
+    const [firstName, setFirstName] = useState(sessionStorage.getItem("firstName"));
 
   return (
-      <Layout email={email}>
+      <Layout email={ email } lastName={ lastName } firstName={ firstName }>
           <Routes>
               <Route path="/" element={<MainPage />}></Route>
               <Route path="/orarend" element={<Timetable />}></Route>
@@ -47,8 +50,22 @@ export const App = () => {
 
               {/* LOGIN / REGISTER */}
               <Route path="/regisztracio" element={<Register />}></Route>
-              <Route path="/bejelentkezes" element={<Login setEmail={setEmail} />}></Route>
-              <Route path="/kijelentkezes" element={<Logout setEmail={setEmail} />}></Route>
+              <Route path="/bejelentkezes" element={<Login setEmail={ setEmail } setLastName={ setLastName } setFirstName={ setFirstName } />}></Route>
+              <Route path="/kijelentkezes" element={<Logout setEmail={ setEmail } setLastName={ setLastName } setFirstName={ setFirstName } />}></Route>
+
+              {/* LOGIN / REGISTER */}
+              { !email && (
+                  <Route path="/regisztracio" element={<Register />}></Route>
+              )}
+              { !email && (
+                  <Route path="/bejelentkezes" element={<Login setEmail={ setEmail } />}></Route>
+              )}
+              { email && (
+                  <Route path="/kijelentkezes" element={<Logout setEmail={ setEmail } />}></Route>
+              )}
+
+              {/* PROFILE */}
+              <Route path={"/profil/" + lastName + "-" + firstName} element={<Profile />}></Route>
 
           {/*  TODO:
                 - add route restrictions in frontend here in App

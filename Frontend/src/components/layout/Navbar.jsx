@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export const Navbar = ({ email }) => {
+export const Navbar = ({ email, lastName, firstName }) => {
     return (
         <div className="navbar bg-primary text-primary-content max-h-12">
             {/* TABLET/MOBILE MENU */}
@@ -129,21 +129,23 @@ export const Navbar = ({ email }) => {
                             </div> : null
                         }
                         { email ?
-                            <div>
-                                <div className="text-base-100 px-4 max-h-14">
-                                    <div className="avatar w-full">
-                                        <div className="w-12 max-h-12 rounded-full mr-4">
-                                            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                                        </div>
-                                        <div className="text-center">
-                                            <h5>Lágymányosi</h5>
-                                            <h5>Georgina</h5>
+                            (<div>
+                                <Link to={"/profil/" + lastName + "-" + firstName}>
+                                    <div className="text-base-100 px-4 hover:text-accent">
+                                        <div className="avatar grid grid-cols-3 w-full max-h-14">
+                                            <div className="w-12 max-h-12 rounded-full">
+                                                <img src="/src/assets/images/profile_img_tmp_small.png" />
+                                            </div>
+                                            <div className="text-center col-span-2 max-h-14 w-full">
+                                                <h5>{ lastName }</h5>
+                                                <h5>{ firstName }</h5>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                                 <hr className="w-11/12 mx-auto border-1 border-secondary rounded" />
                                 <li><Link to="/kijelentkezes" className="hover:text-accent">Kijelentkezés</Link></li>
-                            </div> : null
+                            </div> ) : null
                         }
                     </ul>
                 </div>
@@ -153,5 +155,7 @@ export const Navbar = ({ email }) => {
 }
 
 Navbar.propTypes = {
-    email: PropTypes.string
+    email: PropTypes.string,
+    lastName: PropTypes.string,
+    firstName: PropTypes.string
 };
