@@ -59,15 +59,6 @@ export const Profile = () => {
                                 <div className="grid gap-6 my-4 lg:my-0 w-full text-center">
                                     <h3>{ lastName + " " + firstName }</h3>
                                     <h3>{ email }</h3>
-                                    <button type="button" className="btn w-11/12 md:w-1/2 lg:w-4/6 h-fit p-1 mx-auto bg-secondary text-primary font-bold border-secondary text-xl hover:bg-accent hover:border-accent">
-                                        Név megváltoztatása
-                                    </button>
-                                    <button type="button" className="btn w-11/12 md:w-1/2 lg:w-4/6 h-fit p-1 mx-auto bg-secondary text-primary font-bold border-secondary text-xl hover:bg-accent hover:border-accent">
-                                        E-mail cím megváltoztatása
-                                    </button>
-                                    <button type="button" className="btn w-11/12 md:w-1/2 lg:w-4/6 h-fit p-1 mx-auto bg-secondary text-primary font-bold border-secondary text-xl hover:bg-accent hover:border-accent">
-                                        Jelszó megváltoztatása
-                                    </button>
                                 </div>
                             </div>
                         </div>
