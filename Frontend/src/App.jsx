@@ -22,8 +22,11 @@ export const App = () => {
     const [lastName, setLastName] = useState(sessionStorage.getItem("lastName"));
     const [firstName, setFirstName] = useState(sessionStorage.getItem("firstName"));
 
+    const lowerLastName = lastName?.toLowerCase();
+    const lowerFirstName = firstName?.toLowerCase();
+
   return (
-      <Layout email={ email } lastName={ lastName } firstName={ firstName }>
+      <Layout email={ email } lastName={ lastName } firstName={ firstName } lowerLastName={lowerLastName} lowerFirstName={lowerFirstName} >
           <Routes>
               <Route path="/" element={<MainPage />}></Route>
               <Route path="/orarend" element={<Timetable />}></Route>
@@ -65,7 +68,7 @@ export const App = () => {
               )}
 
               {/* PROFILE */}
-              <Route path={"/profil/" + lastName + "-" + firstName} element={<Profile />}></Route>
+              <Route path={"/profil/" + lowerLastName + "-" + lowerFirstName} element={<Profile />}></Route>
 
           {/*  TODO:
                 - add route restrictions in frontend here in App

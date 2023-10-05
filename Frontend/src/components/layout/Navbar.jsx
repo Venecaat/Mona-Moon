@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export const Navbar = ({ email, lastName, firstName }) => {
+export const Navbar = ({ email, lastName, firstName, lowerLastName, lowerFirstName }) => {
     return (
         <div className="navbar bg-primary text-primary-content max-h-12">
             {/* TABLET/MOBILE MENU */}
@@ -130,7 +130,7 @@ export const Navbar = ({ email, lastName, firstName }) => {
                         }
                         { email ?
                             (<div>
-                                <Link to={"/profil/" + lastName + "-" + firstName}>
+                                <Link to={"/profil/" + lowerLastName + "-" + lowerFirstName}>
                                     <div className="text-base-100 px-4 hover:text-accent">
                                         <div className="avatar grid grid-cols-3 w-full max-h-14">
                                             <div className="w-12 max-h-12 rounded-full">
@@ -157,5 +157,7 @@ export const Navbar = ({ email, lastName, firstName }) => {
 Navbar.propTypes = {
     email: PropTypes.string,
     lastName: PropTypes.string,
-    firstName: PropTypes.string
+    firstName: PropTypes.string,
+    lowerLastName: PropTypes.string,
+    lowerFirstName: PropTypes.string
 };
