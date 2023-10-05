@@ -12,6 +12,11 @@ export class UsersApi {
         return await res.data;
     }
 
+    static async getUser() {
+        const res = await axios.get(`${API_URL}/User/CurrentUser`, { withCredentials : true });
+        return await res.data;
+    }
+
     static async register(lastName, firstName, email, password) {
         let errorMsg = "";
         let errorStatusCode;
