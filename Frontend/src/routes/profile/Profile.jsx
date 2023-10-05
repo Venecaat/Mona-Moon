@@ -1,7 +1,24 @@
-import {useState} from "react";
+import { useEffect, useState } from "react";
+import { UsersApi } from "../../api/UsersApi.jsx";
 
 export const Profile = () => {
     const [isProfile, setIsProfile] = useState(true);
+    const [lastName, setLastName] = useState();
+    const [firstName, setFirstName] = useState();
+    const [email, setEmail] = useState();
+
+    useEffect(() => {
+        const getCurrentUser = async () => {
+            const currentUser = await UsersApi.getUser();
+
+            setLastName(currentUser.lastName);
+            setFirstName(currentUser.firstName);
+            setEmail(currentUser.email);
+        }
+        getCurrentUser();
+
+    }, [])
+
     const changeTab = (key) => {
         const profileButton = document.getElementById("profile-btn");
         const settingsButton = document.getElementById("settings-btn");
@@ -40,8 +57,8 @@ export const Profile = () => {
                             <div className="hero-content flex-col lg:flex-row px-0 md:p-4 w-full justify-normal">
                                 <img src="/src/assets/images/profile_img_tmp.jpg" className="max-w-xs sm:max-w-sm rounded-lg shadow-2xl lg:mr-8" />
                                 <div className="grid gap-6 my-4 lg:my-0 w-full text-center">
-                                    <h3>Focalors alias Lady Furina</h3>
-                                    <h3>hydro.archon@fontaine.fo</h3>
+                                    <h3>{ lastName + " " + firstName }</h3>
+                                    <h3>{ email }</h3>
                                     <button type="button" className="btn w-11/12 md:w-1/2 lg:w-4/6 h-fit p-1 mx-auto bg-secondary text-primary font-bold border-secondary text-xl hover:bg-accent hover:border-accent">
                                         Név megváltoztatása
                                     </button>
