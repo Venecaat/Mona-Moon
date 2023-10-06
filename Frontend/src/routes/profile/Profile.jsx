@@ -3,17 +3,19 @@ import { UsersApi } from "../../api/UsersApi.jsx";
 
 export const Profile = () => {
     const [isProfile, setIsProfile] = useState(true);
-    const [lastName, setLastName] = useState();
-    const [firstName, setFirstName] = useState();
-    const [email, setEmail] = useState();
+    const [lastName, setLastName] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [email, setEmail] = useState("");
 
     useEffect(() => {
         const getCurrentUser = async () => {
             const currentUser = await UsersApi.getUser();
 
-            setLastName(currentUser.lastName);
-            setFirstName(currentUser.firstName);
-            setEmail(currentUser.email);
+            if (currentUser !== null) {
+                setLastName(currentUser.lastName);
+                setFirstName(currentUser.firstName);
+                setEmail(currentUser.email);
+            }
         }
         getCurrentUser();
 
