@@ -15,12 +15,18 @@ import { ZumbaPerformance } from "./routes/services/bellydance-zumba/ZumbaPerfor
 import { Login } from "./routes/auth/Login.jsx";
 import { Register } from "./routes/auth/Register.jsx";
 import { Logout } from "./routes/auth/Logout.jsx";
+import { Profile } from "./routes/profile/Profile.jsx";
 
 export const App = () => {
     const [email, setEmail] = useState(sessionStorage.getItem("email"));
+    const [lastName, setLastName] = useState(sessionStorage.getItem("lastName"));
+    const [firstName, setFirstName] = useState(sessionStorage.getItem("firstName"));
+
+    const lowerLastName = lastName?.toLowerCase();
+    const lowerFirstName = firstName?.toLowerCase();
 
   return (
-      <Layout email={email}>
+      <Layout email={ email } lastName={ lastName } firstName={ firstName } lowerLastName={lowerLastName} lowerFirstName={lowerFirstName} >
           <Routes>
               <Route path="/" element={<MainPage />}></Route>
               <Route path="/orarend" element={<Timetable />}></Route>
@@ -47,25 +53,33 @@ export const App = () => {
 
               {/* LOGIN / REGISTER */}
               <Route path="/regisztracio" element={<Register />}></Route>
-              <Route path="/bejelentkezes" element={<Login setEmail={setEmail} />}></Route>
-              <Route path="/kijelentkezes" element={<Logout setEmail={setEmail} />}></Route>
+              <Route path="/bejelentkezes" element={<Login setEmail={ setEmail } setLastName={ setLastName } setFirstName={ setFirstName } />}></Route>
+              <Route path="/kijelentkezes" element={<Logout setEmail={ setEmail } setLastName={ setLastName } setFirstName={ setFirstName } />}></Route>
+
+              {/* LOGIN / REGISTER */}
+              { !email && (
+                  <Route path="/regisztracio" element={<Register />}></Route>
+              )}
+              { !email && (
+                  <Route path="/bejelentkezes" element={<Login setEmail={ setEmail } />}></Route>
+              )}
+              { email && (
+                  <Route path="/kijelentkezes" element={<Logout setEmail={ setEmail } />}></Route>
+              )}
+
+              {/* PROFILE */}
+              <Route path={"/profil/" + lowerLastName + "-" + lowerFirstName} element={<Profile />}></Route>
 
           {/*  TODO:
-                - add password requirements in Register
-                - add email check here or backend eg.: asd@fgh - if there is no domain at the end
-                - fix Main Page
-                - show user in account menu
-                - fix backend environment variables
                 - add route restrictions in frontend here in App
-                - add Profile page
+                - implement buttons in settings tab in Profile page
                 - change session storage to cookies backend or frontend
-                - add Remember me option to Login
+                - implement Remember me option in Login
                 - after registration navigate to Login or maybe a verification page or modal
                 - make forgot password - maybe in modal
                 - email verification
                 - increase cookie expiry time
                 - use Cloudinary
-                - add field check in Login in frontend
                 - more unit tests for backend
             */}
 

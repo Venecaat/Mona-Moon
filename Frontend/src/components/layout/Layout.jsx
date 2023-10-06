@@ -1,9 +1,9 @@
-import PropTypes from "prop-types";
+import { useEffect } from "react";
 import { Footer } from "./Footer.jsx";
 import { Navbar } from "./Navbar.jsx";
-import { useEffect } from "react";
+import PropTypes from "prop-types";
 
-export const Layout = ({ children, email }) => {
+export const Layout = ({ children, email, lastName, firstName, lowerLastName, lowerFirstName }) => {
     useEffect(() => {
         const backToTopButton = document.getElementById("backToTop");
 
@@ -19,7 +19,7 @@ export const Layout = ({ children, email }) => {
 
     return (
         <div className="flex flex-col justify-between h-screen">
-            <Navbar email={email} />
+            <Navbar email={ email } lastName={ lastName } firstName={ firstName } lowerLastName={lowerLastName} lowerFirstName={lowerFirstName} />
                 <main className="max-w-5xl w-full mx-auto my-6">
                     { children }
                 </main>
@@ -37,5 +37,9 @@ export const Layout = ({ children, email }) => {
 
 Layout.propTypes = {
     children: PropTypes.any,
-    email: PropTypes.string
+    email: PropTypes.string,
+    lastName: PropTypes.string,
+    firstName: PropTypes.string,
+    lowerLastName: PropTypes.string,
+    lowerFirstName: PropTypes.string
 };

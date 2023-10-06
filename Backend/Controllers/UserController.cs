@@ -36,12 +36,19 @@ namespace Backend.Controllers
         }
 
         [Authorize]
-        [HttpGet("{id}")]
+        [HttpGet]
+        [Route("CurrentUser")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public async Task<ActionResult<PublicUser>> GetUserById(int id)
+        public async Task<ActionResult<PublicUser>> GetCurrentUser()
         {
+            string? currentUser = HttpContext.User.Identity?.Name;
+
+            if (currentUser is null) return StatusCode(StatusCodes.Status401Unauthorized);
+            int id = int.Parse(currentUser);
+
             try
             {
                 PublicUser? user = await _userService.Find(id);

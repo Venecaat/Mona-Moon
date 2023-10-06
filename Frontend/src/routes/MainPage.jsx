@@ -17,10 +17,21 @@ export const MainPage = () => {
                     </div>
                 </div>
             </div>
-            <Header title="Mi érdekel?" classes="text-center" />
+            <Header title="Hastánc - Zumba" classes="text-center" />
             <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-y-5">
-                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Hastánc - Zumba" />
-                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Telihold Anyaoltalom" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Hastánc Órák" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Hastánc Fellépés" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Zumba Órák" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Zumba Fellépés" />
+            </div>
+            <Header title="Telihold Anyaoltalom" classes="text-center" />
+            <div className="grid grid-cols-1 lg:grid-cols-2 justify-items-center gap-y-5">
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Fitmummy Várandós Hastánc" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Fitmummy Várandós Latin Fitness" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Dúlai Támogatás" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Gyermekágyas Gondoskodás" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Császármetszés Feldolgozó Csoport" />
+                <ServiceCard imageLink="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" linkTitle="Szülésáldó Ünnep" />
             </div>
         </div>
     )

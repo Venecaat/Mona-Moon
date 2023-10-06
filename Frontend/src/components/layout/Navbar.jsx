@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
-export const Navbar = ({ email }) => {
+export const Navbar = ({ email, lastName, firstName, lowerLastName, lowerFirstName }) => {
     return (
         <div className="navbar bg-primary text-primary-content max-h-12">
             {/* TABLET/MOBILE MENU */}
@@ -107,6 +107,7 @@ export const Navbar = ({ email }) => {
                 </ul>
             </div>
 
+            {/* ALWAYS VISIBLE */}
             <div className="navbar-center lg:hidden flex">
                 <Link to="/" className="btn btn-ghost normal-case text-xl">Mona Moon</Link>
             </div>
@@ -120,7 +121,7 @@ export const Navbar = ({ email }) => {
                             <circle cx="12" cy="10" r="3"/><circle cx="12" cy="12" r="10"/>
                         </svg>
                     </label>
-                    <ul className="menu dropdown-content bg-primary text-secondary rounded-box font-bold mt-3 lg:mt-0 p-2 z-10 w-40">
+                    <ul className="menu dropdown-content bg-primary text-secondary rounded-box font-bold mt-3 lg:mt-0 p-2 z-10 w-52">
                         { !email ?
                             <div>
                                 <li><Link to="/bejelentkezes" className="hover:text-accent">Bejelentkezés</Link></li>
@@ -128,9 +129,23 @@ export const Navbar = ({ email }) => {
                             </div> : null
                         }
                         { email ?
-                            <div>
+                            (<div>
+                                <Link to={"/profil/" + lowerLastName + "-" + lowerFirstName}>
+                                    <div className="text-base-100 px-4 hover:text-accent">
+                                        <div className="avatar grid grid-cols-3 w-full max-h-14">
+                                            <div className="w-12 max-h-12 rounded-full">
+                                                <img src="/src/assets/images/profile_img_tmp_small.png" />
+                                            </div>
+                                            <div className="text-center col-span-2 max-h-14 w-full">
+                                                <h5>{ lastName }</h5>
+                                                <h5>{ firstName }</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </Link>
+                                <hr className="w-11/12 mx-auto border-1 border-secondary rounded" />
                                 <li><Link to="/kijelentkezes" className="hover:text-accent">Kijelentkezés</Link></li>
-                            </div> : null
+                            </div> ) : null
                         }
                     </ul>
                 </div>
@@ -140,5 +155,9 @@ export const Navbar = ({ email }) => {
 }
 
 Navbar.propTypes = {
-    email: PropTypes.string
+    email: PropTypes.string,
+    lastName: PropTypes.string,
+    firstName: PropTypes.string,
+    lowerLastName: PropTypes.string,
+    lowerFirstName: PropTypes.string
 };

@@ -3,23 +3,24 @@ using Backend.AutoMapper;
 using Backend.Database;
 using Backend.Repositories;
 using Backend.Services;
+using Backend.Utils;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 var mySpecificOrigins = "mySpecificOrigins";
-string? frontendUrl = Environment.GetEnvironmentVariable("FRONTEND_URL");
 
-if (frontendUrl is null) throw new ArgumentNullException(null, "Missing FRONTEND_URL environment variable!");
+DotNetEnv.Env.Load();
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: mySpecificOrigins,
         policy =>
         {
-            policy.WithOrigins(frontendUrl)
+            policy.WithOrigins(EnvVarHelper.FrontendUrl)
                 .AllowAnyMethod()
                 .AllowAnyHeader()
                 .AllowCredentials();
@@ -46,11 +47,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // Add Authentication scheme
-string? jwtTokenKey = Environment.GetEnvironmentVariable("JWT_TOKEN_KEY");
-
-if (jwtTokenKey is null) throw new ArgumentNullException(null, "Missing JWT_TOKEN_KEY environment variable!");
-
-var jwtKey = Encoding.UTF8.GetBytes(jwtTokenKey);
+var jwtKey = Encoding.UTF8.GetBytes(EnvVarHelper.JwtTokenKey);
 builder.Services.AddAuthentication(opt =>
 {
     opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

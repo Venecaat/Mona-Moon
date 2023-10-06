@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
-import { HeaderDividerLine } from "../../../components/HeaderDividerLine.jsx";
-import { WarningBoxElement } from "../../../components/WarningBoxElement.jsx";
-import { WarningBox } from "../../../components/WarningBox.jsx";
-import { InfoBox } from "../../../components/InfoBox.jsx";
-import { InfoBoxElement } from "../../../components/InfoBoxElement.jsx";
-import { NormalParagraph } from "../../../components/NormalParagraph.jsx";
-import { HighlightedParagraph } from "../../../components/HighlightedParagraph.jsx";
-import { ServiceHeader } from "../../../components/ServiceHeader.jsx";
+import { HeaderDividerLine } from "../../../components/content/HeaderDividerLine.jsx";
+import { WarningBoxElement } from "../../../components/content/WarningBoxElement.jsx";
+import { WarningBox } from "../../../components/content/WarningBox.jsx";
+import { InfoBox } from "../../../components/content/InfoBox.jsx";
+import { InfoBoxElement } from "../../../components/content/InfoBoxElement.jsx";
+import { NormalParagraph } from "../../../components/content/NormalParagraph.jsx";
+import { HighlightedParagraph } from "../../../components/content/HighlightedParagraph.jsx";
+import { ServiceHeader } from "../../../components/content/ServiceHeader.jsx";
 
 export const BirthBlessing = () => {
     return (

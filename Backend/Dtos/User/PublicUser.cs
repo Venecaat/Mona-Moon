@@ -2,9 +2,13 @@
 
 namespace Backend.Dtos.User
 {
-    public class PublicUser : BaseUser
+    public class PublicUser
     {
         public required int Id { get; set; }
+
+        [Required]
+        [RegularExpression("^\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*(\\.\\w{2,3})+$")]
+        public required string Email { get; set; }
 
         [Required]
         [StringLength(50, MinimumLength = 2)]
