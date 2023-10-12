@@ -1,4 +1,3 @@
-using System.Text;
 using Backend.AutoMapper;
 using Backend.Database;
 using Backend.Repositories;
@@ -7,6 +6,7 @@ using Backend.Utils;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var mySpecificOrigins = "mySpecificOrigins";
 
@@ -40,7 +40,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
 // Add DB Context
-builder.Services.AddDbContext<MonaMoonDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("MonaMoon")));
+builder.Services.AddDbContext<MonaMoonDbContext>(options => options.UseSqlServer(EnvVarHelper.DbConnectionString));
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
