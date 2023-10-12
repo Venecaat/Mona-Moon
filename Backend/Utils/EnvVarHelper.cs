@@ -8,8 +8,14 @@
         private static string Get(string envKey)
         {
             string? envVar = Environment.GetEnvironmentVariable(envKey);
+            CheckEnvironmentVariableExistence(envKey, envVar);
 
-            return envVar ?? throw new NullReferenceException($"Missing \"{envKey}\" environment variable!");
+            return envVar!;
+        }
+
+        private static void CheckEnvironmentVariableExistence(string envKey, string? envVar)
+        {
+            if (string.IsNullOrEmpty(envVar)) throw new NullReferenceException($"Missing \"{envKey}\" environment variable!");
         }
     }
 }
