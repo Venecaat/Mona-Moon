@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: MonaMoon-DB
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    user: root
+    environment:
+        MSSQL_SA_PASSWORD: "${SA_PASSWORD}"
+        ACCEPT_EULA: "Y"
+    expose:
+        - "${DB_PORT}"
+    command: /bin/bash ./entrypoint.sh
+    restart: on-failure
+    healthcheck:
+        test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-U", "SA", "-P", "${SA_PASSWORD}", "-Q", "SELECT 1"]
+        interval: 10s
+        retries: 12
+    volumes:
+        - mssqldata:/var/opt/mssql/data
+        - ./Backend/Database/CreateDockerDb/createDb.sql:/createDb.sql
+        - ./Backend/Database/CreateDockerDb/entrypoint.sh:/entrypoint.sh
+        - ./Backend/Database/CreateDockerDb/initDb.sh:/initDb.sh
+
+volumes:
+    mssqldata:
