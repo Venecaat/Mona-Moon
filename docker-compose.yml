@@ -22,5 +22,34 @@ services:
         - ./Backend/Database/CreateDockerDb/entrypoint.sh:/entrypoint.sh
         - ./Backend/Database/CreateDockerDb/initDb.sh:/initDb.sh
 
+  backend:
+    container_name: backend
+    image: ${DOCKER_REGISTRY-}backend
+    build:
+      context: Backend
+      dockerfile: Dockerfile
+    ports:
+        - "${BACKEND_PORT}:${BACKEND_PORT_DEF}"
+    expose:
+        - "${BACKEND_PORT}:${BACKEND_PORT_DEF}"
+    depends_on:
+        db:
+            condition: service_healthy
+    environment:
+        JWT_TOKEN_KEY: ${JWT_TOKEN_KEY}
+        FRONTEND_URL: ${FRONTEND_URL}
+        DB_SERVER: ${DB_SERVER}
+        DB_DATABASE: ${DB_DATABASE}
+        DB_ID: ${DB_ID}
+        DB_PASSWORD: ${DB_PASSWORD}
+        ASPNETCORE_URLS: ${ASPNETCORE_URLS}
+        ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+    restart: "on-failure"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "${HEALTH_API_URL}"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+
 volumes:
     mssqldata:
