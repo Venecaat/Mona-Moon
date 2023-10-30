@@ -28,8 +28,6 @@ services:
     build:
       context: Backend
       dockerfile: Dockerfile
-    ports:
-        - "${BACKEND_PORT}:${BACKEND_PORT_DEF}"
     expose:
         - "${BACKEND_PORT}:${BACKEND_PORT_DEF}"
     depends_on:
@@ -50,6 +48,24 @@ services:
       interval: 10s
       timeout: 10s
       retries: 12
+
+  frontend:
+    container_name: frontend
+    image: ${DOCKER_REGISTRY-}frontend
+    build:
+      context: Frontend
+      dockerfile: Dockerfile
+      args:
+        API_URL: ${VITE_API_URL}
+    ports:
+        - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+    environment:
+        VITE_API_URL: ${VITE_API_URL}
+    restart: "on-failure"
+    depends_on:
+        backend:
+            condition: service_healthy
+    command: pnpm dev
 
 volumes:
     mssqldata:
