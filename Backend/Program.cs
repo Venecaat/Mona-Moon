@@ -42,6 +42,9 @@ builder.Services.AddAutoMapper(typeof(MapProfile));
 // Add DB Context
 builder.Services.AddDbContext<MonaMoonDbContext>(options => options.UseSqlServer(EnvVarHelper.DbConnectionString));
 
+// Add health checks
+builder.Services.AddHealthChecks();
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -74,6 +77,8 @@ builder.Services.AddAuthentication(opt =>
 });
 
 var app = builder.Build();
+
+app.MapHealthChecks("/api/health");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
