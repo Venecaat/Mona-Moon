@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Backend.Utils;
 
 namespace Backend.Services
 {
@@ -18,9 +19,7 @@ namespace Backend.Services
         {
             _userService = userService;
             _mapper = mapper;
-            _jwtTokenKey = Environment.GetEnvironmentVariable("JWT_TOKEN_KEY");
-
-            if (_jwtTokenKey is null) throw new ArgumentNullException(null, "Missing JWT_TOKEN_KEY environment variable!");
+            _jwtTokenKey = EnvVarHelper.JwtTokenKey;
         }
 
         public RegisterUser HashPw(RegisterUser user)
