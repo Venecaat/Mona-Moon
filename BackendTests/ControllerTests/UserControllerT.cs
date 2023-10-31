@@ -1,4 +1,5 @@
-﻿using Backend.Services;
+﻿using System.Security.Claims;
+using Backend.Services;
 using Moq;
 using Backend.Controllers;
 using AutoMapper;
@@ -6,9 +7,10 @@ using Backend.AutoMapper;
 using Backend.Database;
 using Backend.Repositories;
 using Microsoft.EntityFrameworkCore;
-using Backend.Database.Models.User;
 using Backend.Dtos.User;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Principal;
 
 namespace BackendTests.ControllerTests
 {
@@ -109,6 +111,129 @@ namespace BackendTests.ControllerTests
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
             int expectedStatusCode = 400;
+
+            Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
+        }
+
+        [Test]
+        public void GetCurrentUser_ReturnsHttpStatusCode200()
+        {
+            PublicUser user = new PublicUser
+            {
+                Id = 325,
+                Email = "test@email.com",
+                FirstName = "Test",
+                LastName = "User",
+                IsAdmin = false
+            };
+            
+            Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
+            GenericIdentity mockIdentity = new GenericIdentity($"{user.Id}");
+            GenericPrincipal mockPrincipal = new GenericPrincipal(mockIdentity, null);
+
+            mockHttpContext.Setup(t => t.User).Returns(mockPrincipal);
+
+            _controller.ControllerContext.HttpContext = mockHttpContext.Object;
+
+            _userService.Setup(x => x.Find(user.Id)).Returns(Task.FromResult(user));
+
+            var result = _controller.GetCurrentUser();
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 200;
+
+            Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
+        }
+
+        [Test]
+        public void GetCurrentUser_ReturnsUser()
+        {
+            PublicUser expectedUser = new PublicUser
+            {
+                Id = 325,
+                Email = "test@email.com",
+                FirstName = "Test",
+                LastName = "User",
+                IsAdmin = false
+            };
+
+            Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
+            GenericIdentity mockIdentity = new GenericIdentity($"{expectedUser.Id}");
+            GenericPrincipal mockPrincipal = new GenericPrincipal(mockIdentity, null);
+
+            mockHttpContext.Setup(t => t.User).Returns(mockPrincipal);
+
+            _controller.ControllerContext.HttpContext = mockHttpContext.Object;
+
+            _userService.Setup(x => x.Find(expectedUser.Id)).Returns(Task.FromResult(expectedUser));
+
+            var result = _controller.GetCurrentUser();
+            var resultUser = (result.Result.Result as ObjectResult)?.Value;
+            
+            Util.AreEqualByJson(expectedUser, resultUser);
+        }
+
+        [Test]
+        public void GetCurrentUser_ReturnsHttpStatusCode400()
+        {
+            int id = 325;
+
+            Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
+            GenericIdentity mockIdentity = new GenericIdentity($"{id}");
+            GenericPrincipal mockPrincipal = new GenericPrincipal(mockIdentity, null);
+
+            mockHttpContext.Setup(t => t.User).Returns(mockPrincipal);
+
+            _controller.ControllerContext.HttpContext = mockHttpContext.Object;
+
+            _userService.Setup(x => x.Find(id)).Throws(new ArgumentNullException());
+
+            var result = _controller.GetCurrentUser();
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 400;
+
+            Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
+        }
+
+        [Test]
+        public void GetCurrentUser_ReturnsHttpStatusCode401()
+        {
+            int id = 325;
+
+            Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
+
+            mockHttpContext.Setup(t => t.User.Identity.Name).Returns((string?)null);
+
+            _controller.ControllerContext.HttpContext = mockHttpContext.Object;
+            
+            var result = _controller.GetCurrentUser();
+            var statusCode = (result.Result.Result as StatusCodeResult)?.StatusCode;
+
+            int expectedStatusCode = 401;
+
+            Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
+        }
+
+        [Test]
+        public void GetCurrentUser_ReturnsHttpStatusCode404()
+        {
+            int id = 325;
+
+            Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
+            GenericIdentity mockIdentity = new GenericIdentity($"{id}");
+            GenericPrincipal mockPrincipal = new GenericPrincipal(mockIdentity, null);
+
+            mockHttpContext.Setup(t => t.User).Returns(mockPrincipal);
+
+            _controller.ControllerContext.HttpContext = mockHttpContext.Object;
+
+            _userService.Setup(x => x.Find(id)).Returns(Task.FromResult((PublicUser?)null));
+
+            var result = _controller.GetCurrentUser();
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 404;
 
             Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
         }
