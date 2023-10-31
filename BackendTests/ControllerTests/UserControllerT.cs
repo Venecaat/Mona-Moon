@@ -1,5 +1,4 @@
-﻿using System.Security.Claims;
-using Backend.Services;
+﻿using Backend.Services;
 using Moq;
 using Backend.Controllers;
 using AutoMapper;
@@ -44,7 +43,7 @@ namespace BackendTests.ControllerTests
 
             int expectedStatusCode = 200;
 
-            Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
         }
 
         [Test]
@@ -112,7 +111,7 @@ namespace BackendTests.ControllerTests
 
             int expectedStatusCode = 400;
 
-            Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
         }
 
         [Test]
@@ -142,7 +141,7 @@ namespace BackendTests.ControllerTests
 
             int expectedStatusCode = 200;
 
-            Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
         }
 
         [Test]
@@ -193,7 +192,7 @@ namespace BackendTests.ControllerTests
 
             int expectedStatusCode = 400;
 
-            Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
         }
 
         [Test]
@@ -212,7 +211,7 @@ namespace BackendTests.ControllerTests
 
             int expectedStatusCode = 401;
 
-            Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
         }
 
         [Test]
@@ -235,7 +234,7 @@ namespace BackendTests.ControllerTests
 
             int expectedStatusCode = 404;
 
-            Assert.That(expectedStatusCode, Is.EqualTo(statusCode));
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
         }
     }
 }
