@@ -481,5 +481,107 @@ namespace BackendTests.ControllerTests
 
             Assert.That(statusCode, Is.EqualTo(409));
         }
+
+        [Test]
+        public void Login_ReturnsHttpStatusCode200()
+        {
+            LoginUser user = new LoginUser
+            {
+                Email = "raiden@inazuma.com",
+                Password = "tenshukaku"
+            };
+
+            PublicUser existingUser = new PublicUser
+            {
+                Id = _testId,
+                Email = "raiden@inazuma.com",
+                FirstName = "Raiden",
+                LastName = "Shogun",
+                IsAdmin = false,
+            };
+
+            _authService.Setup(x => x.Authenticate(user)).Returns(Task.FromResult<PublicUser?>(existingUser));
+            _authService.Setup(x => x.GenerateJwt(existingUser)).Returns("generated_jwt_token");
+
+            Mock<IResponseCookies> mockCookies = new Mock<IResponseCookies>();
+            Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
+
+            mockHttpContext.Setup(c => c.Response.Cookies).Returns(mockCookies.Object);
+
+            _controller.ControllerContext.HttpContext = mockHttpContext.Object;
+
+            var result = _controller.Login(user);
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            Assert.That(statusCode, Is.EqualTo(200));
+        }
+
+        [Test]
+        public void Login_ReturnsUser()
+        {
+            LoginUser user = new LoginUser
+            {
+                Email = "raiden@inazuma.com",
+                Password = "tenshukaku"
+            };
+
+            PublicUser expectedUser = new PublicUser
+            {
+                Id = _testId,
+                Email = "raiden@inazuma.com",
+                FirstName = "Raiden",
+                LastName = "Shogun",
+                IsAdmin = false,
+            };
+
+            _authService.Setup(x => x.Authenticate(user)).Returns(Task.FromResult<PublicUser?>(expectedUser));
+            _authService.Setup(x => x.GenerateJwt(expectedUser)).Returns("generated_jwt_token");
+
+            Mock<IResponseCookies> mockCookies = new Mock<IResponseCookies>();
+            Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
+
+            mockHttpContext.Setup(c => c.Response.Cookies).Returns(mockCookies.Object);
+
+            _controller.ControllerContext.HttpContext = mockHttpContext.Object;
+
+            var result = _controller.Login(user);
+            var resultUser = (result.Result.Result as ObjectResult)?.Value;
+
+            Util.AreEqualByJson(expectedUser, resultUser);
+        }
+
+        [Test]
+        public void Login_ReturnsHttpStatusCode400()
+        {
+            LoginUser user = new LoginUser
+            {
+                Email = "raiden@inazuma.com",
+                Password = "tenshukaku"
+            };
+
+            _authService.Setup(x => x.Authenticate(user)).Throws(new ArgumentException());
+
+            var result = _controller.Login(user);
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            Assert.That(statusCode, Is.EqualTo(400));
+        }
+
+        [Test]
+        public void Login_ReturnsHttpStatusCode401()
+        {
+            LoginUser user = new LoginUser
+            {
+                Email = "raiden@inazuma.com",
+                Password = "tenshukaku"
+            };
+
+            _authService.Setup(x => x.Authenticate(user)).Returns(Task.FromResult<PublicUser?>(null));
+
+            var result = _controller.Login(user);
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            Assert.That(statusCode, Is.EqualTo(401));
+        }
     }
 }
