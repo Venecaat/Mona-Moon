@@ -136,7 +136,7 @@ namespace BackendTests.ControllerTests
 
             _controller.ControllerContext.HttpContext = mockHttpContext.Object;
 
-            _userService.Setup(x => x.Find(user.Id)).Returns(Task.FromResult(user));
+            _userService.Setup(x => x.Find(user.Id)).Returns(Task.FromResult<PublicUser?>(user));
 
             var result = _controller.GetCurrentUser();
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
@@ -166,7 +166,7 @@ namespace BackendTests.ControllerTests
 
             _controller.ControllerContext.HttpContext = mockHttpContext.Object;
 
-            _userService.Setup(x => x.Find(expectedUser.Id)).Returns(Task.FromResult(expectedUser));
+            _userService.Setup(x => x.Find(expectedUser.Id)).Returns(Task.FromResult<PublicUser?>(expectedUser));
 
             var result = _controller.GetCurrentUser();
             var resultUser = (result.Result.Result as ObjectResult)?.Value;
@@ -204,7 +204,7 @@ namespace BackendTests.ControllerTests
 
             Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
 
-            mockHttpContext.Setup(t => t.User.Identity.Name).Returns((string?)null);
+            mockHttpContext.Setup(t => t.User.Identity.Name).Returns<string?>(null);
 
             _controller.ControllerContext.HttpContext = mockHttpContext.Object;
             
@@ -229,7 +229,7 @@ namespace BackendTests.ControllerTests
 
             _controller.ControllerContext.HttpContext = mockHttpContext.Object;
 
-            _userService.Setup(x => x.Find(id)).Returns(Task.FromResult((PublicUser?)null));
+            _userService.Setup(x => x.Find(id)).Returns(Task.FromResult<PublicUser?>(null));
 
             var result = _controller.GetCurrentUser();
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
