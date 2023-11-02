@@ -240,6 +240,157 @@ namespace BackendTests.ControllerTests
         }
 
         [Test]
+        public void UpdateUser_ReturnsHttpStatusCode200()
+        {
+            PublicUser existingUser = new PublicUser
+            {
+                Id = 325,
+                Email = "black@dragon.com",
+                FirstName = "Iris",
+                LastName = "Black",
+                IsAdmin = false
+            };
+
+            UpdateUser user = new UpdateUser
+            {
+                Id = 325,
+                Email = "black@dragon.com",
+                FirstName = "Iris",
+                LastName = "Black",
+                Password = "dragonbreath"
+            };
+
+            _userService.Setup(x => x.FindByEmailDto(user.Email)).Returns(Task.FromResult<PublicUser?>(null));
+            _userService.Setup(x => x.Find(user.Id)).Returns(Task.FromResult<PublicUser?>(existingUser));
+            _userService.Setup(x => x.Update(user)).Returns(Task.FromResult(existingUser));
+
+            var result = _controller.UpdateUser(user);
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 200;
+
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+        }
+
+        [Test]
+        public void UpdateUser_ReturnsUser()
+        {
+            PublicUser expectedUser = new PublicUser
+            {
+                Id = 325,
+                Email = "black@dragon.com",
+                FirstName = "Iris",
+                LastName = "Black",
+                IsAdmin = false
+            };
+
+            UpdateUser user = new UpdateUser
+            {
+                Id = 325,
+                Email = "black@dragon.com",
+                FirstName = "Iris",
+                LastName = "Black",
+                Password = "dragonbreath"
+            };
+
+            _userService.Setup(x => x.FindByEmailDto(user.Email)).Returns(Task.FromResult<PublicUser?>(null));
+            _userService.Setup(x => x.Find(user.Id)).Returns(Task.FromResult<PublicUser?>(expectedUser));
+            _userService.Setup(x => x.Update(user)).Returns(Task.FromResult(expectedUser));
+
+            var result = _controller.UpdateUser(user);
+            var resultUser = (result.Result.Result as ObjectResult)?.Value;
+
+            Util.AreEqualByJson(expectedUser, resultUser);
+        }
+
+        [Test]
+        public void UpdateUser_ReturnsHttpStatusCode400()
+        {
+            PublicUser existingUser = new PublicUser
+            {
+                Id = 325,
+                Email = "black@dragon.com",
+                FirstName = "Iris",
+                LastName = "Black",
+                IsAdmin = false
+            };
+
+            UpdateUser user = new UpdateUser
+            {
+                Id = 325,
+                Email = "black@dragon.com",
+                FirstName = "Iris",
+                LastName = "Black",
+                Password = "dragonbreath"
+            };
+
+            _userService.Setup(x => x.FindByEmailDto(user.Email)).Returns(Task.FromResult<PublicUser?>(null));
+            _userService.Setup(x => x.Find(user.Id)).Returns(Task.FromResult<PublicUser?>(existingUser));
+            _userService.Setup(x => x.Update(user)).Throws(new DbUpdateException());
+
+            var result = _controller.UpdateUser(user);
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 400;
+
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+        }
+
+        [Test]
+        public void UpdateUser_ReturnsHttpStatusCode404()
+        {
+            UpdateUser user = new UpdateUser
+            {
+                Id = 325,
+                Email = "black@dragon.com",
+                FirstName = "Iris",
+                LastName = "Black",
+                Password = "dragonbreath"
+            };
+
+            _userService.Setup(x => x.FindByEmailDto(user.Email)).Returns(Task.FromResult<PublicUser?>(null));
+            _userService.Setup(x => x.Find(user.Id)).Returns(Task.FromResult<PublicUser?>(null));
+
+            var result = _controller.UpdateUser(user);
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 404;
+
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+        }
+
+        [Test]
+        public void UpdateUser_ReturnsHttpStatusCode409()
+        {
+            PublicUser existingUser = new PublicUser
+            {
+                Id = 325,
+                Email = "black@dragon.com",
+                FirstName = "Iris",
+                LastName = "Black",
+                IsAdmin = false
+            };
+
+            UpdateUser user = new UpdateUser
+            {
+                Id = 325,
+                Email = "black@dragon.com",
+                FirstName = "Iris",
+                LastName = "Black",
+                Password = "dragonbreath"
+            };
+
+            _userService.Setup(x => x.FindByEmailDto(user.Email)).Returns(Task.FromResult<PublicUser?>(existingUser));
+
+            var result = _controller.UpdateUser(user);
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 409;
+
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+        }
+
+        [Test]
         public void DeleteUser_ReturnsHttpStatusCode200()
         {
             int id = 325;
