@@ -583,5 +583,21 @@ namespace BackendTests.ControllerTests
 
             Assert.That(statusCode, Is.EqualTo(401));
         }
+
+        [Test]
+        public void Logout_ReturnsHttpStatusCode200()
+        {
+            Mock<IResponseCookies> mockCookies = new Mock<IResponseCookies>();
+            Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
+
+            mockHttpContext.Setup(c => c.Response.Cookies).Returns(mockCookies.Object);
+
+            _controller.ControllerContext.HttpContext = mockHttpContext.Object;
+
+            var result = _controller.Logout();
+            var statusCode = (result as ObjectResult)?.StatusCode;
+
+            Assert.That(statusCode, Is.EqualTo(200));
+        }
     }
 }
