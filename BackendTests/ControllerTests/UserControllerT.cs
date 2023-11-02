@@ -110,10 +110,8 @@ namespace BackendTests.ControllerTests
 
             var result = _controller.GetAllUser();
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
-
-            int expectedStatusCode = 400;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            
+            Assert.That(statusCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -141,9 +139,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.GetCurrentUser();
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 200;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(200));
         }
 
         [Test]
@@ -192,9 +188,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.GetCurrentUser();
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 400;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -211,9 +205,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.GetCurrentUser();
             var statusCode = (result.Result.Result as StatusCodeResult)?.StatusCode;
 
-            int expectedStatusCode = 401;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(401));
         }
 
         [Test]
@@ -234,9 +226,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.GetCurrentUser();
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 404;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(404));
         }
 
         [Test]
@@ -267,9 +257,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.UpdateUser(user);
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 200;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(200));
         }
 
         [Test]
@@ -331,9 +319,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.UpdateUser(user);
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 400;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -354,9 +340,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.UpdateUser(user);
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 404;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(404));
         }
 
         [Test]
@@ -385,9 +369,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.UpdateUser(user);
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 409;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(409));
         }
 
         [Test]
@@ -400,9 +382,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.DeleteUser(id);
             var statusCode = (result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 200;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(200));
         }
 
         [Test]
@@ -415,9 +395,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.DeleteUser(id);
             var statusCode = (result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 400;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -430,9 +408,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.DeleteUser(id);
             var statusCode = (result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 404;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(404));
         }
 
         [Test]
@@ -461,9 +437,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.Register(newUser);
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 201;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(201));
         }
 
         [Test]
@@ -483,9 +457,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.Register(newUser);
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 400;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(400));
         }
 
         [Test]
@@ -513,9 +485,7 @@ namespace BackendTests.ControllerTests
             var result = _controller.Register(newUser);
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
-            int expectedStatusCode = 409;
-
-            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+            Assert.That(statusCode, Is.EqualTo(409));
         }
     }
 }
