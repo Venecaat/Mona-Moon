@@ -13,7 +13,7 @@ namespace Backend.Services
     {
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
-        private readonly string? _jwtTokenKey;
+        private readonly string _jwtTokenKey;
 
         public AuthService(IUserService userService, IMapper mapper)
         {
@@ -29,7 +29,7 @@ namespace Backend.Services
             return user;
         }
 
-        public virtual async Task<PublicUser> Authenticate(LoginUser user)
+        public virtual async Task<PublicUser?> Authenticate(LoginUser user)
         {
             User? resUser = await _userService.FindByEmail(user.Email);
             bool verified = false;
