@@ -10,6 +10,8 @@ using Backend.Dtos.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Principal;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Http.Features;
 
 namespace BackendTests.ControllerTests
 {
@@ -233,6 +235,89 @@ namespace BackendTests.ControllerTests
             var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
 
             int expectedStatusCode = 404;
+
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+        }
+
+        [Test]
+        public void Register_ReturnsHttpStatusCode201()
+        {
+            RegisterUser newUser = new RegisterUser
+            {
+                Email = "something1@nothing.com",
+                FirstName = "Spongebob",
+                LastName = "Squarepants",
+                Password = "fireunderwater"
+            };
+
+            PublicUser existingUser = new PublicUser
+            {
+                Id = 325,
+                Email = "something1@nothing.com",
+                FirstName = "Spongebob",
+                LastName = "Squarepants",
+                IsAdmin = false,
+            };
+
+            _authService.Setup(a => a.HashPw(newUser)).Returns(newUser);
+            _userService.Setup(x => x.Create(newUser)).Returns(Task.FromResult(existingUser));
+
+            var result = _controller.Register(newUser);
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 201;
+
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+        }
+
+        [Test]
+        public void Register_ReturnsHttpStatusCode400()
+        {
+            RegisterUser newUser = new RegisterUser
+            {
+                Email = "something1@nothing.com",
+                FirstName = "Spongebob",
+                LastName = "Squarepants",
+                Password = "fireunderwater"
+            };
+
+            _authService.Setup(a => a.HashPw(newUser)).Returns(newUser);
+            _userService.Setup(x => x.Create(newUser)).Throws(new DbUpdateException());
+
+            var result = _controller.Register(newUser);
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 400;
+
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+        }
+
+        [Test]
+        public void Register_ReturnsHttpStatusCode409()
+        {
+            RegisterUser newUser = new RegisterUser
+            {
+                Email = "something1@nothing.com",
+                FirstName = "Spongebob",
+                LastName = "Squarepants",
+                Password = "fireunderwater"
+            };
+
+            PublicUser existingUser = new PublicUser
+            {
+                Id = 325,
+                Email = "something1@nothing.com",
+                FirstName = "Spongebob",
+                LastName = "Squarepants",
+                IsAdmin = false,
+            };
+
+            _userService.Setup(x => x.FindByEmailDto(newUser.Email)).Returns(Task.FromResult<PublicUser?>(existingUser));
+
+            var result = _controller.Register(newUser);
+            var statusCode = (result.Result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 409;
 
             Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
         }
