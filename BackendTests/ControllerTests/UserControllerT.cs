@@ -127,10 +127,8 @@ namespace BackendTests.ControllerTests
             };
             
             Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
-            GenericIdentity mockIdentity = new GenericIdentity($"{user.Id}");
-            GenericPrincipal mockPrincipal = new GenericPrincipal(mockIdentity, null);
 
-            mockHttpContext.Setup(t => t.User).Returns(mockPrincipal);
+            mockHttpContext.Setup(t => t.User.Identity.Name).Returns($"{user.Id}");
 
             _controller.ControllerContext.HttpContext = mockHttpContext.Object;
 
@@ -155,10 +153,8 @@ namespace BackendTests.ControllerTests
             };
 
             Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
-            GenericIdentity mockIdentity = new GenericIdentity($"{expectedUser.Id}");
-            GenericPrincipal mockPrincipal = new GenericPrincipal(mockIdentity, null);
 
-            mockHttpContext.Setup(t => t.User).Returns(mockPrincipal);
+            mockHttpContext.Setup(t => t.User.Identity.Name).Returns($"{expectedUser.Id}");
 
             _controller.ControllerContext.HttpContext = mockHttpContext.Object;
 
@@ -176,10 +172,8 @@ namespace BackendTests.ControllerTests
             int id = 325;
 
             Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
-            GenericIdentity mockIdentity = new GenericIdentity($"{id}");
-            GenericPrincipal mockPrincipal = new GenericPrincipal(mockIdentity, null);
 
-            mockHttpContext.Setup(t => t.User).Returns(mockPrincipal);
+            mockHttpContext.Setup(t => t.User.Identity.Name).Returns($"{id}");
 
             _controller.ControllerContext.HttpContext = mockHttpContext.Object;
 
@@ -198,7 +192,7 @@ namespace BackendTests.ControllerTests
 
             Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
 
-            mockHttpContext.Setup(t => t.User.Identity.Name).Returns<string?>(null);
+            mockHttpContext.Setup(t => t.User.Identity.Name).Returns((string?)null);
 
             _controller.ControllerContext.HttpContext = mockHttpContext.Object;
             
@@ -214,10 +208,8 @@ namespace BackendTests.ControllerTests
             int id = 325;
 
             Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
-            GenericIdentity mockIdentity = new GenericIdentity($"{id}");
-            GenericPrincipal mockPrincipal = new GenericPrincipal(mockIdentity, null);
 
-            mockHttpContext.Setup(t => t.User).Returns(mockPrincipal);
+            mockHttpContext.Setup(t => t.User.Identity.Name).Returns($"{id}");
 
             _controller.ControllerContext.HttpContext = mockHttpContext.Object;
 
