@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Backend.Dtos.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Principal;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Features;
 
@@ -20,6 +19,7 @@ namespace BackendTests.ControllerTests
         private Mock<UserService> _userService;
         private Mock<AuthService> _authService;
         private UserController _controller;
+        private int _testId;
 
         [SetUp]
         public void Setup()
@@ -35,6 +35,8 @@ namespace BackendTests.ControllerTests
             _authService = new Mock<AuthService>(_userService.Object, mapper);
 
             _controller = new UserController(_userService.Object, _authService.Object);
+
+            _testId = 325;
         }
 
         [Test]
@@ -119,7 +121,7 @@ namespace BackendTests.ControllerTests
         {
             PublicUser user = new PublicUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "test@email.com",
                 FirstName = "Test",
                 LastName = "User",
@@ -145,7 +147,7 @@ namespace BackendTests.ControllerTests
         {
             PublicUser expectedUser = new PublicUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "test@email.com",
                 FirstName = "Test",
                 LastName = "User",
@@ -169,7 +171,7 @@ namespace BackendTests.ControllerTests
         [Test]
         public void GetCurrentUser_ReturnsHttpStatusCode400()
         {
-            int id = 325;
+            int id = _testId;
 
             Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
 
@@ -188,7 +190,7 @@ namespace BackendTests.ControllerTests
         [Test]
         public void GetCurrentUser_ReturnsHttpStatusCode401()
         {
-            int id = 325;
+            int id = _testId;
 
             Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
 
@@ -205,7 +207,7 @@ namespace BackendTests.ControllerTests
         [Test]
         public void GetCurrentUser_ReturnsHttpStatusCode404()
         {
-            int id = 325;
+            int id = _testId;
 
             Mock<HttpContext> mockHttpContext = new Mock<HttpContext>();
 
@@ -226,7 +228,7 @@ namespace BackendTests.ControllerTests
         {
             PublicUser existingUser = new PublicUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "black@dragon.com",
                 FirstName = "Iris",
                 LastName = "Black",
@@ -235,7 +237,7 @@ namespace BackendTests.ControllerTests
 
             UpdateUser user = new UpdateUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "black@dragon.com",
                 FirstName = "Iris",
                 LastName = "Black",
@@ -257,7 +259,7 @@ namespace BackendTests.ControllerTests
         {
             PublicUser expectedUser = new PublicUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "black@dragon.com",
                 FirstName = "Iris",
                 LastName = "Black",
@@ -266,7 +268,7 @@ namespace BackendTests.ControllerTests
 
             UpdateUser user = new UpdateUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "black@dragon.com",
                 FirstName = "Iris",
                 LastName = "Black",
@@ -288,7 +290,7 @@ namespace BackendTests.ControllerTests
         {
             PublicUser existingUser = new PublicUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "black@dragon.com",
                 FirstName = "Iris",
                 LastName = "Black",
@@ -297,7 +299,7 @@ namespace BackendTests.ControllerTests
 
             UpdateUser user = new UpdateUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "black@dragon.com",
                 FirstName = "Iris",
                 LastName = "Black",
@@ -319,7 +321,7 @@ namespace BackendTests.ControllerTests
         {
             UpdateUser user = new UpdateUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "black@dragon.com",
                 FirstName = "Iris",
                 LastName = "Black",
@@ -340,7 +342,7 @@ namespace BackendTests.ControllerTests
         {
             PublicUser existingUser = new PublicUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "black@dragon.com",
                 FirstName = "Iris",
                 LastName = "Black",
@@ -349,7 +351,7 @@ namespace BackendTests.ControllerTests
 
             UpdateUser user = new UpdateUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "black@dragon.com",
                 FirstName = "Iris",
                 LastName = "Black",
@@ -367,7 +369,7 @@ namespace BackendTests.ControllerTests
         [Test]
         public void DeleteUser_ReturnsHttpStatusCode200()
         {
-            int id = 325;
+            int id = _testId;
 
             _userService.Setup(x => x.Delete(id)).Returns(Task.FromResult(true));
 
@@ -380,7 +382,7 @@ namespace BackendTests.ControllerTests
         [Test]
         public void DeleteUser_ReturnsHttpStatusCode400()
         {
-            int id = 325;
+            int id = _testId;
 
             _userService.Setup(x => x.Delete(id)).Throws(new DbUpdateException());
 
@@ -393,7 +395,7 @@ namespace BackendTests.ControllerTests
         [Test]
         public void DeleteUser_ReturnsHttpStatusCode404()
         {
-            int id = 325;
+            int id = _testId;
 
             _userService.Setup(x => x.Delete(id)).Returns(Task.FromResult(false));
 
@@ -416,7 +418,7 @@ namespace BackendTests.ControllerTests
 
             PublicUser existingUser = new PublicUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "something1@nothing.com",
                 FirstName = "Spongebob",
                 LastName = "Squarepants",
@@ -465,7 +467,7 @@ namespace BackendTests.ControllerTests
 
             PublicUser existingUser = new PublicUser
             {
-                Id = 325,
+                Id = _testId,
                 Email = "something1@nothing.com",
                 FirstName = "Spongebob",
                 LastName = "Squarepants",
