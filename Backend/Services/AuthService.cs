@@ -22,14 +22,14 @@ namespace Backend.Services
             _jwtTokenKey = EnvVarHelper.JwtTokenKey;
         }
 
-        public RegisterUser HashPw(RegisterUser user)
+        public virtual RegisterUser HashPw(RegisterUser user)
         {
             string pwHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
             user.Password = pwHash;
             return user;
         }
 
-        public async Task<PublicUser> Authenticate(LoginUser user)
+        public virtual async Task<PublicUser> Authenticate(LoginUser user)
         {
             User? resUser = await _userService.FindByEmail(user.Email);
             bool verified = false;
@@ -43,7 +43,7 @@ namespace Backend.Services
             return _mapper.Map<User, PublicUser>(resUser);
         }
 
-        public string GenerateJwt(PublicUser user)
+        public virtual string GenerateJwt(PublicUser user)
         {
             SymmetricSecurityKey symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtTokenKey));
             SigningCredentials credentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
