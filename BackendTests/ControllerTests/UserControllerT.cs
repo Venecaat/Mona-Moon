@@ -240,6 +240,51 @@ namespace BackendTests.ControllerTests
         }
 
         [Test]
+        public void DeleteUser_ReturnsHttpStatusCode200()
+        {
+            int id = 325;
+
+            _userService.Setup(x => x.Delete(id)).Returns(Task.FromResult(true));
+
+            var result = _controller.DeleteUser(id);
+            var statusCode = (result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 200;
+
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+        }
+
+        [Test]
+        public void DeleteUser_ReturnsHttpStatusCode400()
+        {
+            int id = 325;
+
+            _userService.Setup(x => x.Delete(id)).Throws(new DbUpdateException());
+
+            var result = _controller.DeleteUser(id);
+            var statusCode = (result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 400;
+
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+        }
+
+        [Test]
+        public void DeleteUser_ReturnsHttpStatusCode404()
+        {
+            int id = 325;
+
+            _userService.Setup(x => x.Delete(id)).Returns(Task.FromResult(false));
+
+            var result = _controller.DeleteUser(id);
+            var statusCode = (result.Result as ObjectResult)?.StatusCode;
+
+            int expectedStatusCode = 404;
+
+            Assert.That(statusCode, Is.EqualTo(expectedStatusCode));
+        }
+
+        [Test]
         public void Register_ReturnsHttpStatusCode201()
         {
             RegisterUser newUser = new RegisterUser
