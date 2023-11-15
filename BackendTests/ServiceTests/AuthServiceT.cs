@@ -169,5 +169,20 @@ namespace BackendTests.ServiceTests
 
             Util.AreEqualByJson(expectedUser, resUser);
         }
+
+        [Test]
+        public void GenerateJwt_ReturnsJwtToken()
+        {
+            PublicUser user = new PublicUser
+            {
+                Id = 325,
+                Email = "furina@fontain.com",
+                FirstName = "Furina",
+                LastName = "Lady",
+                IsAdmin = true
+            };
+
+            Assert.IsNotNull(_authService.GenerateJwt(user));
+        }
     }
 }
