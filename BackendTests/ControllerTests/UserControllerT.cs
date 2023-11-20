@@ -9,8 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Backend.Dtos.User;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.Features;
 
 namespace BackendTests.ControllerTests
 {
