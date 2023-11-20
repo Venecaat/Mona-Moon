@@ -176,7 +176,7 @@ namespace BackendTests.ServiceTests
                 IsAdmin = false
             };
 
-            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult(user));
+            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult<User?>(user));
 
             Util.AreEqualByJson(expectedUser, await service.Find(4));
         }
@@ -213,7 +213,7 @@ namespace BackendTests.ServiceTests
                 IsAdmin = false
             };
 
-            mockRepository.Setup(x => x.FindByEmail(It.IsAny<string>())).Returns(Task.FromResult(user));
+            mockRepository.Setup(x => x.FindByEmail(It.IsAny<string>())).Returns(Task.FromResult<User?>(user));
 
             Util.AreEqualByJson(expectedUser, await service.FindByEmailDto("totally@valid.com"));
         }
@@ -241,7 +241,7 @@ namespace BackendTests.ServiceTests
                 IsAdmin = false
             };
 
-            mockRepository.Setup(x => x.FindByEmail(It.IsAny<string>())).Returns(Task.FromResult(expectedUser));
+            mockRepository.Setup(x => x.FindByEmail(It.IsAny<string>())).Returns(Task.FromResult<User?>(expectedUser));
 
             Util.AreEqualByJson(expectedUser, await service.FindByEmail("totally@valid.com"));
         }
@@ -285,7 +285,7 @@ namespace BackendTests.ServiceTests
                 IsAdmin = true
             };
 
-            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult(user));
+            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult<User?>(user));
             mockRepository.Setup(x => x.Delete(It.IsAny<User>()))
                 .Callback<User>(_ => users.Remove(users.First(u => u.Id == user.Id)));
 
@@ -307,7 +307,7 @@ namespace BackendTests.ServiceTests
                 IsAdmin = true
             };
             
-            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult(user));
+            mockRepository.Setup(x => x.Find(It.IsAny<int>())).Returns(Task.FromResult<User?>(user));
 
             Assert.True(await service.Delete(3));
         }

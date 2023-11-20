@@ -1,0 +1,71 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: MonaMoon-DB
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    user: root
+    environment:
+        MSSQL_SA_PASSWORD: "${SA_PASSWORD}"
+        ACCEPT_EULA: "Y"
+    expose:
+        - "${DB_PORT}"
+    command: /bin/bash ./entrypoint.sh
+    restart: on-failure
+    healthcheck:
+        test: ["CMD", "/opt/mssql-tools/bin/sqlcmd", "-U", "SA", "-P", "${SA_PASSWORD}", "-Q", "SELECT 1"]
+        interval: 10s
+        retries: 12
+    volumes:
+        - mssqldata:/var/opt/mssql/data
+        - ./Backend/Database/CreateDockerDb/createDb.sql:/createDb.sql
+        - ./Backend/Database/CreateDockerDb/entrypoint.sh:/entrypoint.sh
+        - ./Backend/Database/CreateDockerDb/initDb.sh:/initDb.sh
+
+  backend:
+    container_name: backend
+    image: ${DOCKER_REGISTRY-}backend
+    build:
+      context: Backend
+      dockerfile: Dockerfile
+    expose:
+        - "${BACKEND_PORT}:${BACKEND_PORT_DEF}"
+    depends_on:
+        db:
+            condition: service_healthy
+    environment:
+        JWT_TOKEN_KEY: ${JWT_TOKEN_KEY}
+        FRONTEND_URL: ${FRONTEND_URL}
+        DB_SERVER: ${DB_SERVER}
+        DB_DATABASE: ${DB_DATABASE}
+        DB_ID: ${DB_ID}
+        DB_PASSWORD: ${DB_PASSWORD}
+        ASPNETCORE_URLS: ${ASPNETCORE_URLS}
+        ASPNETCORE_ENVIRONMENT: ${ASPNETCORE_ENVIRONMENT}
+    restart: "on-failure"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "${HEALTH_API_URL}"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+
+  frontend:
+    container_name: frontend
+    image: ${DOCKER_REGISTRY-}frontend
+    build:
+      context: Frontend
+      dockerfile: Dockerfile
+      args:
+        API_URL: ${VITE_API_URL}
+    ports:
+        - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+    environment:
+        VITE_API_URL: ${VITE_API_URL}
+    restart: "on-failure"
+    depends_on:
+        backend:
+            condition: service_healthy
+    command: pnpm dev
+
+volumes:
+    mssqldata:

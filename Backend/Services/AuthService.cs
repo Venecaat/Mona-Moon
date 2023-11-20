@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Backend.Utils;
 
 namespace Backend.Services
 {
@@ -12,25 +13,23 @@ namespace Backend.Services
     {
         private readonly IUserService _userService;
         private readonly IMapper _mapper;
-        private readonly string? _jwtTokenKey;
+        private readonly string _jwtTokenKey;
 
         public AuthService(IUserService userService, IMapper mapper)
         {
             _userService = userService;
             _mapper = mapper;
-            _jwtTokenKey = Environment.GetEnvironmentVariable("JWT_TOKEN_KEY");
-
-            if (_jwtTokenKey is null) throw new ArgumentNullException(null, "Missing JWT_TOKEN_KEY environment variable!");
+            _jwtTokenKey = EnvVarHelper.JwtTokenKey;
         }
 
-        public RegisterUser HashPw(RegisterUser user)
+        public virtual RegisterUser HashPw(RegisterUser user)
         {
             string pwHash = BCrypt.Net.BCrypt.HashPassword(user.Password);
             user.Password = pwHash;
             return user;
         }
 
-        public async Task<PublicUser> Authenticate(LoginUser user)
+        public virtual async Task<PublicUser?> Authenticate(LoginUser user)
         {
             User? resUser = await _userService.FindByEmail(user.Email);
             bool verified = false;
@@ -44,7 +43,7 @@ namespace Backend.Services
             return _mapper.Map<User, PublicUser>(resUser);
         }
 
-        public string GenerateJwt(PublicUser user)
+        public virtual string GenerateJwt(PublicUser user)
         {
             SymmetricSecurityKey symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtTokenKey));
             SigningCredentials credentials = new SigningCredentials(symmetricSecurityKey, SecurityAlgorithms.HmacSha256Signature);
