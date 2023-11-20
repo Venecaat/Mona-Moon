@@ -22,4 +22,4 @@ jobs:
     - name: Build
       run: dotnet build ./Backend/Backend.csproj --no-restore
     - name: Test
-      run: dotnet test ./BackendTests/BackendTests.csproj --no-build --verbosity normal
+      run: dotnet test ./MonaMoon.sln --no-build --verbosity normal
